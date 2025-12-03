@@ -9,4 +9,7 @@
     <Project Path="AIExamples.Data/AIExamples.Data.csproj" />
     <Project Path="AIExamples.Shared/AIExamples.Shared.csproj" Id="62de912c-2ce5-46ce-a214-3a087cfc9208" />
   </Folder>
+  <Folder Name="/WebApplications/">
+    <Project Path="OpenApiWebApi/OpenApiWebApi.csproj" />
+  </Folder>
 </Solution>

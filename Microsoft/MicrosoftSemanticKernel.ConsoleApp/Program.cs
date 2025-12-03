@@ -3,6 +3,7 @@
                .ConfigureGitHubAI()
                .ConfigureOllamaAI()
                .ConfigureLMStudioAI()
+               .ConfigureOpenApi()
                .RegisterExamples()
                .Build();
 
@@ -96,6 +97,8 @@
 //await host.ExecuteExampleAsync<TextPluginUsageExample>();
 //await host.ExecuteExampleAsync<HttpPluginUsageExample>();
 //await host.ExecuteExampleAsync<ConversationSummaryPluginExample>();
+
+//await host.ExecuteExampleAsync<OpenApiPluginExample>();
 
 //await host.ExecuteExampleAsync<PersonalDetailsPluginExample>();
 //await host.ExecuteExampleAsync<TaxCodeServicePluginExample>();

@@ -12,6 +12,8 @@ public static class HostBuilderExtensions
 
         public IHostBuilder ConfigureLMStudioAI() => builder.BindSettings<LMStudioAISettings>("LMStudioAI");
 
+        public IHostBuilder ConfigureOpenApi() => builder.BindSettings<OpenApiSettings>("OpenApi");
+
         public IHostBuilder RegisterExamples()
         {
             builder.ConfigureServices(services =>

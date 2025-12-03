@@ -164,6 +164,12 @@ Model: gpt-4o-mini
 Demonstrates how ConversationSummaryPlugin, a pre-built Microsoft plugin, can take a block of text and create a summary from it.  
 Model: gpt-4o-mini
 
+- **OpenApiPluginExample**  
+Demonstrates how to import an Open API schema that infers a set of functions that can then be used automatically given the context 
+of a prompt.  
+**N.B.** See the **OpenApiWebApi** project for the API used in this example.  
+Model: gpt-4o-mini
+
 - **PersonalDetailsPluginExample**  
 Demonstrates how to create a custom plugin that provides some data that can then be included in prompt queries.  
 Model: gpt-4o-mini
