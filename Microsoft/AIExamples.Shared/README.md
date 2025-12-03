@@ -68,6 +68,11 @@ dotnet user-secrets set "AzureAIFoundry:Projects:0:ApiKey" ""
 dotnet user-secrets set "AzureAIFoundry:Projects:0:Endpoint" ""
 dotnet user-secrets set "AzureAIFoundry:Projects:0:OpenAIEndpoint" ""
 
+dotnet user-secrets set "AzureAIFoundry:Projects:1:Key" ""
+dotnet user-secrets set "AzureAIFoundry:Projects:1:ApiKey" ""
+dotnet user-secrets set "AzureAIFoundry:Projects:1:Endpoint" ""
+dotnet user-secrets set "AzureAIFoundry:Projects:1:OpenAIEndpoint" ""
+
 dotnet user-secrets set "GitHubAI:ApiKey" ""
 ```
 

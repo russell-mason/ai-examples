@@ -20,6 +20,9 @@
         <ProjectReference Include="..\AIExamples.Shared\AIExamples.Shared.csproj" />
     </ItemGroup>
     <ItemGroup>
+      <None Update="AudioToText\SourceAudio\WinstonChurchillNews.mp3">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
       <None Update="MultimodalModels\SourceImages\Animals\Bear.jpg">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>

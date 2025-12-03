@@ -7,4 +7,6 @@ public class AzureAIFoundryModelDeploymentSettings
     public string Gpt4Mini { get; set; } = string.Empty;
 
     public string Grok3Mini { get; set; } = string.Empty;
+
+    public string Whisper { get; set; } = string.Empty;
 }

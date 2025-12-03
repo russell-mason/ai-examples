@@ -86,3 +86,9 @@ Model: qwen/qwen3-vl-4b
 - **ImageDescriptionExample**  
 Demonstrates how to use the OpenAI chat client to describe what's shown in an image.  
 Model: qwen/qwen3-vl-4b
+
+### Audio To Text
+
+- **AudioToTextExample**  
+Demonstrates how to read an mps3 audio file and transcribe it to text using the Azure Open AI audio to text service.  
+Model: whisper

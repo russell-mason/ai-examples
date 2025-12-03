@@ -52,3 +52,11 @@
 
 //await host.ExecuteExampleAsync<ImageContentExample>();
 //await host.ExecuteExampleAsync<ImageDescriptionExample>();
+
+
+
+// ---------------------------------------------------------------------------------------
+// Audio To Text - From Azure Deployments
+// ---------------------------------------------------------------------------------------
+
+//await host.ExecuteExampleAsync<AudioToTextExample>();
