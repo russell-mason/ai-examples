@@ -1,0 +1,11 @@
+<Solution>
+  <Folder Name="/ConsoleApplications/">
+    <Project Path="MicrosoftSemanticKernel.ConsoleApp/MicrosoftSemanticKernel.ConsoleApp.csproj" />
+  </Folder>
+  <Folder Name="/Examples/">
+    <Project Path="MicrosoftSemanticKernel.Examples/MicrosoftSemanticKernel.Examples.csproj" Id="f20f4e1b-385a-4c98-8209-dff573de9971" />
+  </Folder>
+  <Folder Name="/Shared/">
+    <Project Path="AIExamples.Shared/AIExamples.Shared.csproj" Id="62de912c-2ce5-46ce-a214-3a087cfc9208" />
+  </Folder>
+</Solution>
