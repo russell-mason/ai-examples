@@ -1,0 +1,22 @@
+{
+    "schema": 1,
+    "type": "completion",
+    "description": "Finds an interesting fact about each of the items in a comma separated list.",
+    "execution_settings": {
+        "default": {
+            "number_of_responses": 1,
+            "temperature": 1,
+            "top_p": 1,
+            "max_tokens": 1000,
+            "presence_penalty": 0.0,
+            "frequency_penalty": 0.0
+        }
+    },
+    "input_variables": [
+        {
+            "name": "list",
+            "description": "The comma separated list of values to find a fact about.",
+            "required": true
+        }
+    ]
+}

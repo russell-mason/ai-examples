@@ -44,6 +44,33 @@
       <None Update="MultimodalModels\SourceImages\Animals\Watermelon.jpg">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>
+      <None Update="PromptFunctions\Plugins\Books\FindAuthor.yaml">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="PromptFunctions\Plugins\Books\FindAuthor\config.json">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="PromptFunctions\Plugins\Books\FindAuthor\skprompt.txt">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="PromptFunctions\Plugins\Pipeline\Find\config.json">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="PromptFunctions\Plugins\Pipeline\Find\skprompt.txt">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="PromptFunctions\Plugins\Pipeline\GetInterestingFact\config.json">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="PromptFunctions\Plugins\Pipeline\GetInterestingFact\skprompt.txt">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="PromptFunctions\Plugins\Translations\Translate\config.json">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="PromptFunctions\Plugins\Translations\Translate\skprompt.txt">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
     </ItemGroup>
 
 </Project>

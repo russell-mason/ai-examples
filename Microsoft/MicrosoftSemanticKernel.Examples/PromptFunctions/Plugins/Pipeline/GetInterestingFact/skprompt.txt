@@ -1,0 +1,13 @@
+﻿Treat the text below, defined as being between ---------- and ----------, as a comma separated list.
+For each item in the list, extract the item value and create an interesting fact about that item.
+Each fact should be a single sentaence.
+Provide the results in the format:
+
+- item_value
+interesting_fact
+
+Do not include any additional text or ask any follow up questions.
+
+----------
+{{$list}}
+----------

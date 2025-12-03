@@ -1,0 +1,36 @@
+﻿From the text below, defined as being between ---------- and ----------, extract the {{$criteria}} mentioned. 
+Provide the results as a comma-separated list.
+Do not include any additional text or ask any follow up questions.
+
+----------
+A trip to France would be incomplete without experiencing the timeless charm and elegance 
+that Paris infuses into every avenue, café, and landmark.​
+
+Street vendors, ornate temples, and vibrant nightlife are just some of the elements that give 
+Bangkok its status as a perennial favorite among adventurous travelers.​
+
+In the heart of the United Kingdom, London stands out as a beacon of history and innovation, 
+seamlessly blending the past with the present through its grand museums, royal parks, and celebrated theater scene.​
+
+With its futuristic skyline and thriving luxury shopping, few urban landscapes dazzle as much as Dubai in 
+the United Arab Emirates, a city that redefines the idea of modern opulence.​
+
+While exploring Japan, many visitors are captivated by how Tokyo merges centuries-old traditions with pulsating 
+streets and high-tech wonders, making the city unforgettable for first-timers and veterans alike.​
+
+
+Plays and poetry steeped in vivid language and emotional depth make William Shakespeare an enduring influence 
+on world literature, with works that are still studied and performed centuries after they were written.​
+
+Masterpieces such as War and Peace and Anna Karenina introduced countless readers to a sweeping vision of society 
+and morality, as crafted by the thoughtful pen of Leo Tolstoy.​
+
+The dystopian worlds and biting social critiques found in 1984 and Animal Farm showcase the unforgettable impact 
+that George Orwell has had on literature and political discourse.​
+
+Stream-of-consciousness writing and modernist innovation forever changed narrative style, thanks in no small part 
+to the creative genius displayed by Virginia Woolf.​
+
+Characters like Oliver Twist and Ebenezer Scrooge have become icons in popular culture, arising from the imaginative 
+stories and social commentary woven by Charles Dickens.
+----------

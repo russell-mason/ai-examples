@@ -103,3 +103,28 @@ Model: gpt-4o-mini
 Demonstrates how to return a message that contains JSON by specifying the response format via settings, and then 
 deserializing the JSON to a typed object.  
 Model: gpt-4o-mini
+
+### Prompt Functions
+
+- **PromptToFunctionExample**  
+Demonstrates how to turn a parameterized prompt into a kernel function, then execute it passing the parameter.  
+Model: gpt-4o-mini
+
+- **JsonFileToFunctionFunctionExample**  
+Demonstrates how to import a plugin containing a prompt function via config.json and skprompt.txt files, and then executing 
+the function from within that plugin.  
+Model: gpt-4o-mini
+
+- **YamlFileToFunctionFunctionExample**  
+Demonstrates how to create a prompt function from a yaml file, then execute it passing a parameter.   
+Model: gpt-4o-mini
+
+- **TranslationFunctionExample**  
+Demonstrates how to import a plugin containing a prompt function via config.json and skprompt.txt files, and executing 
+it multiple times using different parameters.    
+Model: gpt-4o-mini
+
+- **FunctionPipelineExample**  
+Demonstrates how to compose, and execute, multiple prompt functions via a pipeline passing a value from one function to 
+the next. This uses a custom pipeline class originating from Microsoft examples.  
+Model: gpt-4o-mini

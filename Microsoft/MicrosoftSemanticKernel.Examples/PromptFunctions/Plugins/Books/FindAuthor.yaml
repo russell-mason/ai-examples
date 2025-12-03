@@ -1,0 +1,11 @@
+﻿name: FindAuthor
+template: |
+  Who was the author of the book titled "{{$title}}"? Provide the author's name only.  
+template_format: semantic-kernel
+description: Finds the author of the specified book.
+input_variables:
+  - name: title
+    description: The title of the book.
+    is_required: true
+output_variable:
+  description: The author.

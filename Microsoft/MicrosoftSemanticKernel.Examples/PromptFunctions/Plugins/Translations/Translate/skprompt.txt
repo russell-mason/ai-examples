@@ -1,0 +1,3 @@
+﻿Take the following text and translate it from {{$source_language}} to {{$target_language}}.
+Reply with the translation only, do not embellish the answer, or prompt with follow up questions.
+{{$text}}

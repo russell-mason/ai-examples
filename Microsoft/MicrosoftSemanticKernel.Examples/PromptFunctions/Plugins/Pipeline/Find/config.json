@@ -1,0 +1,22 @@
+{
+    "schema": 1,
+    "type": "completion",
+    "description": "Finds instances of the specified criteria within a block of text.",
+    "execution_settings": {
+        "default": {
+            "number_of_responses": 1,
+            "temperature": 0,
+            "top_p": 0,
+            "max_tokens": 1000,
+            "presence_penalty": 0.0,
+            "frequency_penalty": 0.0
+        }
+    },
+    "input_variables": [
+        {
+            "name": "criteria",
+            "description": "The text to use as a filter within the text.",
+            "required": true
+        }
+    ]
+}

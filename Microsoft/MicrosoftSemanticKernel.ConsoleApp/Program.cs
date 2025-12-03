@@ -69,3 +69,15 @@
 
 //await host.ExecuteExampleAsync<JsonFromChatCompletionExample>();
 //await host.ExecuteExampleAsync<ResponseFormatFromInvokePromptExample>();
+
+
+
+// ---------------------------------------------------------------------------------------
+// Prompt Functions - From Azure Deployments
+// ---------------------------------------------------------------------------------------
+
+//await host.ExecuteExampleAsync<PromptToFunctionExample>();
+//await host.ExecuteExampleAsync<JsonFileToFunctionFunctionExample>();
+//await host.ExecuteExampleAsync<YamlFileToFunctionFunctionExample>();
+//await host.ExecuteExampleAsync<TranslationFunctionExample>();
+//await host.ExecuteExampleAsync<FunctionPipelineExample>();
