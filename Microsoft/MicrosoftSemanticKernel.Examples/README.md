@@ -76,3 +76,13 @@ Model: phi3:mini
 - **LMStudioLocalPhiExample**  
 Demonstrates using the LM Studio application running locally with a microsoft/phi-4 model via the OpenAI chat client.  
 Model: microsoft/phi-4
+
+### Multimodal Models
+
+- **ImageContentExample**  
+Demonstrates how to use the OpenAI chat client to analyse whether there are any animals in an image, and if so, what they are.  
+Model: qwen/qwen3-vl-4b
+
+- **ImageDescriptionExample**  
+Demonstrates how to use the OpenAI chat client to describe what's shown in an image.  
+Model: qwen/qwen3-vl-4b

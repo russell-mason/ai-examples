@@ -19,5 +19,28 @@
     <ItemGroup>
         <ProjectReference Include="..\AIExamples.Shared\AIExamples.Shared.csproj" />
     </ItemGroup>
+    <ItemGroup>
+      <None Update="MultimodalModels\SourceImages\Animals\Bear.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="MultimodalModels\SourceImages\Animals\DogAndDuck.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="MultimodalModels\SourceImages\Animals\Elephant.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="MultimodalModels\SourceImages\Animals\RabbitAndChick.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="MultimodalModels\SourceImages\Animals\Tiger1.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="MultimodalModels\SourceImages\Animals\Tiger2.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="MultimodalModels\SourceImages\Animals\Watermelon.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+    </ItemGroup>
 
 </Project>

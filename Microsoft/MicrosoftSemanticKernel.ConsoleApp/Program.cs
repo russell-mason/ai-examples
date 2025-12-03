@@ -43,3 +43,12 @@
 //// - From LM Studio
 
 //await host.ExecuteExampleAsync<LMStudioLocalPhiExample>();
+
+
+
+// ---------------------------------------------------------------------------------------
+// Multimodal Models - From LM Studio
+// ---------------------------------------------------------------------------------------
+
+//await host.ExecuteExampleAsync<ImageContentExample>();
+//await host.ExecuteExampleAsync<ImageDescriptionExample>();
