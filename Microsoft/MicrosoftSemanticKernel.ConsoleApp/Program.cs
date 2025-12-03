@@ -99,3 +99,13 @@
 
 //await host.ExecuteExampleAsync<PersonalDetailsPluginExample>();
 //await host.ExecuteExampleAsync<TaxCodeServicePluginExample>();
+
+
+
+// ---------------------------------------------------------------------------------------
+// Embeddings - From Azure Deployments
+// ---------------------------------------------------------------------------------------
+
+//await host.ExecuteExampleAsync<EmbeddingGeneratorExample>();
+//await host.ExecuteExampleAsync<InMemoryVectorSearchExample>();
+//await host.ExecuteExampleAsync<InMemoryTextSearchExample>();

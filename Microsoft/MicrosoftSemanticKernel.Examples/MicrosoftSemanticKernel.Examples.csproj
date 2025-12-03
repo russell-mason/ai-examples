@@ -17,6 +17,7 @@
         <PackageReference Include="Microsoft.SemanticKernel.Yaml" Version="1.67.1" />
     </ItemGroup>
     <ItemGroup>
+        <ProjectReference Include="..\AIExamples.Data\AIExamples.Data.csproj" />
         <ProjectReference Include="..\AIExamples.Shared\AIExamples.Shared.csproj" />
     </ItemGroup>
     <ItemGroup>

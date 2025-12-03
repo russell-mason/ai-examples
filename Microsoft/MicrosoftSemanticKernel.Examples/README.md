@@ -171,3 +171,18 @@ Model: gpt-4o-mini
 - **TaxCodeServicePluginExample**  
 Demonstrates how to create a custom plugin that uses dependency injection to access external functionality via services.  
 Model: gpt-4o-mini
+
+### Embeddings
+
+- **EmbeddingGeneratorExample**  
+Demonstrates how to create an embedding from text.  
+Model: text-embedding-3-small
+
+- **InMemoryVectorSearchExample**  
+Demonstrates populating an in-memory vector store with a set of objects with embeddings, and performing a search using a 
+vector based query.   
+Model: text-embedding-3-small
+
+- **InMemoryTextSearchExample**  
+Demonstrates populating an in-memory vector store with a set of objects with embeddings, and performing a search using text.  
+Model: text-embedding-3-small
