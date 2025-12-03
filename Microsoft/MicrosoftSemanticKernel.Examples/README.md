@@ -35,6 +35,21 @@ Model: gpt-4o-mini
 Demonstrates how to get the number of input and output tokens used by chat request/response messages.  
 Model: gpt-4o-mini
 
+- **ChatCompletionHistoryExample**  
+Demonstrates how to create a chat history so that prior request/response messages provide historical context.  
+Model: gpt-4o-mini
+
+- **ChatCompletionHistoryTruncationReducerExample**  
+Demonstrates how to take a chat history and condense it to only include a set number of request/response messages. 
+This will result in older messages being removed so context from further back will no longer be available.  
+Model: gpt-4o-mini
+
+- **ChatCompletionHistorySummarizationReducerExample**  
+Demonstrates how to take a chat history and condense it to a summary of the messages thus far. This will create 
+a single message from a set of messages and replace them. This should provide enough context without having to 
+still have all the literal messages available.  
+Model: gpt-4o-mini
+
 ### Model Providers
 
 - **AzureOpenAIExample**  

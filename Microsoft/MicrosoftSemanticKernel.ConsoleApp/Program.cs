@@ -16,6 +16,9 @@
 //await host.ExecuteExampleAsync<ChatCompletionStreamingExample>();
 //await host.ExecuteExampleAsync<ChatCompletionSettingsExample>();
 //await host.ExecuteExampleAsync<ChatCompletionTokenUsageExample>();
+//await host.ExecuteExampleAsync<ChatCompletionHistoryExample>();
+//await host.ExecuteExampleAsync<ChatCompletionHistoryTruncationReducerExample>();
+//await host.ExecuteExampleAsync<ChatCompletionHistorySummarizationReducerExample>();
 
 
 
