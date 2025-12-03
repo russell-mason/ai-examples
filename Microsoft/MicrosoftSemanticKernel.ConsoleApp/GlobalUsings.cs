@@ -4,5 +4,8 @@ global using MicrosoftSemanticKernel.Examples.AudioToText;
 global using MicrosoftSemanticKernel.Examples.Foundation;
 global using MicrosoftSemanticKernel.Examples.ModelProviders;
 global using MicrosoftSemanticKernel.Examples.MultimodalModels;
+global using MicrosoftSemanticKernel.Examples.Plugins;
+global using MicrosoftSemanticKernel.Examples.Plugins.MicrosoftCore;
+global using MicrosoftSemanticKernel.Examples.Plugins.Native;
 global using MicrosoftSemanticKernel.Examples.PromptFunctions;
 global using MicrosoftSemanticKernel.Examples.StructuredData;

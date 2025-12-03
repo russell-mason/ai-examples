@@ -44,6 +44,9 @@
       <None Update="MultimodalModels\SourceImages\Animals\Watermelon.jpg">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>
+      <None Update="Plugins\MicrosoftCore\SourceText\CharacterQuotes.txt">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
       <None Update="PromptFunctions\Plugins\Books\FindAuthor.yaml">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>

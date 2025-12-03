@@ -128,3 +128,46 @@ Model: gpt-4o-mini
 Demonstrates how to compose, and execute, multiple prompt functions via a pipeline passing a value from one function to 
 the next. This uses a custom pipeline class originating from Microsoft examples.  
 Model: gpt-4o-mini
+
+### Plugins
+
+- **NoPluginExample**  
+Demonstrates how, without additional support, chat completion doesn't know basic information such as the current date.   
+Model: gpt-4o-mini
+
+- **TimePluginExample**  
+Demonstrates how TimePlugin, a pre-built Microsoft plugin, provides chat completion with access to date and time related 
+functionality.  
+Model: gpt-4o-mini
+
+- **TimePluginUsageExample**  
+Demonstrates how to get the number of input and output tokens used by chat completion when using a plugin. This increases the 
+number of tokens used as additional request and response messages are created between the chat completion client and the 
+plugin.  
+Model: gpt-4o-mini
+
+- **FileIOPluginUsageExample**  
+Demonstrates how FileIOPlugin, a pre-built Microsoft plugin, provides the ability to read the contents of a local file and use
+that as an additional source, from within a prompt.  
+Model: gpt-4o-mini
+
+- **TextPluginUsageExample**  
+Demonstrates how TextPlugin, a pre-built Microsoft plugin, provides access to text based functionality, such as converting 
+case, and determining the length of text.  
+Model: gpt-4o-mini
+
+- **HttpPluginUsageExample**  
+Demonstrates how HttpPlugin, a pre-built Microsoft plugin, can be used to retrieve some JSON using an HTTP call.  
+Model: gpt-4o-mini
+
+- **ConversationSummaryPluginExample**  
+Demonstrates how ConversationSummaryPlugin, a pre-built Microsoft plugin, can take a block of text and create a summary from it.  
+Model: gpt-4o-mini
+
+- **PersonalDetailsPluginExample**  
+Demonstrates how to create a custom plugin that provides some data that can then be included in prompt queries.  
+Model: gpt-4o-mini
+
+- **TaxCodeServicePluginExample**  
+Demonstrates how to create a custom plugin that uses dependency injection to access external functionality via services.  
+Model: gpt-4o-mini

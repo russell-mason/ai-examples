@@ -81,3 +81,21 @@
 //await host.ExecuteExampleAsync<YamlFileToFunctionFunctionExample>();
 //await host.ExecuteExampleAsync<TranslationFunctionExample>();
 //await host.ExecuteExampleAsync<FunctionPipelineExample>();
+
+
+
+// ---------------------------------------------------------------------------------------
+// Plugins - From Azure Deployments
+// ---------------------------------------------------------------------------------------
+
+//await host.ExecuteExampleAsync<NoPluginExample>();
+
+//await host.ExecuteExampleAsync<TimePluginExample>();
+//await host.ExecuteExampleAsync<TimePluginUsageExample>();
+//await host.ExecuteExampleAsync<FileIOPluginUsageExample>();
+//await host.ExecuteExampleAsync<TextPluginUsageExample>();
+//await host.ExecuteExampleAsync<HttpPluginUsageExample>();
+//await host.ExecuteExampleAsync<ConversationSummaryPluginExample>();
+
+//await host.ExecuteExampleAsync<PersonalDetailsPluginExample>();
+//await host.ExecuteExampleAsync<TaxCodeServicePluginExample>();
