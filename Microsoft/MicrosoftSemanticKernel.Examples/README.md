@@ -92,3 +92,14 @@ Model: qwen/qwen3-vl-4b
 - **AudioToTextExample**  
 Demonstrates how to read an mps3 audio file and transcribe it to text using the Azure Open AI audio to text service.  
 Model: whisper
+
+### Structured Data
+
+- **JsonFromChatCompletionExample**  
+Demonstrates how to return a message that contains JSON by describing the format in the prompt.  
+Model: gpt-4o-mini
+
+- **ResponseFormatFromInvokePromptExample**  
+Demonstrates how to return a message that contains JSON by specifying the response format via settings, and then 
+deserializing the JSON to a typed object.  
+Model: gpt-4o-mini

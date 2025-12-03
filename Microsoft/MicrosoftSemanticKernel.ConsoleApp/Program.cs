@@ -60,3 +60,12 @@
 // ---------------------------------------------------------------------------------------
 
 //await host.ExecuteExampleAsync<AudioToTextExample>();
+
+
+
+// ---------------------------------------------------------------------------------------
+// Structured Data - From Azure Deployments
+// ---------------------------------------------------------------------------------------
+
+//await host.ExecuteExampleAsync<JsonFromChatCompletionExample>();
+//await host.ExecuteExampleAsync<ResponseFormatFromInvokePromptExample>();

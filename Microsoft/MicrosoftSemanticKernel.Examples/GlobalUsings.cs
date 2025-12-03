@@ -1,3 +1,4 @@
+global using System.Text.Json;
 global using AIExamples.Shared.Configuration;
 global using AIExamples.Shared.Examples;
 global using AIExamples.Shared.Examples.Attributes;
@@ -6,5 +7,6 @@ global using Microsoft.SemanticKernel;
 global using Microsoft.SemanticKernel.AudioToText;
 global using Microsoft.SemanticKernel.ChatCompletion;
 global using Microsoft.SemanticKernel.Connectors.OpenAI;
+global using MicrosoftSemanticKernel.Examples.StructuredData.Models;
 global using OllamaSharp;
 global using OpenAI.Chat;
