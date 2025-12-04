@@ -1,4 +1,5 @@
 global using System.ClientModel;
+global using System.ComponentModel;
 global using AIExamples.Shared.Configuration;
 global using AIExamples.Shared.Examples;
 global using AIExamples.Shared.Extensions;
@@ -6,5 +7,8 @@ global using Azure;
 global using Azure.AI.OpenAI;
 global using Microsoft.Agents.AI;
 global using Microsoft.Extensions.AI;
+global using Microsoft.Extensions.DependencyInjection;
 global using MicrosoftAgentFramework.Examples.Foundation.Models;
+global using MicrosoftAgentFramework.Examples.Tools.Models;
+global using MicrosoftAgentFramework.Examples.Tools.Services;
 global using OpenAI;

@@ -99,3 +99,29 @@ Model: qwen/qwen3-vl-4b
 Demonstrates image analysis, determining whether a set of vehicles exhibit any damage and, if so, what type of damage,
 and where it appears.  
 Model: qwen/qwen3-vl-4b
+
+### Tools
+
+- **FunctionToolsViaOptionsExample**  
+Demonstrates how to add tools from static functions via options that can be passed to an agent.   
+Model: gpt-4o-mini
+
+- **FunctionToolsViaCreationExample**  
+Demonstrates how to create tools from static functions and include them when creating the agent.  
+Model: gpt-4o-mini
+
+- **FunctionToolsViaSelfExposedExample**  
+Demonstrates how a class can expose a series of functions as AI Tools.  
+Model: gpt-4o-mini
+
+- **ToolWithDependencyInjectionExample**  
+Demonstrates how a service collection can be passed to the agent so that tools can have services injected into them.  
+Model: gpt-4o-mini
+
+- **FunctionToolApprovalExample**  
+Demonstrates requiring the user to approve the calling of a tool from an agent.  
+Model: gpt-4o-mini
+
+- **AgentAsToolExample**  
+Demonstrates how to use an agent as a tool from within another agent.  
+Model: gpt-4o-mini
