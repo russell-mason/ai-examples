@@ -4,13 +4,13 @@ These examples can be executed via the **MicrosoftSemanticKernel.ConsoleApp** pr
 
 ### Intent
 
-These examples are for learing purposes, and intended to show the features provided by Semantic Kernel. 
+These examples are for learning purposes, and intended to show the features provided by Semantic Kernel. 
 
 Examples attempt to be self-contained. While this results in duplication of code, the idea is to be able to go to an 
 example and just see the code required to complete that task. There are some exceptions to this, such as injecting 
 services to provide broader and more realistic scenarios, but these should be fairly self-evident from the context.
 
-All cost estimnates are in USD. The minimum estimates is $0.001, i.e. a tenth of a cent. Some examples only use a few 
+All cost estimates are in USD. The minimum estimates is $0.001, i.e. a tenth of a cent. Some examples only use a few 
 tokens so would be less, but for the sake of simplicity a tenth of a cent seems reasonable. Estimates are purely an 
 indicator of scale, i.e. a fraction of a cent, a few cents, etc. They are not intended to be accurate based on actual token 
 usage.
@@ -70,7 +70,7 @@ Model: phi3:mini
 
 - **OllamaStandaloneLocalPhiExample**  
 Demonstrates using the Ollama application running locally with a phi3:mini model via a standalone instance of the Ollama 
-chat client, i.e. without using the kernal.  
+chat client, i.e. without using the kernel.  
 Model: phi3:mini
 
 - **LMStudioLocalPhiExample**  
