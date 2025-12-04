@@ -1,6 +1,6 @@
 {
   "profiles": {
-    "MicrosoftSemanticKernel.ConsoleApp": {
+    "MicrosoftAgentFramework.ConsoleApp": {
       "commandName": "Project",
       "environmentVariables": {
         "DOTNET_ENVIRONMENT": "Development"

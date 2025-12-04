@@ -42,3 +42,60 @@ Model: gpt-4o-mini
 - **AgentChatClientStreamingExample**  
 Demonstrates getting a streamed response from an agent, and  outputting response tokens as they're received.  
 Model: gpt-4o-mini
+
+- **AgentChatClientOptionsExample**  
+Demonstrates providing options to the agent, such as a starting prompt and temperature.  
+Model: gpt-4o-mini
+
+- **AgentChatClientTokenUsageExample**  
+Demonstrates how to get the number of input and output tokens used by agent request/response messages.  
+Model: gpt-4o-mini
+
+- **AgentChatClientThreadExample**  
+Demonstrates how to create a thread (chat history) so that prior request/response messages provide historical context.  
+Model: gpt-4o-mini
+
+- **MessageCountingChatReducerExample**  
+Demonstrates using a chat reducer with an agent to only include a set number of request/response messages. 
+This will result in older messages being removed so context from further back will no longer be available.    
+Model: gpt-4o-mini
+
+- **SummarizingChatReducerExample**  
+Demonstrates using a chat reducer with an agent to summarize messages thus far. This will create a single 
+message from a set of messages and replace them. This should provide enough context without having to still have 
+all the literal messages available.    
+Model: gpt-4o-mini
+
+- **AzureModelExample**  
+Demonstrates using an Azure hosted grok-3-mini model with an agent.  
+Model: grok-3-mini
+
+- **StructuredDataExample**  
+Demonstrates how to return a typed response message that contains structured data directly.  
+Model: gpt-4o-mini
+
+- **StructuredDataFromJsonSchemaExample**  
+Demonstrates how to return a message that contains JSON conforming to provided JSON schema.  
+Model: gpt-4o-mini
+
+- **TranscribeAudioExample**  
+Demonstrates how to read an mps3 audio file and transcribe it to text using an audio client.  
+Model: gpt-4o-mini
+
+- **LocalModelExample**  
+Demonstrates using the LM Studio application running locally with a microsoft/phi-4 model.    
+Model: microsoft/phi-4
+
+- **DataContentExample**  
+Demonstrates how to include image content in a chat message, and provide a description of what's shown in the
+image.
+Model: qwen/qwen3-vl-4b
+
+- **ImageDescriptionExample**  
+Demonstrates how to get a description of what's shown in a set of images.  
+Model: qwen/qwen3-vl-4b
+
+- **VehicleDamageAssessmentExample**  
+Demonstrates image analysis, determining whether a set of vehicles exhibit any damage and, if so, what type of damage,
+and where it appears.  
+Model: qwen/qwen3-vl-4b

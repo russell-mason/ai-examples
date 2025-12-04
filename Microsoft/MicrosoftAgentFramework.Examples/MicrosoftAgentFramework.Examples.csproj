@@ -17,5 +17,49 @@
     <ItemGroup>
         <ProjectReference Include="..\AIExamples.Shared\AIExamples.Shared.csproj" />
     </ItemGroup>
+    <ItemGroup>
+      <None Update="Foundation\SourceAudio\WinstonChurchillNews.mp3">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Foundation\SourceImages\Animals\Bear.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Foundation\SourceImages\Animals\DogAndDuck.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Foundation\SourceImages\Animals\Elephant.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Foundation\SourceImages\Animals\RabbitAndChick.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Foundation\SourceImages\Animals\Tiger1.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Foundation\SourceImages\Animals\Tiger2.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Foundation\SourceImages\Animals\Watermelon.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Foundation\SourceImages\Vehicles\BrokenWindscreen.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Foundation\SourceImages\Vehicles\DentRearDriversSide.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Foundation\SourceImages\Vehicles\FordRangeNoDamage.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Foundation\SourceImages\Vehicles\GoodConditionTesla.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Foundation\SourceImages\Vehicles\MercedesBumperBroken.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Foundation\SourceImages\Vehicles\NewFordFiesta.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+    </ItemGroup>
 
 </Project>
