@@ -18,6 +18,12 @@ tokens so would be less, but for the sake of simplicity a tenth of a cent seems 
 indicator of scale, i.e. a fraction of a cent, a few cents, etc. They are not intended to be accurate based on actual token 
 usage.
 
+**N.B.** Some examples here can only be used via an Azure account using Azure Credentials, as opposed to an API key which 
+most other examples use. These are clearly highlighted, and you'll need to be logged in to your Azure account for them
+to work.  
+Simply using ***"az login"*** via the Azure CLI is sufficient.  
+https://learn.microsoft.com/en-us/cli/azure/authenticate-azure-cli-interactively?view=azure-cli-latest
+
 # Examples
 
 ### Foundation
@@ -125,3 +131,11 @@ Model: gpt-4o-mini
 - **AgentAsToolExample**  
 Demonstrates how to use an agent as a tool from within another agent.  
 Model: gpt-4o-mini
+
+- **OpenApiToolExample**  
+Demonstrates using a persistent agent with an OpenAPI schema tool that infers a set of functions that can then be used 
+automatically given the context of a prompt.  
+Model: gpt-4o-mini  
+**N.B.** This uses a PersistentAgent which is only available via an Azure account using Azure Credentials. You will 
+need to be logged in to your Azure account to run this example.  
+**N.B.** The associated API must also have been deployed and publicly available (see the OpenApiWebApi project).

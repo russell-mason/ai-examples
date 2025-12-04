@@ -74,6 +74,8 @@ dotnet user-secrets set "AzureAIFoundry:Projects:1:Endpoint" ""
 dotnet user-secrets set "AzureAIFoundry:Projects:1:OpenAIEndpoint" ""
 
 dotnet user-secrets set "GitHubAI:ApiKey" ""
+
+dotnet user-secrets set "OpenApi:Endpoint" ""
 ```
 
 Note that the UserSecretsId **055603f5-5ef3-43a9-8f59-d02e7e9072f3** has been set against each project.

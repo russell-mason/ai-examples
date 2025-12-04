@@ -1,6 +1,7 @@
 ﻿var host = Host.CreateDefaultBuilder()
                .ConfigureAzureAIFoundry()
                .ConfigureLMStudioAI()
+               .ConfigureOpenApi()
                .RegisterExamples()
                .Build();
 
@@ -49,3 +50,5 @@
 //await host.ExecuteExampleAsync<ToolWithDependencyInjectionExample>();
 //await host.ExecuteExampleAsync<FunctionToolApprovalExample>();
 //await host.ExecuteExampleAsync<AgentAsToolExample>();
+
+//await host.ExecuteExampleAsync<OpenApiToolExample>();
