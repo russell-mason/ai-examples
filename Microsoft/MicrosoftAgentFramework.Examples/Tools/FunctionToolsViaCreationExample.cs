@@ -1,5 +1,13 @@
 ﻿namespace MicrosoftAgentFramework.Examples.Tools;
 
+/// <summary>
+/// Demonstrates how to create tools from static functions and include them when creating the agent.
+/// </summary>
+[ExampleCategory(Category.GettingStarted)]
+[ExampleCategory(Category.TextGeneration)]
+[ExampleCategory(Category.Tools)]
+[ExampleResourceUse(Resource.AzureAIFoundry, AIModel.GPT4Mini)]
+[ExampleCostEstimate(0.001)]
 public class FunctionToolsViaCreationExample(AzureAIFoundrySettings settings) : IExample
 {
     public async Task ExecuteAsync()

@@ -2,6 +2,14 @@
 
 #pragma warning disable MEAI001
 
+/// <summary>
+/// Demonstrates using a chat reducer with an agent to only include a set number of request/response messages. 
+/// This will result in older messages being removed so context from further back will no longer be available.
+/// </summary>
+[ExampleCategory(Category.GettingStarted)]
+[ExampleCategory(Category.TextGeneration)]
+[ExampleResourceUse(Resource.AzureAIFoundry, AIModel.GPT4Mini)]
+[ExampleCostEstimate(0.001)]
 public class MessageCountingChatReducerExample(AzureAIFoundrySettings settings) : IExample
 {
     public async Task ExecuteAsync()

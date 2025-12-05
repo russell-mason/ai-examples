@@ -1,5 +1,12 @@
 ﻿namespace MicrosoftAgentFramework.Examples.Foundation;
 
+/// <summary>
+/// Demonstrates providing options to the agent, such as a starting prompt and temperature.
+/// </summary>
+[ExampleCategory(Category.GettingStarted)]
+[ExampleCategory(Category.TextGeneration)]
+[ExampleResourceUse(Resource.AzureAIFoundry, AIModel.GPT4Mini)]
+[ExampleCostEstimate(0.001)]
 public class AgentChatClientOptionsExample(AzureAIFoundrySettings settings) : IExample
 {
     public async Task ExecuteAsync()

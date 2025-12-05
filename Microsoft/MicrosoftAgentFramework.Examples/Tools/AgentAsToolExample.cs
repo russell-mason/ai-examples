@@ -1,5 +1,13 @@
 ﻿namespace MicrosoftAgentFramework.Examples.Tools;
 
+/// <summary>
+/// Demonstrates how to use an agent as a tool from within another agent.
+/// </summary>
+[ExampleCategory(Category.GettingStarted)]
+[ExampleCategory(Category.TextGeneration)]
+[ExampleCategory(Category.Tools)]
+[ExampleResourceUse(Resource.AzureAIFoundry, AIModel.GPT4Mini)]
+[ExampleCostEstimate(0.002)]
 public class AgentAsToolExample(AzureAIFoundrySettings settings) : IExample
 {
     public async Task ExecuteAsync()

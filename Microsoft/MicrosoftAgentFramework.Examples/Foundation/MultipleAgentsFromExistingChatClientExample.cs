@@ -1,5 +1,12 @@
 ﻿namespace MicrosoftAgentFramework.Examples.Foundation;
 
+/// <summary>
+/// Demonstrates creating two independent agents using a common chat client.
+/// </summary>
+[ExampleCategory(Category.GettingStarted)]
+[ExampleCategory(Category.TextGeneration)]
+[ExampleResourceUse(Resource.AzureAIFoundry, AIModel.GPT4Mini)]
+[ExampleCostEstimate(0.001)]
 public class MultipleAgentsFromExistingChatClientExample(AzureAIFoundrySettings settings) : IExample
 {
     public async Task ExecuteAsync()

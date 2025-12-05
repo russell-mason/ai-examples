@@ -2,6 +2,15 @@
 
 #pragma warning disable MEAI001
 
+/// <summary>
+/// Demonstrates using a chat reducer with an agent to summarize messages thus far. This will create a single 
+/// message from a set of messages and replace them. This should provide enough context without having to still have 
+/// all the literal messages available.
+/// </summary>
+[ExampleCategory(Category.GettingStarted)]
+[ExampleCategory(Category.TextGeneration)]
+[ExampleResourceUse(Resource.AzureAIFoundry, AIModel.GPT4Mini)]
+[ExampleCostEstimate(0.002)]
 public class SummarizingChatReducerExample(AzureAIFoundrySettings settings) : IExample
 {
     public async Task ExecuteAsync()

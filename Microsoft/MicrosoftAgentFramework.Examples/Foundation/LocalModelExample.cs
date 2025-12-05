@@ -4,6 +4,13 @@
 // https://lmstudio.ai/
 // load microsoft/phi-4
 
+/// <summary>
+/// Demonstrates using the LM Studio application running locally with a microsoft/phi-4 model.
+/// </summary>
+[ExampleCategory(Category.GettingStarted)]
+[ExampleCategory(Category.TextGeneration)]
+[ExampleResourceUse(Resource.LocalLMStudio, AIModel.MSPhi4)]
+[ExampleCostEstimate(0.00)]
 public class LocalModelExample(LMStudioAISettings settings) : IExample
 {
     public async Task ExecuteAsync()

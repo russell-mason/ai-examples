@@ -1,5 +1,13 @@
 ﻿namespace MicrosoftAgentFramework.Examples.Foundation;
 
+/// <summary>
+/// Demonstrates how to return a typed response message that contains structured data directly.
+/// </summary>
+[ExampleCategory(Category.GettingStarted)]
+[ExampleCategory(Category.TextGeneration)]
+[ExampleCategory(Category.StructuredData)]
+[ExampleResourceUse(Resource.AzureAIFoundry, AIModel.GPT4Mini)]
+[ExampleCostEstimate(0.002)]
 public class StructuredDataExample(AzureAIFoundrySettings settings) : IExample
 {
     public async Task ExecuteAsync()

@@ -1,5 +1,12 @@
 ﻿namespace MicrosoftAgentFramework.Examples.Foundation;
 
+/// <summary>
+/// Demonstrates how to create a thread (chat history) so that prior request/response messages provide historical context.
+/// </summary>
+[ExampleCategory(Category.GettingStarted)]
+[ExampleCategory(Category.TextGeneration)]
+[ExampleResourceUse(Resource.AzureAIFoundry, AIModel.GPT4Mini)]
+[ExampleCostEstimate(0.001)]
 public class AgentChatClientThreadExample(AzureAIFoundrySettings settings) : IExample
 {
     public async Task ExecuteAsync()

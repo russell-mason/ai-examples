@@ -1,5 +1,12 @@
 ﻿namespace MicrosoftAgentFramework.Examples.Foundation;
 
+/// <summary>
+/// Demonstrates simplifying the creation of an agent rather than using the individual elements explicitly.
+/// </summary>
+[ExampleCategory(Category.GettingStarted)]
+[ExampleCategory(Category.TextGeneration)]
+[ExampleResourceUse(Resource.AzureAIFoundry, AIModel.GPT4Mini)]
+[ExampleCostEstimate(0.001)]
 public class AgentChatClientExample(AzureAIFoundrySettings settings) : IExample
 {
     public async Task ExecuteAsync()

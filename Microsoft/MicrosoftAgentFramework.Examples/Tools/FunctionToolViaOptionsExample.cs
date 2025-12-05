@@ -1,5 +1,13 @@
 ﻿namespace MicrosoftAgentFramework.Examples.Tools;
 
+/// <summary>
+/// Demonstrates how to add tools from static functions via options that can be passed to an agent.
+/// </summary>
+[ExampleCategory(Category.GettingStarted)]
+[ExampleCategory(Category.TextGeneration)]
+[ExampleCategory(Category.Tools)]
+[ExampleResourceUse(Resource.AzureAIFoundry, AIModel.GPT4Mini)]
+[ExampleCostEstimate(0.001)]
 public class FunctionToolsViaOptionsExample(AzureAIFoundrySettings settings) : IExample
 {
     public async Task ExecuteAsync()

@@ -16,5 +16,7 @@ public enum AIModel
 
     Qwen3,
 
+    Whisper,
+
     TextEmbedding3Small
 }

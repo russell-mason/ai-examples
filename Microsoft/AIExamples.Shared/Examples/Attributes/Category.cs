@@ -22,5 +22,7 @@ public enum Category
 
     StructuredData,
 
-    OpenAPI
+    OpenAPI,
+
+    Tools
 }

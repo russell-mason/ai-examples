@@ -12,6 +12,17 @@
 
 // Make sure you change the OpenApi:Endpoint in appsettings.json in the AIExamples.Shared project (or user secrets).
 
+/// <summary>
+/// Demonstrates using a persistent agent with an OpenAPI schema tool that infers a set of functions that can then be used 
+/// automatically given the context of a prompt.
+/// </summary>
+[ExampleCategory(Category.GettingStarted)]
+[ExampleCategory(Category.TextGeneration)]
+[ExampleCategory(Category.Tools)]
+[ExampleCategory(Category.OpenAPI)]
+[ExampleResourceUse(Resource.AzureAIFoundry, AIModel.GPT4Mini)]
+[ExampleResourceUse(Resource.HTTP)]
+[ExampleCostEstimate(0.004)]
 public class OpenApiToolExample(AzureAIFoundrySettings azureSettings, OpenApiSettings openApiSettings) : IExample
 {
     public async Task ExecuteAsync()

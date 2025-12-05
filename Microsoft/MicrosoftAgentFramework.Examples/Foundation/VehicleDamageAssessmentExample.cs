@@ -4,6 +4,15 @@
 // https://lmstudio.ai/
 // load qwen/qwen3-vl-4b
 
+/// <summary>
+/// Demonstrates image analysis, determining whether a set of vehicles exhibit any damage and, if so, what type of damage,
+/// and where it appears.
+/// </summary>
+[ExampleCategory(Category.GettingStarted)]
+[ExampleCategory(Category.ImageAnalysis)]
+[ExampleResourceUse(Resource.LocalLMStudio, AIModel.Qwen3)]
+[ExampleResourceUse(Resource.LocalFile)]
+[ExampleCostEstimate(0.00)]
 public class VehicleDamageAssessmentExample(LMStudioAISettings settings) : IExample
 {
     public async Task ExecuteAsync()

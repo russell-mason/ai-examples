@@ -8,7 +8,7 @@
 /// </summary>
 [ExampleCategory(Category.GettingStarted)]
 [ExampleCategory(Category.AudioToText)]
-[ExampleResourceUse(Resource.AzureAIFoundry, AIModel.GPT4Mini)]
+[ExampleResourceUse(Resource.AzureAIFoundry, AIModel.Whisper)]
 [ExampleResourceUse(Resource.LocalFile)]
 [ExampleCostEstimate(0.01)]
 public class AudioToTextExample(AzureAIFoundrySettings settings) : IExample

@@ -2,6 +2,14 @@
 
 #pragma warning disable MEAI001
 
+/// <summary>
+/// Demonstrates requiring the user to approve the calling of a tool from an agent.
+/// </summary>
+[ExampleCategory(Category.GettingStarted)]
+[ExampleCategory(Category.TextGeneration)]
+[ExampleCategory(Category.Tools)]
+[ExampleResourceUse(Resource.AzureAIFoundry, AIModel.GPT4Mini)]
+[ExampleCostEstimate(0.001)]
 public class FunctionToolApprovalExample(AzureAIFoundrySettings settings) : IExample
 {
     public async Task ExecuteAsync()

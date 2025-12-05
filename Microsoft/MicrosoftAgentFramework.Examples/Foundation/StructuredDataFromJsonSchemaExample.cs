@@ -1,5 +1,13 @@
 ﻿namespace MicrosoftAgentFramework.Examples.Foundation;
 
+/// <summary>
+/// Demonstrates how to return a message that contains JSON conforming to provided JSON schema.
+/// </summary>
+[ExampleCategory(Category.GettingStarted)]
+[ExampleCategory(Category.TextGeneration)]
+[ExampleCategory(Category.StructuredData)]
+[ExampleResourceUse(Resource.AzureAIFoundry, AIModel.GPT4Mini)]
+[ExampleCostEstimate(0.002)]
 public class StructuredDataFromJsonSchemaExample(AzureAIFoundrySettings settings) : IExample
 {
     public async Task ExecuteAsync()

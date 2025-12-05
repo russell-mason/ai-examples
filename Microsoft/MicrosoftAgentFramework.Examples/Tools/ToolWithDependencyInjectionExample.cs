@@ -1,5 +1,13 @@
 ﻿namespace MicrosoftAgentFramework.Examples.Tools;
 
+/// <summary>
+/// Demonstrates how a service collection can be passed to the agent so that tools can have services injected into them.
+/// </summary>
+[ExampleCategory(Category.GettingStarted)]
+[ExampleCategory(Category.TextGeneration)]
+[ExampleCategory(Category.Tools)]
+[ExampleResourceUse(Resource.AzureAIFoundry, AIModel.GPT4Mini)]
+[ExampleCostEstimate(0.001)]
 public class ToolWithDependencyInjectionExample(AzureAIFoundrySettings settings) : IExample
 {
     public async Task ExecuteAsync()

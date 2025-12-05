@@ -1,5 +1,12 @@
 ﻿namespace MicrosoftAgentFramework.Examples.Foundation;
 
+/// <summary>
+/// Demonstrates using an Azure hosted grok-3-mini model with an agent.
+/// </summary>
+[ExampleCategory(Category.GettingStarted)]
+[ExampleCategory(Category.TextGeneration)]
+[ExampleResourceUse(Resource.AzureAIFoundry, AIModel.Grok3Mini)]
+[ExampleCostEstimate(0.001)]
 public class AzureModelExample(AzureAIFoundrySettings settings) : IExample
 {
     public async Task ExecuteAsync()

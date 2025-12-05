@@ -1,5 +1,12 @@
 ﻿namespace MicrosoftAgentFramework.Examples.Foundation;
 
+/// <summary>
+/// Demonstrates creating the individual elements required to obtain an agent, and getting a simple response from a prompt.
+/// </summary>
+[ExampleCategory(Category.GettingStarted)]
+[ExampleCategory(Category.TextGeneration)]
+[ExampleResourceUse(Resource.AzureAIFoundry, AIModel.GPT4Mini)]
+[ExampleCostEstimate(0.001)]
 public class AgentFromExistingChatClientExample(AzureAIFoundrySettings settings) : IExample
 {
     public async Task ExecuteAsync()

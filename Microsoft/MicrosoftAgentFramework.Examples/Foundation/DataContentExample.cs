@@ -6,6 +6,15 @@
 
 // Images taken from https://www.pixelstalk.net/
 
+/// <summary>
+/// Demonstrates how to include image content in a chat message, and provide a description of what's shown in the
+/// image.
+/// </summary>
+[ExampleCategory(Category.GettingStarted)]
+[ExampleCategory(Category.ImageAnalysis)]
+[ExampleResourceUse(Resource.LocalLMStudio, AIModel.Qwen3)]
+[ExampleResourceUse(Resource.LocalFile)]
+[ExampleCostEstimate(0.00)]
 public class DataContentExample(LMStudioAISettings settings) : IExample
 {
     public async Task ExecuteAsync()

@@ -2,6 +2,7 @@ global using System.ClientModel;
 global using System.ComponentModel;
 global using AIExamples.Shared.Configuration;
 global using AIExamples.Shared.Examples;
+global using AIExamples.Shared.Examples.Attributes;
 global using AIExamples.Shared.Extensions;
 global using Azure;
 global using Azure.AI.Agents.Persistent;

@@ -1,5 +1,13 @@
 ﻿namespace MicrosoftAgentFramework.Examples.Tools;
 
+/// <summary>
+/// Demonstrates how a class can expose a series of functions as AI Tools.
+/// </summary>
+[ExampleCategory(Category.GettingStarted)]
+[ExampleCategory(Category.TextGeneration)]
+[ExampleCategory(Category.Tools)]
+[ExampleResourceUse(Resource.AzureAIFoundry, AIModel.GPT4Mini)]
+[ExampleCostEstimate(0.001)]
 public class FunctionToolsViaSelfExposedExample(AzureAIFoundrySettings settings) : IExample
 {
     public async Task ExecuteAsync()
