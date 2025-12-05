@@ -18,5 +18,7 @@ public enum AIModel
 
     Whisper,
 
-    TextEmbedding3Small
+    TextEmbedding3Small,
+
+    TextEmbeddingAda002
 }

@@ -11,4 +11,6 @@ public class AzureAIFoundryModelDeploymentSettings
     public string Whisper { get; set; } = string.Empty;
 
     public string TextEmbedding3Small { get; set; } = string.Empty;
+
+    public string TextEmbeddingAda002 { get; set; } = string.Empty;
 }

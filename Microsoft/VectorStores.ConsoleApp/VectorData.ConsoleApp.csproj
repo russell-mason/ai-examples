@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net10.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <UserSecretsId>055603f5-5ef3-43a9-8f59-d02e7e9072f3</UserSecretsId>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\AIExamples.Shared\AIExamples.Shared.csproj" />
+        <ProjectReference Include="..\VectorStores.Examples\VectorData.Examples.csproj" />
+    </ItemGroup>
+
+</Project>

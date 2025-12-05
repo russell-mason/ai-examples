@@ -16,5 +16,9 @@ public enum Resource
 
     AzureAIFoundry,
 
-    AzureCosmosDB
+    TikToken,
+
+    AzureCosmosDB,
+
+    Qdrant
 }
