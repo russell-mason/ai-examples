@@ -12,6 +12,8 @@ public static class HostBuilderExtensions
 
         public IHostBuilder ConfigureLMStudioAI() => builder.BindSettings<LMStudioAISettings>("LMStudioAI");
 
+        public IHostBuilder ConfigureCosmosDB() => builder.BindSettings<CosmosDBSettings>("CosmosDB");
+
         public IHostBuilder ConfigureOpenApi() => builder.BindSettings<OpenApiSettings>("OpenApi");
 
         public IHostBuilder RegisterExamples()

@@ -76,6 +76,8 @@ dotnet user-secrets set "AzureAIFoundry:Projects:1:OpenAIEndpoint" ""
 dotnet user-secrets set "GitHubAI:ApiKey" ""
 
 dotnet user-secrets set "OpenApi:Endpoint" ""
+
+dotnet user-secrets set "CosmosDB:PrimaryConnectionString" ""
 ```
 
 Note that the UserSecretsId **055603f5-5ef3-43a9-8f59-d02e7e9072f3** has been set against each project.
@@ -136,6 +138,7 @@ var host = Host.CreateDefaultBuilder()
                .ConfigureGitHubAI()
                .ConfigureOllamaAI()
                .ConfigureLMStudioAI()
+               .ConfigureCosmosDB()
                .RegisterExamples()
                .Build();
 

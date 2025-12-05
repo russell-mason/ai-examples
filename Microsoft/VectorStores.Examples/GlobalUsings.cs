@@ -1,4 +1,7 @@
 global using System.ClientModel;
+global using System.Collections.ObjectModel;
+global using System.Text.Json;
+global using System.Text.Json.Serialization;
 global using AIExamples.Data.Models;
 global using AIExamples.Data.Services;
 global using AIExamples.Shared.Configuration;
@@ -6,5 +9,7 @@ global using AIExamples.Shared.Examples;
 global using AIExamples.Shared.Examples.Attributes;
 global using AIExamples.Shared.Extensions;
 global using Azure.AI.OpenAI;
+global using Microsoft.Azure.Cosmos;
 global using OpenAI.Embeddings;
 global using TiktokenSharp;
+global using VectorData.Examples.Persistence.CosmosDBStore.Models;
