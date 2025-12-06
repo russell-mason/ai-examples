@@ -6,6 +6,11 @@
 /// example that can then be used to perform vector searches against existing data.  
 /// N.B. Performing a vector search against this data is done in QdrantVectorSearchExample.
 /// </summary>
+[ExampleCategory(Category.GettingStarted)]
+[ExampleCategory(Category.VectorGeneration)]
+[ExampleResourceUse(Resource.AzureAIFoundry, AIModel.TextEmbedding3Small)]
+[ExampleResourceUse(Resource.DockerQdrant)]
+[ExampleCostEstimate(0.01)]
 public class QdrantStoreNewsHeadlinesEmbeddingsExample(AzureAIFoundrySettings azureSettings, QdrantSettings qdrantSettings) : IExample
 {
     public async Task ExecuteAsync()

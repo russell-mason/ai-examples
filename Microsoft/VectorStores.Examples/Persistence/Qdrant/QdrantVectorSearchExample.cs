@@ -6,6 +6,11 @@
 /// typed objects.  
 /// N.B. This relies on data previously stored via QdrantStoreNewsHeadlinesEmbeddingsExample.
 /// </summary>
+[ExampleCategory(Category.GettingStarted)]
+[ExampleCategory(Category.VectorGeneration)]
+[ExampleCategory(Category.VectorSearch)]
+[ExampleResourceUse(Resource.DockerQdrant)]
+[ExampleCostEstimate(0.01)]
 public class QdrantVectorSearchExample(AzureAIFoundrySettings azureSettings, QdrantSettings qdrantSettings) : IExample
 {
     public async Task ExecuteAsync()

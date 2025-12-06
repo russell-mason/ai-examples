@@ -9,6 +9,11 @@
 /// example that can then be used to perform vector searches against existing data.  
 /// N.B. Performing a vector search against this data is done in CosmosVectorSearchExample.
 /// </summary>
+[ExampleCategory(Category.GettingStarted)]
+[ExampleCategory(Category.VectorGeneration)]
+[ExampleResourceUse(Resource.AzureAIFoundry, AIModel.TextEmbedding3Small)]
+[ExampleResourceUse(Resource.AzureCosmosDB)]
+[ExampleCostEstimate(0.01, 1.20, CostVisibility.Opaque)]
 public class CosmosStoreNewsHeadlinesEmbeddingsExample(AzureAIFoundrySettings azureSettings, CosmosDBSettings cosmosSettings) : IExample
 {
     public async Task ExecuteAsync()

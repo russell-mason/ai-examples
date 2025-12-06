@@ -20,5 +20,5 @@ public enum Resource
 
     AzureCosmosDB,
 
-    Qdrant
+    DockerQdrant
 }

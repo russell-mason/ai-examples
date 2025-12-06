@@ -4,6 +4,11 @@
 /// Demonstrates generating a couple of embeddings from text, storing them, then retrieving them again. Ensures simple 
 /// save/load is working correctly. 
 /// </summary>
+[ExampleCategory(Category.GettingStarted)]
+[ExampleCategory(Category.VectorGeneration)]
+[ExampleResourceUse(Resource.AzureAIFoundry, AIModel.TextEmbedding3Small)]
+[ExampleResourceUse(Resource.AzureCosmosDB)]
+[ExampleCostEstimate(0.01, 1.20, CostVisibility.Opaque)]
 public class CosmosStoreAndRetrieveTestEmbeddingsExample(AzureAIFoundrySettings azureSettings, CosmosDBSettings cosmosSettings) : IExample
 {
     public async Task ExecuteAsync()

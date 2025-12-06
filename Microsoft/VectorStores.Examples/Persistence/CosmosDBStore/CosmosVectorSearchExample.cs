@@ -9,6 +9,11 @@
 /// typed objects.  
 /// N.B. This relies on data previously stored via CosmosStoreNewsHeadlinesEmbeddingsExample.
 /// </summary>
+[ExampleCategory(Category.GettingStarted)]
+[ExampleCategory(Category.VectorGeneration)]
+[ExampleResourceUse(Resource.AzureAIFoundry, AIModel.TextEmbedding3Small)]
+[ExampleResourceUse(Resource.AzureCosmosDB)]
+[ExampleCostEstimate(0.01, 1.20, CostVisibility.Opaque)]
 public class CosmosVectorSearchExample(AzureAIFoundrySettings azureSettings, CosmosDBSettings cosmosSettings) : IExample
 {
     public async Task ExecuteAsync()
