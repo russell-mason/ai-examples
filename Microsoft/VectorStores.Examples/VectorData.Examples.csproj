@@ -10,6 +10,7 @@
         <PackageReference Include="Azure.AI.OpenAI" Version="2.5.0-beta.1" />
         <PackageReference Include="Microsoft.Azure.Cosmos" Version="3.56.0" />
         <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
+        <PackageReference Include="Qdrant.Client" Version="1.16.1" />
         <PackageReference Include="TiktokenSharp" Version="1.2.0" />
     </ItemGroup>
 

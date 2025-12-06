@@ -40,3 +40,8 @@ Each example specifically selects a source project and settings, so if you want 
 to change the selection within any given example.
 
 See the **README.md** file in **VectorData.Examples** for more details.
+
+### Qdrant
+
+You can run a local instance of Qdrant using docker.  
+Run ```docker compose up -d``` from within the VectorData.ConsoleApp\Docker\Qdrant directory

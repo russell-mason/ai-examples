@@ -60,3 +60,20 @@ Demonstrates creating an embedding from search text, then running a vector searc
 stored in the Cosmos DB vector store. The search results represent the most similar matches, and include the original 
 typed objects.  
 **N.B.** This relies on data previously stored via **CosmosStoreNewsHeadlinesEmbeddingsExample.cs**
+
+**Qdrant**
+
+- **QdrantEnsureTestCollectionExistExample**  
+Demonstrates minimal code to create a collection. Ensures the connection is correct and working.  
+
+- **QdrantStoreNewsHeadlinesEmbeddingsExample**  
+Demonstrates taking a set of news headlines from a JSON file, creating typed objects, adding embeddings, and saving 
+them to the Qdrant vector store. This provides permanent storage. This is intended to be the first part of an 
+example that can then be used to perform vector searches against existing data.  
+**N.B.** Performing a vector search against this data is done in **QdrantVectorSearchExample.cs**
+
+- **QdrantVectorSearchExample**  
+Demonstrates creating an embedding from search text, then running a vector search over a set of embedding previously
+stored in the Qdrant vector store. The search results represent the most similar matches, and include the original 
+typed objects.  
+**N.B.** This relies on data previously stored via **QdrantStoreNewsHeadlinesEmbeddingsExample.cs**

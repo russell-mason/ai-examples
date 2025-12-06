@@ -1,6 +1,7 @@
 ﻿var host = Host.CreateDefaultBuilder()
                .ConfigureAzureAIFoundry()
                .ConfigureCosmosDB()
+               .ConfigureQdrant()
                .RegisterExamples()
                .Build();
 
@@ -40,3 +41,13 @@
 
 //await host.ExecuteExampleAsync<CosmosStoreNewsHeadlinesEmbeddingsExample>();  // <┐ 
 //await host.ExecuteExampleAsync<CosmosVectorSearchExample>();                  //  ^ Relies on
+
+
+
+// ---------------------------------------------------------------------------------------
+// Vector Search - From Qdrant - Docker
+// ---------------------------------------------------------------------------------------
+
+//await host.ExecuteExampleAsync<QdrantEnsureTestCollectionExistExample>();
+//await host.ExecuteExampleAsync<QdrantStoreNewsHeadlinesEmbeddingsExample>();  // <┐
+//await host.ExecuteExampleAsync<QdrantVectorSearchExample>();                  //  ^ Relies on

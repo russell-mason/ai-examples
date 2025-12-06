@@ -11,5 +11,7 @@ global using AIExamples.Shared.Extensions;
 global using Azure.AI.OpenAI;
 global using Microsoft.Azure.Cosmos;
 global using OpenAI.Embeddings;
+global using Qdrant.Client;
+global using Qdrant.Client.Grpc;
 global using TiktokenSharp;
 global using VectorData.Examples.Persistence.CosmosDBStore.Models;

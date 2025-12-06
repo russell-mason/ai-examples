@@ -16,6 +16,8 @@ public static class HostBuilderExtensions
 
         public IHostBuilder ConfigureOpenApi() => builder.BindSettings<OpenApiSettings>("OpenApi");
 
+        public IHostBuilder ConfigureQdrant() => builder.BindSettings<QdrantSettings>("Qdrant");
+
         public IHostBuilder RegisterExamples()
         {
             builder.ConfigureServices(services =>
