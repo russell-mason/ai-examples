@@ -18,6 +18,8 @@ public enum Resource
 
     TikToken,
 
+    BERT,
+
     AzureCosmosDB,
 
     DockerQdrant

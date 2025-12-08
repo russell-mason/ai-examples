@@ -12,6 +12,7 @@
 // ---------------------------------------------------------------------------------------
 
 //await host.ExecuteExampleAsync<TikTokenTokenizerExample>();
+//await host.ExecuteExampleAsync<BertTokenizerExample>();
 
 
 

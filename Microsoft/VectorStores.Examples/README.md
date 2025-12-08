@@ -22,6 +22,9 @@ usage.
 - **TikTokenTokenizerExample**  
 Demonstrates turning text into a series of tokens using the TikToken tokenizer.  
 
+- **BertTokenizerExample**  
+Demonstrates turning text into a series of tokens using the BERT tokenizer.  
+
 ### Embeddings
 
 - **TextEmbedding3SmallExample**  
