@@ -180,8 +180,12 @@ Model: gpt-4o-mini
 
 ### Embeddings
 
-- **EmbeddingGeneratorExample**  
-Demonstrates how to create an embedding from text.  
+- **LocalEmbeddingGeneratorExample**  
+Demonstrates how to create an embedding from text using an LM Studio hosted model.  
+Model: text-embedding-3-small
+
+- **AzureEmbeddingGeneratorExample**  
+Demonstrates how to create an embedding from text using an Azure hosted model.  
 Model: text-embedding-3-small
 
 - **InMemoryVectorSearchExample**  
@@ -192,3 +196,16 @@ Model: text-embedding-3-small
 - **InMemoryTextSearchExample**  
 Demonstrates populating an in-memory vector store with a set of objects with embeddings, and performing a search using text.  
 Model: text-embedding-3-small
+
+### Chunking
+
+- **TextChunkerExample**  
+Demonstrates using a text chunker to create embeddings for paragraphs in a text file.  
+
+- **AzureSemanticChunkerExample**  
+Demonstrates using a semantic chunker to create embeddings for a text file using an Azure hosted model.  
+Model: text-embedding-3-small
+
+- **LocalSemanticChunkerExample**  
+Demonstrates using a semantic chunker to create embeddings for a text file using an LM Studio hosted model.  
+Model: text-embedding-e5-base-v2

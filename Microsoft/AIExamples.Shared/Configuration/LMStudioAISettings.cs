@@ -7,4 +7,6 @@ public class LMStudioAISettings
     public string Phi4ModelId { get; set; } = string.Empty;
 
     public string Qwen3ModelId { get; set; } = string.Empty;
+
+    public string E5BaseV2ModelId { get; set; } = string.Empty;
 }

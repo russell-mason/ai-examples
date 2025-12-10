@@ -106,9 +106,29 @@
 
 
 // ---------------------------------------------------------------------------------------
-// Embeddings - From Azure Deployments
+// Embeddings
 // ---------------------------------------------------------------------------------------
 
-//await host.ExecuteExampleAsync<EmbeddingGeneratorExample>();
+//await host.ExecuteExampleAsync<LocalEmbeddingGeneratorExample>();
+
+// - From Azure Deployments
+
+//await host.ExecuteExampleAsync<AzureEmbeddingGeneratorExample>();
 //await host.ExecuteExampleAsync<InMemoryVectorSearchExample>();
 //await host.ExecuteExampleAsync<InMemoryTextSearchExample>();
+
+
+
+// ---------------------------------------------------------------------------------------
+// Chunking
+// ---------------------------------------------------------------------------------------
+
+//await host.ExecuteExampleAsync<TextChunkerExample>();
+
+//// - From Azure Deployments
+
+//await host.ExecuteExampleAsync<AzureSemanticChunkerExample>();
+
+//// - From LM Studio
+
+//await host.ExecuteExampleAsync<LocalSemanticChunkerExample>();

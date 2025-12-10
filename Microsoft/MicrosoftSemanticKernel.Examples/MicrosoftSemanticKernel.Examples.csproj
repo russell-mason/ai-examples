@@ -15,6 +15,7 @@
         <PackageReference Include="Microsoft.SemanticKernel.Plugins.Core" Version="1.67.1-preview" />
         <PackageReference Include="Microsoft.SemanticKernel.Plugins.OpenApi" Version="1.67.1" />
         <PackageReference Include="Microsoft.SemanticKernel.Yaml" Version="1.67.1" />
+        <PackageReference Include="SemanticChunker.NET" Version="1.1.0" />
     </ItemGroup>
     <ItemGroup>
         <ProjectReference Include="..\AIExamples.Data\AIExamples.Data.csproj" />

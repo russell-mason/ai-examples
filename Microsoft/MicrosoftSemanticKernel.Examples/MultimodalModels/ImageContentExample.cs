@@ -1,4 +1,6 @@
-﻿namespace MicrosoftSemanticKernel.Examples.MultimodalModels;
+﻿using TextContent = Microsoft.SemanticKernel.TextContent;
+
+namespace MicrosoftSemanticKernel.Examples.MultimodalModels;
 
 // LM Studio
 // https://lmstudio.ai/

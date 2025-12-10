@@ -20,5 +20,7 @@ public enum AIModel
 
     TextEmbedding3Small,
 
-    TextEmbeddingAda002
+    TextEmbeddingAda002,
+
+    TextEmbeddingE5BaseV2
 }

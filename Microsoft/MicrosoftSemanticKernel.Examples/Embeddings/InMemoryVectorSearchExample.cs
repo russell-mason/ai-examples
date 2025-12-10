@@ -2,8 +2,10 @@
 
 #pragma warning disable SKEXP0001
 #pragma warning disable SKEXP0010
-#pragma warning disable CS0618
 
+/// <summary>
+/// Demonstrates populating an in-memory vector store with a set of objects with embeddings, and performing a search using text.
+/// </summary>
 [ExampleCategory(Category.GettingStarted)]
 [ExampleCategory(Category.VectorGeneration)]
 [ExampleCategory(Category.VectorSearch)]
@@ -16,7 +18,7 @@ public class InMemoryVectorSearchExample(AzureAIFoundrySettings settings) : IExa
         var project = settings.Projects.Default;
 
         var builder = Kernel.CreateBuilder()
-                            .AddAzureOpenAITextEmbeddingGeneration(project.DeployedModels.TextEmbedding3Small, project.OpenAIEndpoint, project.ApiKey)
+                            .AddAzureOpenAIEmbeddingGenerator(project.DeployedModels.TextEmbedding3Small, project.OpenAIEndpoint, project.ApiKey)
                             .AddAzureOpenAIChatCompletion(project.DeployedModels.Default, project.OpenAIEndpoint, project.ApiKey);
 
         builder.Services.AddInMemoryVectorStore();
@@ -38,7 +40,7 @@ public class InMemoryVectorSearchExample(AzureAIFoundrySettings settings) : IExa
                                           }
                          };
 
-        var embeddingService = kernel.GetRequiredService<ITextEmbeddingGenerationService>();
+        var embeddingGenerator = kernel.GetRequiredService<IEmbeddingGenerator<string, Embedding<float>>>();
         var vectorStore = kernel.GetRequiredService<InMemoryVectorStore>();
         var collection = vectorStore.GetCollection<string, NewsHeadline>("headlines", definition);
 
@@ -49,10 +51,9 @@ public class InMemoryVectorSearchExample(AzureAIFoundrySettings settings) : IExa
         foreach (var headline in headlines)
         {
             // Generate Embedding
-            var embeddingResult = await embeddingService.GenerateEmbeddingAsync(headline.ShortDescription);
-            var embedding = embeddingResult.ToArray();
+            var embedding = await embeddingGenerator.GenerateAsync(headline.ShortDescription);
 
-            headline.ShortDescriptionEmbedding = embedding;
+            headline.ShortDescriptionEmbedding = embedding.Vector.ToArray();
 
             // Store Embedding
             await collection.UpsertAsync(headline);
@@ -64,7 +65,7 @@ public class InMemoryVectorSearchExample(AzureAIFoundrySettings settings) : IExa
         Console.WriteLine();
 
         const string prompt = "Extreme weather conditions";
-        var promptVector = await embeddingService.GenerateEmbeddingAsync(prompt);
+        var promptVector = await embeddingGenerator.GenerateAsync(prompt);
 
         var vectorSearchResults = collection.SearchAsync(promptVector, 10);
 
@@ -78,6 +79,5 @@ public class InMemoryVectorSearchExample(AzureAIFoundrySettings settings) : IExa
     }
 }
 
-#pragma warning restore CS0618
 #pragma warning restore SKEXP0010
 #pragma warning restore SKEXP0001

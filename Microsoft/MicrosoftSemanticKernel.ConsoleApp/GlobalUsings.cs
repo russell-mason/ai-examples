@@ -1,6 +1,7 @@
 global using AIExamples.Shared.Extensions;
 global using Microsoft.Extensions.Hosting;
 global using MicrosoftSemanticKernel.Examples.AudioToText;
+global using MicrosoftSemanticKernel.Examples.Chunking;
 global using MicrosoftSemanticKernel.Examples.Embeddings;
 global using MicrosoftSemanticKernel.Examples.Foundation;
 global using MicrosoftSemanticKernel.Examples.ModelProviders;
