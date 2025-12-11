@@ -2,6 +2,7 @@ global using System.ClientModel;
 global using System.Collections.ObjectModel;
 global using System.Text.Json;
 global using System.Text.Json.Serialization;
+global using Accord.Statistics.Analysis;
 global using AIExamples.Data.Models;
 global using AIExamples.Data.Services;
 global using AIExamples.Shared.Configuration;

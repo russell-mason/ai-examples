@@ -1,5 +1,6 @@
 ﻿var host = Host.CreateDefaultBuilder()
                .ConfigureAzureAIFoundry()
+               .ConfigureLMStudioAI()
                .ConfigureCosmosDB()
                .ConfigureQdrant()
                .RegisterExamples()
@@ -22,6 +23,7 @@
 
 //await host.ExecuteExampleAsync<TextEmbedding3SmallExample>();
 //await host.ExecuteExampleAsync<TextEmbeddingAda002Example>();
+//await host.ExecuteExampleAsync<PlotEmbeddingExample>();
 
 
 

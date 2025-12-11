@@ -7,7 +7,7 @@
 [ExampleCategory(Category.GettingStarted)]
 [ExampleCategory(Category.VectorGeneration)]
 [ExampleResourceUse(Resource.AzureAIFoundry, AIModel.TextEmbeddingAda002)]
-[ExampleCostEstimate(0.01)]
+[ExampleCostEstimate(0.001)]
 public class TextEmbeddingAda002Example(AzureAIFoundrySettings settings) : IExample
 {
     public async Task ExecuteAsync()

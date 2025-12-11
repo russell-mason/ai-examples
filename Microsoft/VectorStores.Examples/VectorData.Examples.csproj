@@ -7,6 +7,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="Accord.Statistics" Version="3.8.0" />
         <PackageReference Include="Azure.AI.OpenAI" Version="2.5.0-beta.1" />
         <PackageReference Include="BERTTokenizers" Version="1.2.0" />
         <PackageReference Include="Microsoft.Azure.Cosmos" Version="3.56.0" />

@@ -7,7 +7,7 @@
 [ExampleCategory(Category.GettingStarted)]
 [ExampleCategory(Category.VectorGeneration)]
 [ExampleResourceUse(Resource.AzureAIFoundry, AIModel.TextEmbedding3Small)]
-[ExampleCostEstimate(0.01)]
+[ExampleCostEstimate(0.001)]
 public class TextEmbedding3SmallExample(AzureAIFoundrySettings settings) : IExample
 {
     public async Task ExecuteAsync()
