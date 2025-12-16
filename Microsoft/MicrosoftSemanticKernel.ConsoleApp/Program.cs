@@ -13,11 +13,15 @@
 // Foundation - From Azure Deployments
 // ---------------------------------------------------------------------------------------
 
+//await host.ExecuteExampleAsync<ChatClientExample>();
+//await host.ExecuteExampleAsync<ChatClientStreamingExample>();
+//await host.ExecuteExampleAsync<ChatClientHistoryExample>();
+
 //await host.ExecuteExampleAsync<ChatCompletionExample>();
 //await host.ExecuteExampleAsync<ChatCompletionStreamingExample>();
+//await host.ExecuteExampleAsync<ChatCompletionHistoryExample>();
 //await host.ExecuteExampleAsync<ChatCompletionSettingsExample>();
 //await host.ExecuteExampleAsync<ChatCompletionTokenUsageExample>();
-//await host.ExecuteExampleAsync<ChatCompletionHistoryExample>();
 //await host.ExecuteExampleAsync<ChatCompletionHistoryTruncationReducerExample>();
 //await host.ExecuteExampleAsync<ChatCompletionHistorySummarizationReducerExample>();
 
