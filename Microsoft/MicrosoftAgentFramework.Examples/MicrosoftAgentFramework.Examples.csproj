@@ -42,6 +42,15 @@
       <None Update="Foundation\SourceImages\Animals\Watermelon.jpg">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>
+      <None Update="Foundation\SourceImages\HandWriting\Math.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Foundation\SourceImages\HandWriting\Recipe.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Foundation\SourceImages\HandWriting\WeThePeople.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
       <None Update="Foundation\SourceImages\Vehicles\BrokenWindscreen.jpg">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>

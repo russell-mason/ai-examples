@@ -37,7 +37,7 @@
 //await host.ExecuteExampleAsync<DataContentExample>();
 //await host.ExecuteExampleAsync<ImageDescriptionExample>();
 //await host.ExecuteExampleAsync<VehicleDamageAssessmentExample>();
-
+//await host.ExecuteExampleAsync<HandWritingExample>();
 
 
 // ---------------------------------------------------------------------------------------
