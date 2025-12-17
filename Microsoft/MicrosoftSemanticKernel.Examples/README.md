@@ -19,6 +19,18 @@ usage.
 
 ### Foundation
 
+- **ChatClientExample**  
+Demonstrates obtaining a chat client from the kernel, and getting a simple response from a prompt.  
+Model: gpt-4o-mini
+
+- **ChatClientStreamingExample**  
+Demonstrates getting a streamed response from a chat client, and outputting response tokens as they're received.  
+Model: gpt-4o-mini
+
+- **ChatClientHistoryExample**  
+Demonstrates how to create a chat history so that prior request/response messages provide historical context.  
+Model: gpt-4o-mini
+
 - **ChatCompletionExample**  
 Demonstrates obtaining a chat completion service from the kernel, and getting a simple response from a prompt.  
 Model: gpt-4o-mini

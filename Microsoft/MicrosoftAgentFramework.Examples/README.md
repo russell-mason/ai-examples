@@ -106,6 +106,10 @@ Demonstrates image analysis, determining whether a set of vehicles exhibit any d
 and where it appears.  
 Model: qwen/qwen3-vl-4b
 
+- **HandWritingExample**  
+Demonstrates how to extract text from an image.  
+Model: qwen/qwen3-vl-4b
+
 ### Tools
 
 - **FunctionToolsViaOptionsExample**  
