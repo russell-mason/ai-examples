@@ -2,12 +2,12 @@
   <Folder Name="/ConsoleApplications/">
     <Project Path="MicrosoftAgentFramework.ConsoleApp/MicrosoftAgentFramework.ConsoleApp.csproj" />
     <Project Path="MicrosoftSemanticKernel.ConsoleApp/MicrosoftSemanticKernel.ConsoleApp.csproj" />
-    <Project Path="VectorStores.ConsoleApp/VectorData.ConsoleApp.csproj" />
+    <Project Path="VectorData.ConsoleApp/VectorData.ConsoleApp.csproj" />
   </Folder>
   <Folder Name="/Examples/">
     <Project Path="MicrosoftAgentFramework.Examples/MicrosoftAgentFramework.Examples.csproj" />
     <Project Path="MicrosoftSemanticKernel.Examples/MicrosoftSemanticKernel.Examples.csproj" Id="f20f4e1b-385a-4c98-8209-dff573de9971" />
-    <Project Path="VectorStores.Examples/VectorData.Examples.csproj" />
+    <Project Path="VectorData.Examples/VectorData.Examples.csproj" />
   </Folder>
   <Folder Name="/Shared/">
     <Project Path="AIExamples.Data/AIExamples.Data.csproj" />

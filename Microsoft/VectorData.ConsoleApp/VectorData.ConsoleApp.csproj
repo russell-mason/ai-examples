@@ -10,7 +10,7 @@
 
     <ItemGroup>
         <ProjectReference Include="..\AIExamples.Shared\AIExamples.Shared.csproj" />
-        <ProjectReference Include="..\VectorStores.Examples\VectorData.Examples.csproj" />
+        <ProjectReference Include="..\VectorData.Examples\VectorData.Examples.csproj" />
     </ItemGroup>
 
 </Project>
