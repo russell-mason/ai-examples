@@ -21,8 +21,8 @@ usage.
 **N.B.** Some examples here can only be used via an Azure account using Azure Credentials, as opposed to an API key which
 most other examples use. These are clearly highlighted, and you'll need to be logged in to your Azure account for them
 to work.  
-Simply using **_"az login"_** via the Azure CLI is sufficient.  
-https://learn.microsoft.com/en-us/cli/azure/authenticate-azure-cli-interactively?view=azure-cli-latest
+Simply using **_"az login"_** via the Azure CLI is sufficient. See
+[Microsoft Learn - Azure CLI Login](https://learn.microsoft.com/en-us/cli/azure/authenticate-azure-cli-interactively?view=azure-cli-latest)
 
 # Examples
 

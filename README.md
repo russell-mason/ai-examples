@@ -9,7 +9,7 @@ See the **README.md** files below for more details.
 -   ### Agent Framework
 
     -   This is the entry point for all Microsoft Agent Framework examples:  
-        [MicrosoftSemanticKernel.ConsoleApp](Microsoft/MicrosoftAgentFramework.ConsoleApp/README.md)
+        [MicrosoftAgentFramework.ConsoleApp](Microsoft/MicrosoftAgentFramework.ConsoleApp/README.md)
 
     -   This contains the individual examples:  
         [MicrosoftAgentFramework.Examples](Microsoft/MicrosoftAgentFramework.Examples/README.md)
@@ -17,7 +17,7 @@ See the **README.md** files below for more details.
 -   ### Semantic Kernel
 
     -   This is the entry point for all Sematic Kernel examples:  
-        [MicrosoftSemanticKernel.ConsoleApp](Microsoft/MicrosoftAgentFramework.ConsoleApp/README.md)
+        [MicrosoftSemanticKernel.ConsoleApp](Microsoft/MicrosoftSemanticKernel.ConsoleApp/README.md)
 
     -   This contains the individual examples:  
         [MicrosoftSemanticKernel.Examples](Microsoft/MicrosoftSemanticKernel.Examples/README.md)
