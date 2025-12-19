@@ -8,8 +8,9 @@ and calling the associated API, from within the context of Microsoft AI technolo
 There are only three APIS:
 
 ### GetUserExists
+
 ```http
-GET /users/{UserName}/exists  
+GET /users/{UserName}/exists
 
 e.g. /users/jane_jones/exists
 ```
@@ -17,7 +18,7 @@ e.g. /users/jane_jones/exists
 ### GetUser
 
 ```http
-GET /users/{UserName}  
+GET /users/{UserName}
 
 e.g. /users/bob_smith
 ```
@@ -25,7 +26,7 @@ e.g. /users/bob_smith
 ### CreateUser
 
 ```http
-POST /users  
+POST /users
 {
     "userName": "",
     "password": "",
@@ -34,9 +35,11 @@ POST /users
     "lastName": ""
 }
 ```
+
 ```http
 e.g. /users
 ```
+
 ```json
 {
     "userName": "mike_hall_001",
@@ -72,11 +75,14 @@ e.g. https://localhost:7152/openapi/v1.json
 
 Configuration for this is located in the **AIExamples.Shared** project, in the **appsettings.json** file.
 
-See the **README.md** file in **AIExamples.Shared** for more details.
+See the [README](../AIExamples.Shared/README.md) file in **AIExamples.Shared** for more details.
 
 ### User maintenance
 
-- The list of users will be cleared on the next POST after 24 hours has elappsed
-- A maximum of 50 records will be kept and the oldest evicted on the next POST when this is exceeded
-- This is just so that if you publish this publically you won't run out of memory if the API is accessed fequently
+-   The list of users will be cleared on the next POST after 24 hours has elappsed
+-   A maximum of 50 records will be kept and the oldest evicted on the next POST when this is exceeded
+-   This is just so that if you publish this publically you won't run out of memory if the API is accessed fequently
 
+---
+
+Return to the repository [README](../../README.md) file
