@@ -40,3 +40,9 @@ See the **README.md** files below for more details.
     -   This contains a basic HTTP API designed to demonstate using an OpenAPI schema, and calling the associated API,
         from within the context of Microsoft AI technologies:  
         [OpenApiWebApi](Microsoft/OpenApiWebApi/README.md)
+
+-   ### Interactive Chat
+
+    -   This contains a simple interactive console based chat using Microsoft Agent Framework. It demonstrates a
+        minimal setep in order to get a two way chat with history:  
+        [MicrosoftAgentFramework.InteractiveChatConsoleApp](Microsoft/MicrosoftAgentFramework.InteractiveChatConsoleApp/README.md)

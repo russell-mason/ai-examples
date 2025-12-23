@@ -1,6 +1,7 @@
 <Solution>
   <Folder Name="/ConsoleApplications/">
     <Project Path="MicrosoftAgentFramework.ConsoleApp/MicrosoftAgentFramework.ConsoleApp.csproj" />
+    <Project Path="MicrosoftAgentFramework.InteractiveChatConsoleApp/MicrosoftAgentFramework.InteractiveChatConsoleApp.csproj" Id="0b28d5af-5cf9-4615-8e40-1ccd29c66a7f" />
     <Project Path="MicrosoftSemanticKernel.ConsoleApp/MicrosoftSemanticKernel.ConsoleApp.csproj" />
     <Project Path="VectorData.ConsoleApp/VectorData.ConsoleApp.csproj" />
   </Folder>

@@ -1,6 +1,6 @@
 {
     "profiles": {
-        "MicrosoftAgentFramework.ConsoleApp": {
+        "MicrosoftAgentFramework.InteractiveChatConsoleApp": {
             "commandName": "Project",
             "environmentVariables": {
                 "DOTNET_ENVIRONMENT": "Development"

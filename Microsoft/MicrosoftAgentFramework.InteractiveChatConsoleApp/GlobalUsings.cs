@@ -1,0 +1,10 @@
+global using System.ClientModel;
+global using AIExamples.Shared.Configuration;
+global using AIExamples.Shared.Extensions;
+global using Azure.AI.OpenAI;
+global using Microsoft.Agents.AI;
+global using Microsoft.Extensions.DependencyInjection;
+global using Microsoft.Extensions.Hosting;
+global using MicrosoftAgentFramework.InteractiveChatConsoleApp.Extensions;
+global using MicrosoftAgentFramework.InteractiveChatConsoleApp.Services;
+global using OpenAI;

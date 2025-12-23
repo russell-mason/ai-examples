@@ -4,6 +4,12 @@ public static class ConsoleExtensions
 {
     extension(Console)
     {
+        public static void WriteInColor(string value, ConsoleColor color) =>
+            UseColor(color, () => Console.Write(value));
+
+        public static void WriteLineInColor(string value, ConsoleColor color) =>
+            UseColor(color, () => Console.WriteLine(value));
+
         public static void WriteSeparator() =>
             UseColor(ConsoleColor.Blue,
                      () => Console.WriteLine($"{Environment.NewLine}----------{Environment.NewLine}"));
@@ -13,8 +19,7 @@ public static class ConsoleExtensions
                      () => Console.WriteLine($"{Environment.NewLine}---------- {typeof(T).FullName} ----------{Environment.NewLine}"));
 
         public static void WriteTitle(string value) =>
-            UseColor(ConsoleColor.Yellow,
-                     () => Console.WriteLine($"{Environment.NewLine}{value}"));
+            UseColor(ConsoleColor.Yellow, () => Console.WriteLine($"{Environment.NewLine}{value}"));
 
         public static void WriteError(string message)
         {
