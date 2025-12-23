@@ -9,7 +9,7 @@ See the **README.md** files below for more details.
 -   ### Agent Framework
 
     -   This is the entry point for all Microsoft Agent Framework examples:  
-        [MicrosoftAgentFramework.ConsoleApp](Microsoft/MicrosoftAgentFramework.ConsoleApp/)
+        [MicrosoftAgentFramework.ExamplesConsoleApp](Microsoft/MicrosoftAgentFramework.ExamplesConsoleApp/)
 
     -   This contains the individual examples:  
         [MicrosoftAgentFramework.Examples](Microsoft/MicrosoftAgentFramework.Examples/)
@@ -17,7 +17,7 @@ See the **README.md** files below for more details.
 -   ### Semantic Kernel
 
     -   This is the entry point for all Sematic Kernel examples:  
-        [MicrosoftSemanticKernel.ConsoleApp](Microsoft/MicrosoftSemanticKernel.ConsoleApp/)
+        [MicrosoftSemanticKernel.ExamplesConsoleApp](Microsoft/MicrosoftSemanticKernel.ExamplesConsoleApp/)
 
     -   This contains the individual examples:  
         [MicrosoftSemanticKernel.Examples](Microsoft/MicrosoftSemanticKernel.Examples/)
@@ -25,7 +25,7 @@ See the **README.md** files below for more details.
 -   ### Vector Data
 
     -   This is the entry point for examples relating to tokenization, vectors, embeddings, and Vector Databases:  
-        [VectorData.ConsoleApp](Microsoft/VectorData.ConsoleApp/)
+        [VectorData.ExamplesConsoleApp](Microsoft/VectorData.ExamplesConsoleApp/)
 
     -   This contains the individual examples:  
         [VectorData.Examples](Microsoft/VectorData.Examples/)
