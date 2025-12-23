@@ -13,8 +13,8 @@ The following assumes you're using Visual Studio, so adjust accordingly for othe
 
 Configuration for this is located in the **AIExamples.Shared** project, in the **appsettings.json** file.
 
-See the [README](../AIExamples.Shared/README.md) file in **AIExamples.Shared** for more details.
+See the [README](../AIExamples.Shared/) file in **AIExamples.Shared** for more details.
 
 ---
 
-Return to the repository [README](../../README.md) file
+Return to the repository [README](../../) file

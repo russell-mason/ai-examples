@@ -146,4 +146,4 @@ Simply using **_"az login"_** via the Azure CLI is sufficient. See
 
 ---
 
-Return to the repository [README](../../README.md) file
+Return to the repository [README](../../) file

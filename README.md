@@ -9,40 +9,40 @@ See the **README.md** files below for more details.
 -   ### Agent Framework
 
     -   This is the entry point for all Microsoft Agent Framework examples:  
-        [MicrosoftAgentFramework.ConsoleApp](Microsoft/MicrosoftAgentFramework.ConsoleApp/README.md)
+        [MicrosoftAgentFramework.ConsoleApp](Microsoft/MicrosoftAgentFramework.ConsoleApp/)
 
     -   This contains the individual examples:  
-        [MicrosoftAgentFramework.Examples](Microsoft/MicrosoftAgentFramework.Examples/README.md)
+        [MicrosoftAgentFramework.Examples](Microsoft/MicrosoftAgentFramework.Examples/)
 
 -   ### Semantic Kernel
 
     -   This is the entry point for all Sematic Kernel examples:  
-        [MicrosoftSemanticKernel.ConsoleApp](Microsoft/MicrosoftSemanticKernel.ConsoleApp/README.md)
+        [MicrosoftSemanticKernel.ConsoleApp](Microsoft/MicrosoftSemanticKernel.ConsoleApp/)
 
     -   This contains the individual examples:  
-        [MicrosoftSemanticKernel.Examples](Microsoft/MicrosoftSemanticKernel.Examples/README.md)
+        [MicrosoftSemanticKernel.Examples](Microsoft/MicrosoftSemanticKernel.Examples/)
 
 -   ### Vector Data
 
     -   This is the entry point for examples relating to tokenization, vectors, embeddings, and Vector Databases:  
-        [VectorData.ConsoleApp](Microsoft/VectorData.ConsoleApp/README.md)
+        [VectorData.ConsoleApp](Microsoft/VectorData.ConsoleApp/)
 
     -   This contains the individual examples:  
-        [VectorData.Examples](Microsoft/VectorData.Examples/README.md)
+        [VectorData.Examples](Microsoft/VectorData.Examples/)
 
 -   ### Shared
 
     -   This contains configuration, interfaces, and extensions, that apply accross all examples:  
-        [AIExamples.Shared](Microsoft/AIExamples.Shared/README.md)
+        [AIExamples.Shared](Microsoft/AIExamples.Shared/)
 
 -   ### OpenAPI Web API
 
     -   This contains a basic HTTP API designed to demonstate using an OpenAPI schema, and calling the associated API,
         from within the context of Microsoft AI technologies:  
-        [OpenApiWebApi](Microsoft/OpenApiWebApi/README.md)
+        [OpenApiWebApi](Microsoft/OpenApiWebApi/)
 
 -   ### Interactive Chat
 
     -   This contains a simple interactive console based chat using Microsoft Agent Framework. It demonstrates a
-        minimal setep in order to get a two way chat with history:  
-        [MicrosoftAgentFramework.InteractiveChatConsoleApp](Microsoft/MicrosoftAgentFramework.InteractiveChatConsoleApp/README.md)
+        minimal setup in order to get a two way chat with history:  
+        [MicrosoftAgentFramework.InteractiveChatConsoleApp](Microsoft/MicrosoftAgentFramework.InteractiveChatConsoleApp/)

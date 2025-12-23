@@ -35,14 +35,14 @@ expectation.
 
 Configuration for all examples is located in the **AIExamples.Shared** project, in the **appsettings.json** file.
 
-See the [README](../AIExamples.Shared/README.md) file in **AIExamples.Shared** for more details.
+See the [README](../AIExamples.Shared/) file in **AIExamples.Shared** for more details.
 
 Each example specifically selects a source project and settings, so if you want to change the model, you'll also need
 to change the selection within any given example.
 
-See the [README](../MicrosoftSemanticKernel.Examples/README.md) file in **MicrosoftSemanticKernel.Examples**
+See the [README](../MicrosoftSemanticKernel.Examples/) file in **MicrosoftSemanticKernel.Examples**
 for more details.
 
 ---
 
-Return to the repository [README](../../README.md) file
+Return to the repository [README](../../) file

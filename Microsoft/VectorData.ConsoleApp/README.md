@@ -34,12 +34,12 @@ of vector search as it relates to AI, and RAG.
 
 Configuration for all examples is located in the **AIExamples.Shared** project, in the **appsettings.json** file.
 
-See the [README](../AIExamples.Shared/README.md) file in **AIExamples.Shared** for more details.
+See the [README](../AIExamples.Shared/) file in **AIExamples.Shared** for more details.
 
 Each example specifically selects a source project and settings, so if you want to change the model, you'll also need
 to change the selection within any given example.
 
-See the [README](../VectorData.Examples/README.md) file in **VectorData.Examples** for more details.
+See the [README](../VectorData.Examples/) file in **VectorData.Examples** for more details.
 
 ### Qdrant
 
@@ -48,4 +48,4 @@ Run `docker compose up -d` from within the VectorData.ConsoleApp\Docker\Qdrant d
 
 ---
 
-Return to the repository [README](../../README.md) file
+Return to the repository [README](../../) file
