@@ -6,7 +6,7 @@
 [ExampleCategory(Category.GettingStarted)]
 [ExampleCategory(Category.TextGeneration)]
 [ExampleCategory(Category.Plugins)]
-[ExampleResourceUse(Resource.AzureAIFoundry, AIModel.GPT4Mini)]
+[ExampleResourceUse(Resource.AzureAIFoundry, AIModel.GPT41Mini)]
 [ExampleCostEstimate(0.001)]
 public class TaxCodeServicePluginExample(AzureAIFoundrySettings settings) : IExample
 {

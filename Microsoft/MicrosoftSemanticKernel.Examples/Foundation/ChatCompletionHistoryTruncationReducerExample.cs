@@ -6,7 +6,7 @@
 /// </summary>
 [ExampleCategory(Category.GettingStarted)]
 [ExampleCategory(Category.TextGeneration)]
-[ExampleResourceUse(Resource.AzureAIFoundry, AIModel.GPT4Mini)]
+[ExampleResourceUse(Resource.AzureAIFoundry, AIModel.GPT41Mini)]
 [ExampleCostEstimate(0.002)]
 public class ChatCompletionHistoryTruncationReducerExample(AzureAIFoundrySettings settings) : IExample
 {

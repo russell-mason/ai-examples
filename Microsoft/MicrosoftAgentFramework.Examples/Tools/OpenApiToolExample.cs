@@ -20,7 +20,7 @@
 [ExampleCategory(Category.TextGeneration)]
 [ExampleCategory(Category.Tools)]
 [ExampleCategory(Category.OpenAPI)]
-[ExampleResourceUse(Resource.AzureAIFoundry, AIModel.GPT4Mini)]
+[ExampleResourceUse(Resource.AzureAIFoundry, AIModel.GPT41Mini)]
 [ExampleResourceUse(Resource.HTTP)]
 [ExampleCostEstimate(0.004)]
 public class OpenApiToolExample(AzureAIFoundrySettings azureSettings, OpenApiSettings openApiSettings) : IExample

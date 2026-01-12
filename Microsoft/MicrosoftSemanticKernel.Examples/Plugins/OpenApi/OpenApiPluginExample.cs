@@ -15,7 +15,7 @@
 [ExampleCategory(Category.TextGeneration)]
 [ExampleCategory(Category.Plugins)]
 [ExampleCategory(Category.OpenAPI)]
-[ExampleResourceUse(Resource.AzureAIFoundry, AIModel.GPT4Mini)]
+[ExampleResourceUse(Resource.AzureAIFoundry, AIModel.GPT41Mini)]
 [ExampleResourceUse(Resource.HTTP)]
 [ExampleCostEstimate(0.004)]
 public class OpenApiPluginExample(AzureAIFoundrySettings azureSettings, OpenApiSettings openApiSettings) : IExample

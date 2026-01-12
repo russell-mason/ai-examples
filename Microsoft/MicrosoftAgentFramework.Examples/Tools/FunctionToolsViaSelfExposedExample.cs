@@ -6,7 +6,7 @@
 [ExampleCategory(Category.GettingStarted)]
 [ExampleCategory(Category.TextGeneration)]
 [ExampleCategory(Category.Tools)]
-[ExampleResourceUse(Resource.AzureAIFoundry, AIModel.GPT4Mini)]
+[ExampleResourceUse(Resource.AzureAIFoundry, AIModel.GPT41Mini)]
 [ExampleCostEstimate(0.001)]
 public class FunctionToolsViaSelfExposedExample(AzureAIFoundrySettings settings) : IExample
 {

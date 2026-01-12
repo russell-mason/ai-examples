@@ -6,7 +6,7 @@
 [ExampleCategory(Category.GettingStarted)]
 [ExampleCategory(Category.TextGeneration)]
 [ExampleCategory(Category.Plugins)]
-[ExampleResourceUse(Resource.AzureAIFoundry, AIModel.GPT4Mini)]
+[ExampleResourceUse(Resource.AzureAIFoundry, AIModel.GPT41Mini)]
 [ExampleResourceUse(Resource.HTTP)]
 [ExampleCostEstimate(0.002)]
 public class HttpPluginUsageExample(AzureAIFoundrySettings settings) : IExample

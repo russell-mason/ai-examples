@@ -6,7 +6,7 @@
 [ExampleCategory(Category.GettingStarted)]
 [ExampleCategory(Category.TextGeneration)]
 [ExampleCategory(Category.StructuredData)]
-[ExampleResourceUse(Resource.AzureAIFoundry, AIModel.GPT4Mini)]
+[ExampleResourceUse(Resource.AzureAIFoundry, AIModel.GPT41Mini)]
 [ExampleCostEstimate(0.002)]
 public class StructuredDataFromJsonSchemaExample(AzureAIFoundrySettings settings) : IExample
 {

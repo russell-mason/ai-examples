@@ -112,7 +112,7 @@ a local LLM, is used, some general categorization, and an indicative estimate of
 ```csharp
 [ExampleCategory(Category.GettingStarted)]
 [ExampleCategory(Category.TextGeneration)]
-[ExampleResourceUse(Resource.AzureAIFoundry, AIModel.GPT4Mini)]
+[ExampleResourceUse(Resource.AzureAIFoundry, AIModel.GPT41Mini)]
 [ExampleResourceUse(Resource.LocalFile)]
 [ExampleCostEstimate(0.002)]
 public class MyExample(AzureAIFoundrySettings settings, MyService service) : IExample

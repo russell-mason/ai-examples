@@ -4,7 +4,7 @@ public enum AIModel
 {
     None,
 
-    GPT4Mini,
+    GPT41Mini,
 
     Grok3Mini,
 
