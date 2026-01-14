@@ -46,3 +46,11 @@ See the **README.md** files below for more details.
     -   This contains a simple interactive console based chat using Microsoft Agent Framework. It demonstrates a
         minimal setup in order to get a two way chat with history:  
         [MicrosoftAgentFramework.InteractiveChatConsoleApp](Microsoft/MicrosoftAgentFramework.InteractiveChatConsoleApp/)
+
+## Python
+
+-   ### MNIST
+
+    -   This contains a self-contained step-by-step introduction to the MNIST handwritten digits recognition
+        example:  
+        [MNIST](Python/MNIST/)
