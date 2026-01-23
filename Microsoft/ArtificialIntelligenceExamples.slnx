@@ -1,11 +1,13 @@
 <Solution>
   <Folder Name="/ConsoleApplications/">
+    <Project Path="MachineLearning.ExamplesConsoleApp/MachineLearning.ExamplesConsoleApp.csproj" Id="d55c269f-e571-4df6-9a09-d4f786ba4566" />
     <Project Path="MicrosoftAgentFramework.ExamplesConsoleApp/MicrosoftAgentFramework.ExamplesConsoleApp.csproj" />
     <Project Path="MicrosoftAgentFramework.InteractiveChatConsoleApp/MicrosoftAgentFramework.InteractiveChatConsoleApp.csproj" Id="0b28d5af-5cf9-4615-8e40-1ccd29c66a7f" />
     <Project Path="MicrosoftSemanticKernel.ExamplesConsoleApp/MicrosoftSemanticKernel.ExamplesConsoleApp.csproj" />
     <Project Path="VectorData.ExamplesConsoleApp/VectorData.ExamplesConsoleApp.csproj" />
   </Folder>
   <Folder Name="/Examples/">
+    <Project Path="MachineLearning.AndGate.Example/MachineLearning.AndGate.Example.csproj" Id="9e61f352-6977-41e4-b670-d6a39a8882d5" />
     <Project Path="MicrosoftAgentFramework.Examples/MicrosoftAgentFramework.Examples.csproj" />
     <Project Path="MicrosoftSemanticKernel.Examples/MicrosoftSemanticKernel.Examples.csproj" Id="f20f4e1b-385a-4c98-8209-dff573de9971" />
     <Project Path="VectorData.Examples/VectorData.Examples.csproj" />

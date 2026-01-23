@@ -24,5 +24,7 @@ public enum Category
 
     OpenAPI,
 
-    Tools
+    Tools,
+
+    MachineLearning
 }
