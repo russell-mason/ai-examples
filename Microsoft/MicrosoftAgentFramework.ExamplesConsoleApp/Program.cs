@@ -23,6 +23,7 @@
 //await host.ExecuteExampleAsync<AgentChatClientTokenUsageExample>();
 
 //await host.ExecuteExampleAsync<AgentChatClientThreadExample>();
+//await host.ExecuteExampleAsync<AgentChatClientThreadPersistenceExample>();
 //await host.ExecuteExampleAsync<MessageCountingChatReducerExample>();
 //await host.ExecuteExampleAsync<SummarizingChatReducerExample>();
 

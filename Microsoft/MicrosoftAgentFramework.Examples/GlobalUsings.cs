@@ -1,5 +1,6 @@
 global using System.ClientModel;
 global using System.ComponentModel;
+global using System.Text.Json;
 global using AIExamples.Shared.Configuration;
 global using AIExamples.Shared.Examples;
 global using AIExamples.Shared.Examples.Attributes;

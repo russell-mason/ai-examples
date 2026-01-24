@@ -61,6 +61,11 @@ Simply using **_"az login"_** via the Azure CLI is sufficient. See
     Demonstrates how to create a thread (chat history) so that prior request/response messages provide historical context.  
     Model: gpt-4o-mini
 
+-   **AgentChatClientThreadPersistenceExample**  
+    Demonstrates how a thread (chat history) can be serialized and deserialized in order to persist the thread's
+    current state.  
+    Model: gpt-4o-mini
+
 -   **MessageCountingChatReducerExample**  
     Demonstrates using a chat reducer with an agent to only include a set number of request/response messages.
     This will result in older messages being removed so context from further back will no longer be available.  

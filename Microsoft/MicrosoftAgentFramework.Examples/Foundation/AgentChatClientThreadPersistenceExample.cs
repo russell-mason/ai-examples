@@ -1,0 +1,58 @@
+﻿namespace MicrosoftAgentFramework.Examples.Foundation;
+
+/// <summary>
+/// Demonstrates how a thread (chat history) can be serialized and deserialized in order to persist the thread's
+/// current state.
+/// </summary>
+[ExampleCategory(Category.GettingStarted)]
+[ExampleCategory(Category.TextGeneration)]
+[ExampleResourceUse(Resource.AzureAIFoundry, AIModel.GPT41Mini)]
+[ExampleCostEstimate(0.001)]
+public class AgentChatClientThreadPersistenceExample(AzureAIFoundrySettings settings) : IExample
+{
+    public async Task ExecuteAsync()
+    {
+        var project = settings.Projects.Default;
+
+        // Original
+
+        var originalAgent = new AzureOpenAIClient(new Uri(project.OpenAIEndpoint), new ApiKeyCredential(project.ApiKey))
+                    .GetChatClient(project.DeployedModels.Default)
+                    .CreateAIAgent();
+
+        var originalThread = originalAgent.GetNewThread();
+
+        const string originalPrompt1 = "My name is Bob Smith.";
+
+        var originalResponse1 = await originalAgent.RunAsync(originalPrompt1, originalThread);
+
+        var persistedThreadJson = originalThread.Serialize(JsonSerializerOptions.Web).GetRawText();
+
+        const string originalPrompt2 = "What is my name?";
+
+        var originalResponse2 = await originalAgent.RunAsync(originalPrompt2, originalThread);
+
+        // Simulate persistence by restoring in a new agent instance
+
+        var newAgent = new AzureOpenAIClient(new Uri(project.OpenAIEndpoint), new ApiKeyCredential(project.ApiKey))
+                    .GetChatClient(project.DeployedModels.Default)
+                    .CreateAIAgent();
+
+        var restoredJsonElement = JsonSerializer.Deserialize<JsonElement>(persistedThreadJson, JsonSerializerOptions.Web);
+        var restoredThread = newAgent.DeserializeThread(restoredJsonElement, JsonSerializerOptions.Web);
+        
+        const string newPrompt1 = "What is my name?";
+
+        var newResponse1 = await newAgent.RunAsync(newPrompt1, restoredThread);
+
+        Console.WriteLine(originalResponse1.Text);
+        Console.WriteLine();
+
+        Console.WriteLine("Original Agent's response:");
+        Console.WriteLine(originalResponse2.Text);
+        Console.WriteLine();
+
+        Console.WriteLine("New Agent's response after Thread restored:");
+        Console.WriteLine(newResponse1.Text);
+    }
+}
