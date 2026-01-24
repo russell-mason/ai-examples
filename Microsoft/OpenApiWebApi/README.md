@@ -2,7 +2,7 @@
 
 The following assumes you're using Visual Studio, so adjust accordingly for other IDEs.
 
-**N.B.** This is not intended to be a serious API, it's only intended to demonstate using an OpenAPI schema,
+**N.B.** This is not intended to be a serious API, it's only intended to demonstrate using an OpenAPI schema,
 and calling the associated API, from within the context of Microsoft AI technologies.
 
 There are only three APIS:
@@ -44,7 +44,7 @@ e.g. /users
 {
     "userName": "mike_hall_001",
     "password": "A1234567890",
-    "email": "mike_hallh@my-company.com",
+    "email": "mike_hall@my-company.com",
     "firstName": "Mike",
     "lastName": "Hall"
 }
@@ -79,9 +79,9 @@ See the [README](../AIExamples.Shared/) file in **AIExamples.Shared** for more d
 
 ### User maintenance
 
--   The list of users will be cleared on the next POST after 24 hours has elappsed
--   A maximum of 50 records will be kept and the oldest evicted on the next POST when this is exceeded
--   This is just so that if you publish this publically you won't run out of memory if the API is accessed fequently
+- The list of users will be cleared on the next POST after 24 hours has elapsed
+- A maximum of 50 records will be kept and the oldest evicted on the next POST when this is exceeded
+- This is just so that if you publish this publicly you won't run out of memory if the API is accessed frequently
 
 ---
 

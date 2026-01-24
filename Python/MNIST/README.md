@@ -29,15 +29,15 @@ pip install -r requirements.txt
 
 **Execution notes:**
 
--   Unless otherwise specified, cells must be run in sequence
--   Many cells rely on previous cells having executed, and data variables set globally
--   Rerunning an earlier cell, after having run a cell that comes after it, may produce incorrect results if global
-    variables have changed in the mean time
--   All functions are self-contained, i.e. they must be passed values, even if those values are globally available
--   Many cells use functions specific to that cell to avoid intermediate variables polluting the global namespce
+- Unless otherwise specified, cells must be run in sequence
+- Many cells rely on previous cells having executed, and data variables set globally
+- Rerunning an earlier cell, after having run a cell that comes after it, may produce incorrect results if global
+  variables have changed in the mean time
+- All functions are self-contained, i.e. they must be passed values, even if those values are globally available
+- Many cells use functions specific to that cell to avoid intermediate variables polluting the global namespace
 
 **Disclaimer:**
 
-All notes and code are provided in good faith. However, because this is a learning execise for me, I may
+All notes and code are provided in good faith. However, because this is a learning exercise for me, I may
 have misinterpreted information. Although every effort has been made to be as accurate as possible,
 this is a first parse, and is subject to change, or correction, as my understanding grows.

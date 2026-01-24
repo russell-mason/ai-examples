@@ -1,6 +1,6 @@
 ﻿# Getting Started
 
-This library contains configuration, interfaces, and extensions, that apply accross all examples.
+This library contains configuration, interfaces, and extensions, that apply across all examples.
 
 As examples grow, this will allow all configuration to be centralized, requiring little, if no, additional setup
 for new projects.
@@ -38,7 +38,7 @@ e.g.
         "Projects": [
             {
                 "Key": "[your-foundry-project-01]",
-                "ApiKey": "[your-foundy-project-01-api-key]",
+                "ApiKey": "[your-foundry-project-01-api-key]",
                 "Endpoint": "https://[your-foundry-resource-01].services.ai.azure.com/api/projects/[your-foundy-project-01]",
                 "OpenAIEndpoint": "https://[your-foundry-resource-01].openai.azure.com",
                 "DeployedModels": {
@@ -88,7 +88,7 @@ selection within any given example.
 ### General structure of an example
 
 All examples implement the IExample interface. This allows for scanning and auto-registration for dependency
-injection. This is achived via the **RegisterExamples** extension method found in **HostBuilderExtensions.cs**.
+injection. This is achieved via the **RegisterExamples** extension method found in **HostBuilderExtensions.cs**.
 
 e.g.
 
@@ -126,7 +126,7 @@ get run under different conditions.
 
 ### Execution
 
-An additonal extension method, **ExecuteExampleAsync** in **HostExtensions.cs**, allows for a terse one-line
+An additional extension method, **ExecuteExampleAsync** in **HostExtensions.cs**, allows for a terse one-line
 execution step.
 
 Configuration, registration, and execution, is then a simple matter of a few lines.
