@@ -21,6 +21,10 @@ public static class ConsoleExtensions
         public static void WriteTitle(string value) =>
             UseColor(ConsoleColor.Yellow, () => Console.WriteLine($"{Environment.NewLine}{value}"));
 
+        public static void WriteHighlight(string value) => UseColor(ConsoleColor.Yellow, () => Console.WriteLine(value));
+
+        public static void WriteInfo(string value) => UseColor(ConsoleColor.Green, () => Console.WriteLine(value));
+
         public static void WriteError(string message)
         {
             UseColor(ConsoleColor.Red, () =>

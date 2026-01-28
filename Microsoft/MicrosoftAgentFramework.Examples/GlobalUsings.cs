@@ -1,5 +1,6 @@
 global using System.ClientModel;
 global using System.ComponentModel;
+global using System.Text;
 global using System.Text.Json;
 global using AIExamples.Shared.Configuration;
 global using AIExamples.Shared.Examples;
@@ -13,6 +14,7 @@ global using Microsoft.Agents.AI;
 global using Microsoft.Extensions.AI;
 global using Microsoft.Extensions.DependencyInjection;
 global using MicrosoftAgentFramework.Examples.Foundation.Models;
+global using MicrosoftAgentFramework.Examples.Foundation.Services;
 global using MicrosoftAgentFramework.Examples.Tools.Models;
 global using MicrosoftAgentFramework.Examples.Tools.Services;
 global using OpenAI;
