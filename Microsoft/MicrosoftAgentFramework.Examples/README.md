@@ -70,6 +70,11 @@ Simply using **_"az login"_** via the Azure CLI is sufficient. See
     Demonstrates the ability to intercept, extract, and capture, information provided during the chat and
     store it in a memory state object for use across threads and agents.  
     Model: gpt-4o-mini
+    
+  - **AgentChatClientMemoryPromptExample**  
+    Demonstrates the ability to intercept chat, and extract the user's name. Prevents further interaction until
+    provided. This is stored in a memory state object for use across threads and agents.  
+    Model: gpt-4o-mini
 
 -   **MessageCountingChatReducerExample**  
     Demonstrates using a chat reducer with an agent to only include a set number of request/response messages.

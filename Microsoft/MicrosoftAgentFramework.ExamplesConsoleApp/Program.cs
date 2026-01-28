@@ -25,6 +25,7 @@
 //await host.ExecuteExampleAsync<AgentChatClientThreadExample>();
 //await host.ExecuteExampleAsync<AgentChatClientThreadPersistenceExample>();
 //await host.ExecuteExampleAsync<AgentChatClientMemoryExample>();
+//await host.ExecuteExampleAsync<AgentChatClientMemoryPromptExample>();
 //await host.ExecuteExampleAsync<MessageCountingChatReducerExample>();
 //await host.ExecuteExampleAsync<SummarizingChatReducerExample>();
 

@@ -57,7 +57,7 @@ public class UserPreferencesMemory : AIContextProvider
                 messages,
                 new ChatOptions { Instructions = """
                                                  TASK:
-                                                 Extract the user's name ONLY if the user states that it;s their name.
+                                                 Extract the user's name ONLY if the user states that it's their name.
                                                  DEFINITION:
                                                  - A user's name exists ONLY if the text includes a clear self-identification.
                                                  NON-EXAMPLES (must NOT be treated as names):
