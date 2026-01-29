@@ -24,13 +24,13 @@ public class FunctionToolApprovalExample(AzureAIFoundrySettings settings) : IExa
 
         var agent = new AzureOpenAIClient(new Uri(project.OpenAIEndpoint), new ApiKeyCredential(project.ApiKey))
                     .GetChatClient(project.DeployedModels.Default)
-                    .CreateAIAgent(tools: tools);
+                    .AsAIAgent(tools: tools);
 
-        var thread = agent.GetNewThread();
+        var session = await agent.GetNewSessionAsync();
 
         const string prompt = "What is the time for my current location?";
 
-        var response = await agent.RunAsync(prompt, thread);
+        var response = await agent.RunAsync(prompt, session);
         var approvals = GetApprovals(response);
 
         // There can be multiple approvals required for the same response
@@ -52,7 +52,7 @@ public class FunctionToolApprovalExample(AzureAIFoundrySettings settings) : IExa
 
             var approvalMessages = CreateApprovalMessages(approvals);
 
-            response = await agent.RunAsync(approvalMessages, thread);
+            response = await agent.RunAsync(approvalMessages, session);
             approvals = GetApprovals(response);
         }
 
@@ -60,7 +60,7 @@ public class FunctionToolApprovalExample(AzureAIFoundrySettings settings) : IExa
         Console.WriteLine(response.Text);
     }
 
-    private static List<FunctionApprovalRequestContent> GetApprovals(AgentRunResponse response) =>
+    private static List<FunctionApprovalRequestContent> GetApprovals(AgentResponse response) =>
         response.Messages
                 .SelectMany(message => message.Contents)
                 .OfType<FunctionApprovalRequestContent>()

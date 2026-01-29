@@ -15,7 +15,7 @@ public class AzureModelExample(AzureAIFoundrySettings settings) : IExample
 
         var agent = new AzureOpenAIClient(new Uri(project.OpenAIEndpoint), new ApiKeyCredential(project.ApiKey))
                     .GetChatClient(project.DeployedModels.Grok3Mini)
-                    .CreateAIAgent();
+                    .AsAIAgent();
 
         const string prompt = "What is your base LLM, including version and cutoff date? Be terse.";
 

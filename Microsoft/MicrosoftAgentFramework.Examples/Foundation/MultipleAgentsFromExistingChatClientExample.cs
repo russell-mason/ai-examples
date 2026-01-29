@@ -22,8 +22,8 @@ public class MultipleAgentsFromExistingChatClientExample(AzureAIFoundrySettings 
         var aiClient = new AzureOpenAIClient(new Uri(project.OpenAIEndpoint), new ApiKeyCredential(project.ApiKey));
         var chatClient = aiClient.GetChatClient(project.DeployedModels.Default).AsIChatClient();
         
-        var frenchAgent = chatClient.CreateAIAgent(instructions.Replace("{{$Language}}", "French"));
-        var germanAgent = chatClient.CreateAIAgent(instructions.Replace("{{$Language}}", "German"));
+        var frenchAgent = chatClient.AsAIAgent(instructions.Replace("{{$Language}}", "French"));
+        var germanAgent = chatClient.AsAIAgent(instructions.Replace("{{$Language}}", "German"));
 
         const string prompt = "Hello, How do I get to the library?";
 

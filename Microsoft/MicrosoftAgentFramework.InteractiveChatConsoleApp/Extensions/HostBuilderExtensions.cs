@@ -19,7 +19,7 @@ public static class HostBuilderExtensions
 
                     var agent = new AzureOpenAIClient(new Uri(project.OpenAIEndpoint), new ApiKeyCredential(project.ApiKey))
                                 .GetChatClient(project.DeployedModels.Default)
-                                .CreateAIAgent(instructions);
+                                .AsAIAgent(instructions);
 
                     return agent;
                 });

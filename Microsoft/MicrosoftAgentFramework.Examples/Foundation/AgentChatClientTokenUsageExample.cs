@@ -15,7 +15,7 @@ public class AgentChatClientTokenUsageExample(AzureAIFoundrySettings settings) :
 
         var agent = new AzureOpenAIClient(new Uri(project.OpenAIEndpoint), new ApiKeyCredential(project.ApiKey))
                     .GetChatClient(project.DeployedModels.Default)
-                    .CreateAIAgent();
+                    .AsAIAgent();
 
         const string prompt = "What is the capital of England?";
 

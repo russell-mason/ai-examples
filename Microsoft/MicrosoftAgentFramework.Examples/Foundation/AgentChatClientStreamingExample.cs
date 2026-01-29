@@ -1,7 +1,7 @@
 ﻿namespace MicrosoftAgentFramework.Examples.Foundation;
 
 /// <summary>
-/// Demonstrates getting a streamed response from an agent, and  outputting response tokens as they're received.
+/// Demonstrates getting a streamed response from an agent, and outputting response tokens as they're received.
 /// </summary>
 [ExampleCategory(Category.GettingStarted)]
 [ExampleCategory(Category.TextGeneration)]
@@ -15,7 +15,7 @@ public class AgentChatClientStreamingExample(AzureAIFoundrySettings settings) : 
 
         var agent = new AzureOpenAIClient(new Uri(project.OpenAIEndpoint), new ApiKeyCredential(project.ApiKey))
                     .GetChatClient(project.DeployedModels.Default)
-                    .CreateAIAgent();
+                    .AsAIAgent();
 
         const string prompt = "What is a large language model?";
 

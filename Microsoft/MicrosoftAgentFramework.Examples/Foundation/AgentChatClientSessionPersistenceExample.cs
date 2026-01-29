@@ -1,14 +1,14 @@
 ﻿namespace MicrosoftAgentFramework.Examples.Foundation;
 
 /// <summary>
-/// Demonstrates how a thread (chat history) can be serialized and deserialized in order to persist the thread's
+/// Demonstrates how a session (chat history) can be serialized and deserialized in order to persist the session's
 /// current state.
 /// </summary>
 [ExampleCategory(Category.GettingStarted)]
 [ExampleCategory(Category.TextGeneration)]
 [ExampleResourceUse(Resource.AzureAIFoundry, AIModel.GPT41Mini)]
 [ExampleCostEstimate(0.001)]
-public class AgentChatClientThreadPersistenceExample(AzureAIFoundrySettings settings) : IExample
+public class AgentChatClientSessionPersistenceExample(AzureAIFoundrySettings settings) : IExample
 {
     public async Task ExecuteAsync()
     {
@@ -18,32 +18,32 @@ public class AgentChatClientThreadPersistenceExample(AzureAIFoundrySettings sett
 
         var originalAgent = new AzureOpenAIClient(new Uri(project.OpenAIEndpoint), new ApiKeyCredential(project.ApiKey))
                     .GetChatClient(project.DeployedModels.Default)
-                    .CreateAIAgent();
+                    .AsAIAgent();
 
-        var originalThread = originalAgent.GetNewThread();
+        var originalSession = await originalAgent.GetNewSessionAsync();
 
         const string originalPrompt1 = "My name is Bob Smith.";
 
-        var originalResponse1 = await originalAgent.RunAsync(originalPrompt1, originalThread);
+        var originalResponse1 = await originalAgent.RunAsync(originalPrompt1, originalSession);
 
-        var persistedThreadJson = originalThread.Serialize(JsonSerializerOptions.Web).GetRawText();
+        var persistedSessionJson = originalSession.Serialize(JsonSerializerOptions.Web).GetRawText();
 
         const string originalPrompt2 = "What is my name?";
 
-        var originalResponse2 = await originalAgent.RunAsync(originalPrompt2, originalThread);
+        var originalResponse2 = await originalAgent.RunAsync(originalPrompt2, originalSession);
 
         // Simulate persistence by restoring in a new agent instance
 
         var newAgent = new AzureOpenAIClient(new Uri(project.OpenAIEndpoint), new ApiKeyCredential(project.ApiKey))
                     .GetChatClient(project.DeployedModels.Default)
-                    .CreateAIAgent();
+                    .AsAIAgent();
 
-        var restoredJsonElement = JsonSerializer.Deserialize<JsonElement>(persistedThreadJson, JsonSerializerOptions.Web);
-        var restoredThread = newAgent.DeserializeThread(restoredJsonElement, JsonSerializerOptions.Web);
+        var restoredJsonElement = JsonSerializer.Deserialize<JsonElement>(persistedSessionJson, JsonSerializerOptions.Web);
+        var restoredSession = await newAgent.DeserializeSessionAsync(restoredJsonElement, JsonSerializerOptions.Web);
         
         const string newPrompt1 = "What is my name?";
 
-        var newResponse1 = await newAgent.RunAsync(newPrompt1, restoredThread);
+        var newResponse1 = await newAgent.RunAsync(newPrompt1, restoredSession);
 
         Console.WriteLine(originalResponse1.Text);
         Console.WriteLine();
@@ -52,7 +52,7 @@ public class AgentChatClientThreadPersistenceExample(AzureAIFoundrySettings sett
         Console.WriteLine(originalResponse2.Text);
         Console.WriteLine();
 
-        Console.WriteLine("New Agent's response after Thread restored:");
+        Console.WriteLine("New Agent's response after Session restored:");
         Console.WriteLine(newResponse1.Text);
     }
 }

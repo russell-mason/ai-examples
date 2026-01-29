@@ -27,7 +27,7 @@ public class DataContentExample(LMStudioAISettings settings) : IExample
 
         var agent = new OpenAIClient(new ApiKeyCredential("NOT_APPLICABLE"), new OpenAIClientOptions { Endpoint = new Uri(settings.Endpoint) })
                     .GetChatClient(settings.Qwen3ModelId)
-                    .CreateAIAgent(instructions);
+                    .AsAIAgent(instructions);
 
         var imagePaths = Directory.GetFiles(@".\Foundation\SourceImages\Animals", "*.jpg");
 

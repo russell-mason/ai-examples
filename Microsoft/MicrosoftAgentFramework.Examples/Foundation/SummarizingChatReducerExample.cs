@@ -24,48 +24,50 @@ public class SummarizingChatReducerExample(AzureAIFoundrySettings settings) : IE
 
         var agentOptions = new ChatClientAgentOptions
                            {
-                               ChatMessageStoreFactory = context =>
-                                   new InMemoryChatMessageStore(chatReducer,
-                                                                context.SerializedState,
-                                                                context.JsonSerializerOptions,
-                                                                InMemoryChatMessageStore.ChatReducerTriggerEvent.AfterMessageAdded)
+                               ChatHistoryProviderFactory = (context, _) =>
+                                   new ValueTask<ChatHistoryProvider>(new InMemoryChatHistoryProvider(
+                                                                          chatReducer,
+                                                                          context.SerializedState,
+                                                                          context.JsonSerializerOptions,
+                                                                          InMemoryChatHistoryProvider.ChatReducerTriggerEvent.AfterMessageAdded))
                            };
 
-        // If you want to inspect the message store, comment out the above "var agentOptions = ..." and uncomment the below
+        // If you want to inspect the message history, comment out the above "var agentOptions = ..." and uncomment the below
 
-        //InMemoryChatMessageStore messageStore;
+        //InMemoryChatHistoryProvider historyProvider;
 
         //var agentOptions = new ChatClientAgentOptions
         //                   {
-        //                       ChatMessageStoreFactory = context =>
+        //                       ChatHistoryProviderFactory = (context, _) =>
         //                       {
-        //                           messageStore = new InMemoryChatMessageStore(chatReducer,
-        //                                                                       context.SerializedState,
-        //                                                                       context.JsonSerializerOptions,
-        //                                                                       InMemoryChatMessageStore.ChatReducerTriggerEvent.AfterMessageAdded);
+        //                           historyProvider =
+        //                               new InMemoryChatHistoryProvider(chatReducer,
+        //                                                               context.SerializedState,
+        //                                                               context.JsonSerializerOptions,
+        //                                                               InMemoryChatHistoryProvider.ChatReducerTriggerEvent.AfterMessageAdded);
 
-        //                           return messageStore;
+        //                           return new ValueTask<ChatHistoryProvider>(historyProvider);
         //                       }
         //                   };
 
-        var agent = chatClient.CreateAIAgent(agentOptions);
+        var agent = chatClient.AsAIAgent(agentOptions);
 
-        var thread = agent.GetNewThread();
+        var session = await agent.GetNewSessionAsync();
 
         const string prompt1 = "My name is Bob Smith. I am 35 years old.";
-        var response1 = await agent.RunAsync(prompt1, thread);
+        var response1 = await agent.RunAsync(prompt1, session);
 
         const string prompt2 = "What is my name?";
-        var response2 = await agent.RunAsync(prompt2, thread);
+        var response2 = await agent.RunAsync(prompt2, session);
 
         const string prompt3 = "What is my age?";
-        var response3 = await agent.RunAsync(prompt3, thread);
+        var response3 = await agent.RunAsync(prompt3, session);
 
         const string prompt4 = "What is my name? ";
-        var response4 = await agent.RunAsync(prompt4, thread);
+        var response4 = await agent.RunAsync(prompt4, session);
 
         const string prompt5 = "What is my age? ";
-        var response5 = await agent.RunAsync(prompt5, thread);
+        var response5 = await agent.RunAsync(prompt5, session);
 
         Console.WriteLine(response1.Text);
         Console.WriteLine();

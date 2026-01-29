@@ -18,14 +18,14 @@ public class HandWritingExample(LMStudioAISettings settings) : IExample
     {
         var agentOptions = new ChatClientAgentOptions
                            {
-                               Instructions = """
-                                              You are a hand writing image recognition AI model.
-                                              Only provide a literal interpretation of the text in the image, 
-                                              keeping case, punctuation, symbols, and line breaks. 
-                                              Ignore anything that is not text. 
-                                              """,
                                ChatOptions = new ChatOptions
                                              {
+                                                 Instructions = """
+                                                                You are a hand writing image recognition AI model.
+                                                                Only provide a literal interpretation of the text in the image, 
+                                                                keeping case, punctuation, symbols, and line breaks. 
+                                                                Ignore anything that is not text. 
+                                                                """,
                                                  Temperature = 0,
                                                  TopP = 0
                                              }
@@ -33,7 +33,7 @@ public class HandWritingExample(LMStudioAISettings settings) : IExample
 
         var agent = new OpenAIClient(new ApiKeyCredential("NOT_APPLICABLE"), new OpenAIClientOptions { Endpoint = new Uri(settings.Endpoint) })
                     .GetChatClient(settings.Qwen3ModelId)
-                    .CreateAIAgent(agentOptions);
+                    .AsAIAgent(agentOptions);
 
         var imagePaths = Directory.GetFiles(@".\Foundation\SourceImages\Handwriting", "*.jpg");
 

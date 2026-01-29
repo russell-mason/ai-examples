@@ -2,7 +2,7 @@
 
 /// <summary>
 /// Demonstrates the ability to intercept, extract, and capture, information provided during the chat and
-/// store it in a memory state object for use across threads and agents.
+/// store it in a memory state object for use across sessions and agents.
 /// </summary>
 [ExampleCategory(Category.GettingStarted)]
 [ExampleCategory(Category.TextGeneration)]
@@ -19,10 +19,10 @@ public class AgentChatClientMemoryExample(AzureAIFoundrySettings settings) : IEx
         var chatClient = aiClient.GetChatClient(project.DeployedModels.Default).AsIChatClient();
 
         // Create an original conversation with memory that captures the user's name, likes, and dislikes
-        var originalThread = await Chat(chatClient);
+        var originalSession = await Chat(chatClient);
 
         // Grab the serialized memory from the original conversation
-        var aiContextProvider = originalThread.GetService<AIContextProvider>()!;
+        var aiContextProvider = originalSession.GetService<AIContextProvider>()!;
         var memoryJsonElement = aiContextProvider.Serialize();
 
         // Create a new conversation with the original memory that captured the user's name
@@ -33,63 +33,70 @@ public class AgentChatClientMemoryExample(AzureAIFoundrySettings settings) : IEx
     {
         var agentOptions = new ChatClientAgentOptions
                            {
-                               AIContextProviderFactory = context =>
+                               AIContextProviderFactory = (context, _) =>
                                {
                                    var serializedState = memoryJsonElement ?? context.SerializedState;
 
-                                   return new UserPreferencesMemory(chatClient, serializedState, context.JsonSerializerOptions);
+                                   return new ValueTask<AIContextProvider>(
+                                       new UserPreferencesMemory(chatClient, serializedState, context.JsonSerializerOptions));
                                },
-                               Instructions = "When providing responses, be brief.", 
-                               ChatOptions = new ChatOptions { Temperature = 0, TopK = 1, TopP = 0.1f }
+                               ChatOptions = new ChatOptions
+                                             {
+                                                 Instructions = "When providing responses, be brief.",
+                                                 Temperature = 0,
+                                                 TopK = 1,
+                                                 TopP = 0.1f
+                                             }
                            };
 
-        var agent = chatClient.CreateAIAgent(agentOptions);
+        var agent = chatClient.AsAIAgent(agentOptions);
 
         return agent;
     }
 
-    private static async Task<AgentThread> Chat(IChatClient chatClient)
+    private static async Task<AgentSession> Chat(IChatClient chatClient)
     {
         var agent = CreateAgent(chatClient);
-        var thread = agent.GetNewThread();
+        var session = await agent.GetNewSessionAsync();
 
         Console.WriteHighlight("Original Agent");
         Console.WriteLine();
 
         // This is nonsense, but designed to have some ambiguity and to test if rules are followed correctly
         // For demonstration purposes only
-        await Ask(agent, thread, "What is the capital of England?");
-        await Ask(agent, thread, "I like bacon and Chicken.");
-        await Ask(agent, thread, "I dislike fish, same for lamb.");
-        await Ask(agent, thread, "Who is Winston Churchill?");
-        await Ask(agent, thread, "I prefer Broccoli, but am not keen on spinach.");
-        await Ask(agent, thread, "My name is Washington Hall.");
-        await Ask(agent, thread, "I enjoy potato, but can't say the same for sweet potato.");
-        await Ask(agent, thread, "I had a holiday in the USA recently. " +
-                                 "dallas was great, but my visit to Las vegas was disappointing. " +
-                                 "I also visited New York and Florida. " +
-                                 "The grand canyon was the best, but still not as good as tower bridge!");
-        
-        return thread;
+        await Ask(agent, session, "What is the capital of England?");
+        await Ask(agent, session, "I like bacon and Chicken.");
+        await Ask(agent, session, "I dislike fish, same for lamb.");
+        await Ask(agent, session, "Who is Winston Churchill?");
+        await Ask(agent, session, "I prefer Broccoli, but am not keen on spinach.");
+        await Ask(agent, session, "My name is Washington Hall.");
+        await Ask(agent, session, "I enjoy potato, but can't say the same for sweet potato.");
+
+        await Ask(agent, session, "I had a holiday in the USA recently. " +
+                                  "dallas was great, but my visit to Las vegas was disappointing. " +
+                                  "I also visited New York and Florida. " +
+                                  "The grand canyon was the best, but still not as good as tower bridge!");
+
+        return session;
     }
 
     private static async Task Chat(IChatClient chatClient, JsonElement memoryJsonElement)
     {
         var agent = CreateAgent(chatClient, memoryJsonElement);
-        var thread = agent.GetNewThread();
+        var session = await agent.GetNewSessionAsync();
 
         Console.WriteHighlight("New Agent");
         Console.WriteLine();
 
-        await Ask(agent, thread, "What is the capital of France?");
-        await Ask(agent, thread, "Can you suggest a meal with multiple ingredients I like?");
-        await Ask(agent, thread, "From the places I have visited, list the ones I like?");
+        await Ask(agent, session, "What is the capital of France?");
+        await Ask(agent, session, "Can you suggest a meal with multiple ingredients I like?");
+        await Ask(agent, session, "From the places I have visited, list the ones I like?");
     }
 
-    private static async Task Ask(ChatClientAgent agent, AgentThread thread, string message)
+    private static async Task Ask(ChatClientAgent agent, AgentSession session, string message)
     {
-        var response = await agent.RunAsync(message, thread);
-        var memory = thread.GetService<UserPreferencesMemory>()!;
+        var response = await agent.RunAsync(message, session);
+        var memory = session.GetService<UserPreferencesMemory>()!;
 
         Console.WriteLine(message);
         Console.WriteLine(response.Text);

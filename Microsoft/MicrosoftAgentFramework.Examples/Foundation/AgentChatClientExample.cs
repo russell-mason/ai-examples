@@ -22,7 +22,7 @@ public class AgentChatClientExample(AzureAIFoundrySettings settings) : IExample
         // This is a simplified version of creating the AI client, chat client, and agent, as separate objects
         var agent = new AzureOpenAIClient(new Uri(project.OpenAIEndpoint), new ApiKeyCredential(project.ApiKey))
                     .GetChatClient(project.DeployedModels.Default)
-                    .CreateAIAgent(instructions);
+                    .AsAIAgent(instructions);
 
         const string prompt = "Hello, How do I get to the library?";
 

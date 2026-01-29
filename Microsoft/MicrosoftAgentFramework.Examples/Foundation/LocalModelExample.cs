@@ -17,7 +17,7 @@ public class LocalModelExample(LMStudioAISettings settings) : IExample
     {
         var agent = new OpenAIClient(new ApiKeyCredential("NOT_APPLICABLE"), new OpenAIClientOptions { Endpoint = new Uri(settings.Endpoint) })
                     .GetChatClient(settings.Phi4ModelId)
-                    .CreateAIAgent();
+                    .AsAIAgent();
 
         const string prompt = "What is your base LLM, including version and cutoff date? Be terse.";
 

@@ -43,7 +43,7 @@ public class AgentAsToolExample(AzureAIFoundrySettings settings) : IExample
 
         var agent = new AzureOpenAIClient(new Uri(project.OpenAIEndpoint), new ApiKeyCredential(project.ApiKey))
                     .GetChatClient(project.DeployedModels.Default)
-                    .CreateAIAgent(options);
+                    .AsAIAgent(options);
 
         return agent;
     }
@@ -52,19 +52,22 @@ public class AgentAsToolExample(AzureAIFoundrySettings settings) : IExample
     {
         var options = new ChatClientAgentOptions
                       {
-                          Instructions = """
-                                         You are an Agent that provides details about staff members. 
-                                         If the details are not related to staff members politely inform the user
-                                         that those details are unavailable.
-                                         If asked about any other subject politely inform the user that those details 
-                                         are not within the scope of your knowledge.
-                                         """,
-                          ChatOptions = new ChatOptions { Tools = PersonalDetailsFunctions.AsAITools() }
+                          ChatOptions = new ChatOptions
+                                        {
+                                            Instructions = """
+                                                           You are an Agent that provides details about staff members. 
+                                                           If the details are not related to staff members politely inform the user
+                                                           that those details are unavailable.
+                                                           If asked about any other subject politely inform the user that those details 
+                                                           are not within the scope of your knowledge.
+                                                           """,
+                                            Tools = PersonalDetailsFunctions.AsAITools()
+                                        }
                       };
 
         var agent = new AzureOpenAIClient(new Uri(project.OpenAIEndpoint), new ApiKeyCredential(project.ApiKey))
                     .GetChatClient(project.DeployedModels.Default)
-                    .CreateAIAgent(options);
+                    .AsAIAgent(options);
 
         return agent;
     }

@@ -8,3 +8,4 @@ global using Microsoft.Extensions.Hosting;
 global using MicrosoftAgentFramework.InteractiveChatConsoleApp.Extensions;
 global using MicrosoftAgentFramework.InteractiveChatConsoleApp.Services;
 global using OpenAI;
+global using OpenAI.Chat;

@@ -22,17 +22,17 @@ public class FunctionToolsViaCreationExample(AzureAIFoundrySettings settings) : 
 
         var agent = new AzureOpenAIClient(new Uri(project.OpenAIEndpoint), new ApiKeyCredential(project.ApiKey))
                     .GetChatClient(project.DeployedModels.Default)
-                    .CreateAIAgent(tools: tools);
+                    .AsAIAgent(tools: tools);
 
-        var thread = agent.GetNewThread();
+        var session = await agent.GetNewSessionAsync();
 
         const string prompt1 = "What is the telephone number for Bob Smith, and when is he available?";
 
-        var response1 = await agent.RunAsync(prompt1, thread);
+        var response1 = await agent.RunAsync(prompt1, session);
 
         const string prompt2 = "What is the area code associated with that number?";
 
-        var response2 = await agent.RunAsync(prompt2, thread);
+        var response2 = await agent.RunAsync(prompt2, session);
 
         Console.WriteLine(response1.Text);
         Console.WriteLine();

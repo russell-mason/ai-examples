@@ -1,21 +1,15 @@
 ﻿namespace MicrosoftAgentFramework.InteractiveChatConsoleApp.Services;
 
-public class ChatService : BackgroundService
+public class ChatService(IHostApplicationLifetime hostApplicationLifetime, ChatClientAgent chatClientAgent)
+    : BackgroundService
 {
-    private readonly ChatClientAgent _agent;
-    private readonly IHostApplicationLifetime _hostApplicationLifetime;
-    private AgentThread _thread;
-
-    public ChatService(IHostApplicationLifetime hostApplicationLifetime, ChatClientAgent chatClientAgent)
-    {
-        _hostApplicationLifetime = hostApplicationLifetime;
-        _agent = chatClientAgent;
-        _thread = _agent.GetNewThread();
-    }
+    private AgentSession? _session;
 
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
         WriteIntroduction();
+
+        _session ??= await chatClientAgent.GetNewSessionAsync(stoppingToken);
 
         while (!stoppingToken.IsCancellationRequested)
         {
@@ -25,9 +19,9 @@ public class ChatService : BackgroundService
 
                 if (QuitTriggered(prompt)) return;
 
-                if (ResetTriggered(prompt)) continue;
+                if (await ResetTriggered(prompt)) continue;
 
-                var response = _agent.RunStreamingAsync(prompt, _thread, cancellationToken: stoppingToken);
+                var response = chatClientAgent.RunStreamingAsync(prompt, _session, cancellationToken: stoppingToken);
 
                 await WriteResponse(response);
             }
@@ -55,7 +49,7 @@ public class ChatService : BackgroundService
         Console.WriteLine();
     }
 
-    private static async Task WriteResponse(IAsyncEnumerable<AgentRunResponseUpdate> response)
+    private static async Task WriteResponse(IAsyncEnumerable<AgentResponseUpdate> response)
     {
         Console.WriteLine();
 
@@ -90,16 +84,16 @@ public class ChatService : BackgroundService
 
         WriteConclusion();
 
-        _hostApplicationLifetime.StopApplication();
+        hostApplicationLifetime.StopApplication();
 
         return true;
     }
 
-    private bool ResetTriggered(string prompt)
+    private async Task<bool> ResetTriggered(string prompt)
     {
         if (!prompt.Equals("reset", StringComparison.OrdinalIgnoreCase)) return false;
 
-        _thread = _agent.GetNewThread();
+        _session = await chatClientAgent.GetNewSessionAsync();
 
         WriteReset();
 

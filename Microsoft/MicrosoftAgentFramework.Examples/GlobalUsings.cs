@@ -18,3 +18,6 @@ global using MicrosoftAgentFramework.Examples.Foundation.Services;
 global using MicrosoftAgentFramework.Examples.Tools.Models;
 global using MicrosoftAgentFramework.Examples.Tools.Services;
 global using OpenAI;
+global using OpenAI.Chat;
+global using ChatMessage = Microsoft.Extensions.AI.ChatMessage;
+global using ChatResponseFormat = Microsoft.Extensions.AI.ChatResponseFormat;

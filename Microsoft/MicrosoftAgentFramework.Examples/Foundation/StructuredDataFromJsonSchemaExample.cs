@@ -25,7 +25,7 @@ public class StructuredDataFromJsonSchemaExample(AzureAIFoundrySettings settings
 
         var agent = new AzureOpenAIClient(new Uri(project.OpenAIEndpoint), new ApiKeyCredential(project.ApiKey))
                     .GetChatClient(project.DeployedModels.Default)
-                    .CreateAIAgent(agentOptions);
+                    .AsAIAgent(agentOptions);
 
         const string prompt = """
                               List the top 5 cities in the UK by population.

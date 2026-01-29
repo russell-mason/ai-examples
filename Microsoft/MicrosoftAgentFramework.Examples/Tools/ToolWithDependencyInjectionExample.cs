@@ -22,7 +22,7 @@ public class ToolWithDependencyInjectionExample(AzureAIFoundrySettings settings)
 
         var agent = new AzureOpenAIClient(new Uri(project.OpenAIEndpoint), new ApiKeyCredential(project.ApiKey))
                     .GetChatClient(project.DeployedModels.Default)
-                    .CreateAIAgent(services: serviceProvider,
+                    .AsAIAgent(services: serviceProvider,
                                    tools: serviceProvider.GetRequiredService<TaxCodeFunctions>().AsAITools());
 
         const string prompt = "What is the tax code for the The Big Blue Box Company?";

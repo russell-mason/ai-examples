@@ -57,23 +57,23 @@ Simply using **_"az login"_** via the Azure CLI is sufficient. See
     Demonstrates how to get the number of input and output tokens used by agent request/response messages.  
     Model: gpt-4o-mini
 
--   **AgentChatClientThreadExample**  
-    Demonstrates how to create a thread (chat history) so that prior request/response messages provide historical context.  
+-   **AgentChatClientSessionExample**  
+    Demonstrates how to create a session (chat history) so that prior request/response messages provide historical context.  
     Model: gpt-4o-mini
 
--   **AgentChatClientThreadPersistenceExample**  
-    Demonstrates how a thread (chat history) can be serialized and deserialized in order to persist the thread's
+-   **AgentChatClientSessionPersistenceExample**  
+    Demonstrates how a session (chat history) can be serialized and deserialized in order to persist the session's
     current state.  
     Model: gpt-4o-mini
 
 -   **AgentChatClientMemoryExample**  
     Demonstrates the ability to intercept, extract, and capture, information provided during the chat and
-    store it in a memory state object for use across threads and agents.  
+    store it in a memory state object for use across sessions and agents.  
     Model: gpt-4o-mini
     
   - **AgentChatClientMemoryPromptExample**  
     Demonstrates the ability to intercept chat, and extract the user's name. Prevents further interaction until
-    provided. This is stored in a memory state object for use across threads and agents.  
+    provided. This is stored in a memory state object for use across sessions and agents.  
     Model: gpt-4o-mini
 
 -   **MessageCountingChatReducerExample**  

@@ -1,13 +1,13 @@
 ﻿namespace MicrosoftAgentFramework.Examples.Foundation;
 
 /// <summary>
-/// Demonstrates how to create a thread (chat history) so that prior request/response messages provide historical context.
+/// Demonstrates how to create a session (chat history) so that prior request/response messages provide historical context.
 /// </summary>
 [ExampleCategory(Category.GettingStarted)]
 [ExampleCategory(Category.TextGeneration)]
 [ExampleResourceUse(Resource.AzureAIFoundry, AIModel.GPT41Mini)]
 [ExampleCostEstimate(0.001)]
-public class AgentChatClientThreadExample(AzureAIFoundrySettings settings) : IExample
+public class AgentChatClientSessionExample(AzureAIFoundrySettings settings) : IExample
 {
     public async Task ExecuteAsync()
     {
@@ -15,19 +15,19 @@ public class AgentChatClientThreadExample(AzureAIFoundrySettings settings) : IEx
 
         var agent = new AzureOpenAIClient(new Uri(project.OpenAIEndpoint), new ApiKeyCredential(project.ApiKey))
                     .GetChatClient(project.DeployedModels.Default)
-                    .CreateAIAgent();
+                    .AsAIAgent();
 
-        var thread = agent.GetNewThread();
+        var session = await agent.GetNewSessionAsync();
 
         const string prompt1 = "My name is Bob Smith.";
 
-        var response1 = await agent.RunAsync(prompt1, thread);
+        var response1 = await agent.RunAsync(prompt1, session);
 
         const string prompt2 = "What is my name?";
 
         var response2 = await agent.RunAsync(prompt2);
 
-        var response3 = await agent.RunAsync(prompt2, thread);
+        var response3 = await agent.RunAsync(prompt2, session);
 
         Console.WriteLine(response1.Text);
         Console.WriteTitle("Without history ...");

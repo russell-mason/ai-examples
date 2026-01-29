@@ -18,33 +18,33 @@ public class MessageCountingChatReducerExample(AzureAIFoundrySettings settings) 
 
         var agentOptions = new ChatClientAgentOptions
                            {
-                               ChatMessageStoreFactory = context =>
-                                   new InMemoryChatMessageStore(new MessageCountingChatReducer(4),
-                                                                context.SerializedState,
-                                                                context.JsonSerializerOptions,
-                                                                InMemoryChatMessageStore.ChatReducerTriggerEvent.AfterMessageAdded)
+                               ChatHistoryProviderFactory = (context, _) =>
+                                   new ValueTask<ChatHistoryProvider>(new InMemoryChatHistoryProvider(new MessageCountingChatReducer(4),
+                                                                          context.SerializedState,
+                                                                          context.JsonSerializerOptions,
+                                                                          InMemoryChatHistoryProvider.ChatReducerTriggerEvent.AfterMessageAdded))
                            };
 
         var agent = new AzureOpenAIClient(new Uri(project.OpenAIEndpoint), new ApiKeyCredential(project.ApiKey))
                     .GetChatClient(project.DeployedModels.Default)
-                    .CreateAIAgent(agentOptions);
+                    .AsAIAgent(agentOptions);
 
-        var thread = agent.GetNewThread();
+        var session = await agent.GetNewSessionAsync();
 
         const string prompt1 = "My name is Bob Smith. I am 35 years old.";
-        var response1 = await agent.RunAsync(prompt1, thread);
+        var response1 = await agent.RunAsync(prompt1, session);
 
         const string prompt2 = "What is my name?";
-        var response2 = await agent.RunAsync(prompt2, thread);
+        var response2 = await agent.RunAsync(prompt2, session);
 
         const string prompt3 = "What is my age?";
-        var response3 = await agent.RunAsync(prompt3, thread);
+        var response3 = await agent.RunAsync(prompt3, session);
 
         const string prompt4 = "What is my name? ";
-        var response4 = await agent.RunAsync(prompt4, thread);
+        var response4 = await agent.RunAsync(prompt4, session);
 
         const string prompt5 = "What is my age? ";
-        var response5 = await agent.RunAsync(prompt5, thread);
+        var response5 = await agent.RunAsync(prompt5, session);
 
         Console.WriteLine(response1.Text);
         Console.WriteLine();

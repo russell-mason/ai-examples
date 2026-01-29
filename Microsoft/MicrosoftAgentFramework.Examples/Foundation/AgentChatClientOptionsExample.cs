@@ -15,9 +15,9 @@ public class AgentChatClientOptionsExample(AzureAIFoundrySettings settings) : IE
 
         var agentOptions = new ChatClientAgentOptions
                            {
-                               Instructions = "You are an AI Assistant designed for use by very young children.",
                                ChatOptions = new ChatOptions
                                              {
+                                                 Instructions = "You are an AI Assistant designed for use by very young children.",
                                                  Temperature = 0.5f,
                                                  TopP = 0.5f,
                                                  MaxOutputTokens = 1000
@@ -26,7 +26,7 @@ public class AgentChatClientOptionsExample(AzureAIFoundrySettings settings) : IE
 
         var agent = new AzureOpenAIClient(new Uri(project.OpenAIEndpoint), new ApiKeyCredential(project.ApiKey))
                     .GetChatClient(project.DeployedModels.Default)
-                    .CreateAIAgent(agentOptions);
+                    .AsAIAgent(agentOptions);
 
         const string prompt = "Explain the concept of a sphere";
 
