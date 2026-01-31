@@ -26,5 +26,7 @@ public enum Category
 
     Tools,
 
+    ModelContextProtocol,
+
     MachineLearning
 }

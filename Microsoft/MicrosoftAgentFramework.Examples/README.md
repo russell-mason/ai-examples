@@ -159,6 +159,11 @@ Simply using **_"az login"_** via the Azure CLI is sufficient. See
     need to be logged in to your Azure account to run this example.  
     **N.B.** The associated API must also have been deployed and publicly available (see the OpenApiWebApi project).
 
+-   **HumanResourcesMcpExample**  
+    Demonstrates the use of an MCP Server as Agent AI Tools.  
+    **N.B.** The associated MCP Server will be automatically started when this example is run.  
+    Model: gpt-4o-mini
+
 ---
 
 Return to the repository [README](../../) file

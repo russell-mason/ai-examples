@@ -55,3 +55,5 @@
 //await host.ExecuteExampleAsync<AgentAsToolExample>();
 
 //await host.ExecuteExampleAsync<OpenApiToolExample>();
+
+//await host.ExecuteExampleAsync<HumanResourcesMcpToolsExample>();

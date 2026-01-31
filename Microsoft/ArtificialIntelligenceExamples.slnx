@@ -12,6 +12,10 @@
     <Project Path="MicrosoftSemanticKernel.Examples/MicrosoftSemanticKernel.Examples.csproj" Id="f20f4e1b-385a-4c98-8209-dff573de9971" />
     <Project Path="VectorData.Examples/VectorData.Examples.csproj" />
   </Folder>
+  <Folder Name="/MCPServers/">
+    <File Path=".mcp.json" />
+    <Project Path="HumanResourcesMcpServer/HumanResourcesMcpServer.csproj" Id="a5a30096-d02d-40ad-b929-10104d929a63" />
+  </Folder>
   <Folder Name="/Shared/">
     <Project Path="AIExamples.Data/AIExamples.Data.csproj" />
     <Project Path="AIExamples.Shared/AIExamples.Shared.csproj" Id="62de912c-2ce5-46ce-a214-3a087cfc9208" />

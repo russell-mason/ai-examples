@@ -1,0 +1,16 @@
+{
+    "inputs": [],
+    "servers": {
+        "HumanResourcesMcpServer": {
+            "type": "stdio",
+            "command": "dotnet",
+            "args": [
+                "run",
+                "--project",
+                ".\\HumanResourcesMcpServer",
+                "--nobuild"
+            ],
+            "env": {}
+        }
+    }
+}
