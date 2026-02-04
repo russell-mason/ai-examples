@@ -28,5 +28,7 @@ public enum Category
 
     ModelContextProtocol,
 
-    MachineLearning
+    MachineLearning,
+
+    OpenTelemetry
 }

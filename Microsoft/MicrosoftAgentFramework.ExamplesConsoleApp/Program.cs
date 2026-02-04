@@ -50,6 +50,7 @@
 //await host.ExecuteExampleAsync<FunctionToolsViaOptionsExample>();
 //await host.ExecuteExampleAsync<FunctionToolsViaCreationExample>();
 //await host.ExecuteExampleAsync<FunctionToolsViaSelfExposedExample>();
+//await host.ExecuteExampleAsync<FunctionToolsViaSelfExposedWithOpenTelemetryExample>();
 //await host.ExecuteExampleAsync<ToolWithDependencyInjectionExample>();
 //await host.ExecuteExampleAsync<FunctionToolApprovalExample>();
 //await host.ExecuteExampleAsync<AgentAsToolExample>();

@@ -139,6 +139,10 @@ Simply using **_"az login"_** via the Azure CLI is sufficient. See
     Demonstrates how a class can expose a series of functions as AI Tools.  
     Model: gpt-4o-mini
 
+-   **FunctionToolsViaSelfExposedWithOpenTelemetryExample**  
+    Demonstrates the use of open telemetry for capturing agent activity including the use of AI Tools.  
+    Model: gpt-4o-mini
+
 -   **ToolWithDependencyInjectionExample**  
     Demonstrates how a service collection can be passed to the agent so that tools can have services injected into them.  
     Model: gpt-4o-mini
