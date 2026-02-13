@@ -32,7 +32,9 @@
 //await host.ExecuteExampleAsync<AzureModelExample>();
 //await host.ExecuteExampleAsync<StructuredDataExample>();
 //await host.ExecuteExampleAsync<StructuredDataFromJsonSchemaExample>();
+
 //await host.ExecuteExampleAsync<TranscribeAudioExample>();
+//await host.ExecuteExampleAsync<TextToAudioExample>();
 
 //// - From LM Studio
 

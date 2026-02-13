@@ -12,6 +12,7 @@
         <PackageReference Include="Microsoft.Agents.AI" Version="1.0.0-preview.260128.1" />
         <PackageReference Include="Microsoft.Agents.AI.OpenAI" Version="1.0.0-preview.260128.1" />
         <PackageReference Include="ModelContextProtocol" Version="0.7.0-preview.1" />
+        <PackageReference Include="NAudio" Version="2.2.1" />
         <PackageReference Include="OpenTelemetry" Version="1.15.0" />
         <PackageReference Include="OpenTelemetry.Exporter.Console" Version="1.15.0" />
     </ItemGroup>

@@ -103,6 +103,10 @@ Simply using **_"az login"_** via the Azure CLI is sufficient. See
     Demonstrates how to read an mps3 audio file and transcribe it to text using an audio client.  
     Model: gpt-4o-mini
 
+-   **TextToAudioExample**  
+    Demonstrates how to use an audio client to convert text into an MP3 stream and play it.  
+    Model: tts
+
 -   **LocalModelExample**  
     Demonstrates using the LM Studio application running locally with a microsoft/phi-4 model.  
     Model: microsoft/phi-4

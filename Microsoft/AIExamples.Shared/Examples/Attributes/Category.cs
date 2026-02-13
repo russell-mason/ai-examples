@@ -14,6 +14,8 @@ public enum Category
 
     AudioToText,
 
+    TextToAudio,
+
     ImageAnalysis,
 
     Plugins,

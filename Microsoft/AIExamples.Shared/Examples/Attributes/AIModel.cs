@@ -18,6 +18,8 @@ public enum AIModel
 
     Whisper,
 
+    TTS,
+
     TextEmbedding3Small,
 
     TextEmbeddingAda002,
