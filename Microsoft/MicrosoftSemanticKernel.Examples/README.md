@@ -69,8 +69,8 @@ usage.
     Model: gpt-4o-mini
 
 -   **AzureGrokExample**  
-    Demonstrates using a grok-3-mini model via Azure and the OpenAI chat client.  
-    Model: grok-3-mini
+    Demonstrates using a grok-4-20-non-reasoning model via Azure and the OpenAI chat client.  
+    Model: grok-4-20-non-reasoning
 
 -   **GitHubAIInferenceExample**  
     Demonstrates using a meta/Meta-Llama-3.1-405B-Instruct model via GitHub and the Azure AI Inference chat client.  

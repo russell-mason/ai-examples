@@ -44,7 +44,7 @@ e.g.
                 "DeployedModels": {
                     "Default": "gpt-4o-mini",
                     "Gpt4oMini": "gpt-4o-mini",
-                    "Grok3Mini": "grok-3-mini"
+                    "Grok420NonReasoning": "grok-4-20-non-reasoning"
                 }
             },
 ...

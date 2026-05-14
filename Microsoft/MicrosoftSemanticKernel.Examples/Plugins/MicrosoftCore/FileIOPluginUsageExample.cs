@@ -24,7 +24,13 @@ public class FileIOPluginUsageExample(AzureAIFoundrySettings settings) : IExampl
 
         var kernel = builder.Build();
 
-        kernel.Plugins.AddFromType<FileIOPlugin>();
+        var fileIOPlugin = new FileIOPlugin
+                           {
+                               AllowedFolders = [Path.GetFullPath(@".\Plugins\MicrosoftCore\SourceText")],
+                               DisableFileOverwrite = false
+                           };
+
+        kernel.Plugins.AddFromObject(fileIOPlugin);
 
         var chatCompletionService = kernel.GetRequiredService<IChatCompletionService>();
 

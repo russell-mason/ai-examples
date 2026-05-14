@@ -88,8 +88,8 @@ Simply using **_"az login"_** via the Azure CLI is sufficient. See
     Model: gpt-4o-mini
 
 -   **AzureModelExample**  
-    Demonstrates using an Azure hosted grok-3-mini model with an agent.  
-    Model: grok-3-mini
+    Demonstrates using an Azure hosted grok model with an agent.  
+    Model: grok-4-20-non-reasoning
 
 -   **StructuredDataExample**  
     Demonstrates how to return a typed response message that contains structured data directly.  

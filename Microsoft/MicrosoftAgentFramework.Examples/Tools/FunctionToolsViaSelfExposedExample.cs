@@ -18,7 +18,7 @@ public class FunctionToolsViaSelfExposedExample(AzureAIFoundrySettings settings)
                     .GetChatClient(project.DeployedModels.Default)
                     .AsAIAgent(tools: PersonalDetailsFunctions.AsAITools());
 
-        var session = await agent.GetNewSessionAsync();
+        var session = await agent.CreateSessionAsync();
 
         const string prompt1 = "What is the telephone number for Bob Smith, and when is he available?";
 

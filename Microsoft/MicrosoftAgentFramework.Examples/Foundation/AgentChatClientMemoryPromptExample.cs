@@ -11,47 +11,48 @@
 [ExampleCostEstimate(0.02)]
 public class AgentChatClientMemoryPromptExample(AzureAIFoundrySettings settings) : IExample
 {
+    private const string DemoUserId = "1";
+
     public async Task ExecuteAsync()
     {
         var project = settings.Projects.Default;
 
         var aiClient = new AzureOpenAIClient(new Uri(project.OpenAIEndpoint), new ApiKeyCredential(project.ApiKey));
         var chatClient = aiClient.GetChatClient(project.DeployedModels.Default).AsIChatClient();
+        var dataStore = new DataStore<User>();
 
-        // Create an original conversation with memory that captures the user's name
-        var originalSession = await Chat(chatClient);
+        // Create an original conversation that captures the user's name
+        await InitialChat(chatClient, dataStore);
 
-        // Grab the serialized memory from the original conversation
-        var aiContextProvider = originalSession.GetService<AIContextProvider>()!;
-        var memoryJsonElement = aiContextProvider.Serialize();
-
-        // Create a new conversation with the original memory that captured the user's name
-        await Chat(chatClient, memoryJsonElement);
+        // Create a new conversation that can use the captured information from the original conversation
+        // to provide more personalized responses
+        await SubsequentChat(chatClient, dataStore);
     }
 
-    private static ChatClientAgent CreateAgent(IChatClient chatClient, JsonElement? memoryJsonElement = null)
+    private static ChatClientAgent CreateAgent(IChatClient chatClient, DataStore<User> dataStore)
     {
         var agentOptions = new ChatClientAgentOptions
-                           {
-                               AIContextProviderFactory = (context, _) =>
-                               {
-                                   var serializedState = memoryJsonElement ?? context.SerializedState;
-
-                                   return new ValueTask<AIContextProvider>(
-                                       new UserMemory(chatClient, serializedState, context.JsonSerializerOptions));
-                               },
-                               ChatOptions = new ChatOptions { Instructions = "When providing responses, be brief." }
-                           };
+        {
+            AIContextProviders = [new UserMemory(chatClient, dataStore)],
+            ChatOptions = new ChatOptions { Instructions = "When providing responses, be brief." }
+        };
 
         var agent = chatClient.AsAIAgent(agentOptions);
 
         return agent;
     }
 
-    private static async Task<AgentSession> Chat(IChatClient chatClient)
+    // Simulates setting a user ID against the session in order to correlate independent conversations for
+    // the same user.
+    private static void SetSessionIdentifier(AgentSession session) => 
+        session.StateBag.SetValue(UserPreferencesMemory.UserIdStateKey, DemoUserId);
+
+    private static async Task InitialChat(IChatClient chatClient, DataStore<User> dataStore)
     {
-        var agent = CreateAgent(chatClient);
-        var session = await agent.GetNewSessionAsync();
+        var agent = CreateAgent(chatClient, dataStore);
+        var session = await agent.CreateSessionAsync();
+
+        SetSessionIdentifier(session);
 
         Console.WriteHighlight("Original Agent");
         Console.WriteLine();
@@ -59,37 +60,40 @@ public class AgentChatClientMemoryPromptExample(AzureAIFoundrySettings settings)
         // Uncomment this block and comment out the following block to see what happens if the user's name
         // is specified before the questions are asked.
 
-        //await Ask(agent, session, "Hi I'm Washington Hall");
-        //await Ask(agent, session, "What is the Washington Monument?");
-        //await Ask(agent, session, "Who was George Washington?");
+        //await Ask(agent, session, dataStore, "Hi I'm Washington Hall");
+        //await Ask(agent, session, dataStore, "What is the Washington Monument?");
+        //await Ask(agent, session, dataStore, "Who was George Washington?");
 
-        await Ask(agent, session, "What is the Washington Monument?");
-        await Ask(agent, session, "Who was George Washington?");
-        await Ask(agent, session, "Washington Hall");
-        await Ask(agent, session, "Please answer the questions I asked.");
-
-        return session;
+        await Ask(agent, session, dataStore, "What is the Washington Monument?");
+        await Ask(agent, session, dataStore, "Who was George Washington?");
+        await Ask(agent, session, dataStore, "Washington Hall");
+        await Ask(agent, session, dataStore, "Please answer the questions I asked.");
     }
 
-    private static async Task Chat(IChatClient chatClient, JsonElement memoryJsonElement)
+    private static async Task SubsequentChat(IChatClient chatClient, DataStore<User> dataStore)
     {
-        var agent = CreateAgent(chatClient, memoryJsonElement);
-        var session = await agent.GetNewSessionAsync();
+        var agent = CreateAgent(chatClient, dataStore);
+        var session = await agent.CreateSessionAsync();
+
+        SetSessionIdentifier(session);
 
         Console.WriteHighlight("New Agent");
         Console.WriteLine();
 
-        await Ask(agent, session, "What is my name?");
+        await Ask(agent, session, dataStore, "What is my name?");
     }
 
-    private static async Task Ask(ChatClientAgent agent, AgentSession session, string message)
+    private static async Task Ask(ChatClientAgent agent, 
+                                  AgentSession session, 
+                                  DataStore<User> dataStore,
+                                  string message)
     {
         var response = await agent.RunAsync(message, session);
-        var memory = session.GetService<UserMemory>()!;
+        var user = dataStore.Get(DemoUserId);
 
         Console.WriteLine(message);
         Console.WriteLine(response.Text);
-        Console.WriteInfo($"Name: [{memory.User.Name}]");
+        Console.WriteInfo($"Name: [{user.Name}]");
         Console.WriteLine();
     }
 }

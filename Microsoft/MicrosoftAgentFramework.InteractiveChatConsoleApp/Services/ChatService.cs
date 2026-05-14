@@ -9,7 +9,7 @@ public class ChatService(IHostApplicationLifetime hostApplicationLifetime, ChatC
     {
         WriteIntroduction();
 
-        _session ??= await chatClientAgent.GetNewSessionAsync(stoppingToken);
+        _session ??= await chatClientAgent.CreateSessionAsync(stoppingToken);
 
         while (!stoppingToken.IsCancellationRequested)
         {
@@ -93,7 +93,7 @@ public class ChatService(IHostApplicationLifetime hostApplicationLifetime, ChatC
     {
         if (!prompt.Equals("reset", StringComparison.OrdinalIgnoreCase)) return false;
 
-        _session = await chatClientAgent.GetNewSessionAsync();
+        _session = await chatClientAgent.CreateSessionAsync();
 
         WriteReset();
 

@@ -23,7 +23,12 @@ public class HttpPluginUsageExample(AzureAIFoundrySettings settings) : IExample
 
         var kernel = builder.Build();
 
-        kernel.Plugins.AddFromType<HttpPlugin>();
+        var httpPlugin = new HttpPlugin
+                         {
+                             AllowedDomains = ["api.restful-api.dev"]
+                         };
+
+        kernel.Plugins.AddFromObject(httpPlugin);
 
         var chatCompletionService = kernel.GetRequiredService<IChatCompletionService>();
 
@@ -32,7 +37,7 @@ public class HttpPluginUsageExample(AzureAIFoundrySettings settings) : IExample
                                  FunctionChoiceBehavior = FunctionChoiceBehavior.Auto()
                              };
 
-        const string prompt = "Get the json from this url: https://swapi.dev/api/people/1";
+        const string prompt = "Get the json from this url: https://api.restful-api.dev/objects";
 
         var response = await chatCompletionService.GetChatMessageContentAsync(prompt, promptSettings, kernel);
 

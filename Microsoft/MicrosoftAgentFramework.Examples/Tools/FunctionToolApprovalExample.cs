@@ -1,7 +1,5 @@
 ﻿namespace MicrosoftAgentFramework.Examples.Tools;
 
-#pragma warning disable MEAI001
-
 /// <summary>
 /// Demonstrates requiring the user to approve the calling of a tool from an agent.
 /// </summary>
@@ -26,7 +24,7 @@ public class FunctionToolApprovalExample(AzureAIFoundrySettings settings) : IExa
                     .GetChatClient(project.DeployedModels.Default)
                     .AsAIAgent(tools: tools);
 
-        var session = await agent.GetNewSessionAsync();
+        var session = await agent.CreateSessionAsync();
 
         const string prompt = "What is the time for my current location?";
 
@@ -38,7 +36,7 @@ public class FunctionToolApprovalExample(AzureAIFoundrySettings settings) : IExa
         // GetCurrentLocation is requested first, then GetDateTime, as two separate responses
         while (approvals.Count > 0)
         {
-            var functionNames = string.Join(", ", approvals.Select(approval => approval.FunctionCall.Name));
+            var functionNames = string.Join(", ", approvals.Select(approval => approval.ToolCall.CallId));
 
             Console.WriteLine($"Approval is required to execute: '{functionNames}'. Do you agree? (Y or N)");
 
@@ -60,13 +58,13 @@ public class FunctionToolApprovalExample(AzureAIFoundrySettings settings) : IExa
         Console.WriteLine(response.Text);
     }
 
-    private static List<FunctionApprovalRequestContent> GetApprovals(AgentResponse response) =>
+    private static List<ToolApprovalRequestContent> GetApprovals(AgentResponse response) =>
         response.Messages
                 .SelectMany(message => message.Contents)
-                .OfType<FunctionApprovalRequestContent>()
+                .OfType<ToolApprovalRequestContent>()
                 .ToList();
 
-    private static List<ChatMessage> CreateApprovalMessages(List<FunctionApprovalRequestContent> approvals) =>
+    private static List<ChatMessage> CreateApprovalMessages(List<ToolApprovalRequestContent> approvals) =>
         approvals.Select(approval => new ChatMessage(ChatRole.User, [approval.CreateResponse(true)])).ToList();
 
     [Description("Get the current date and time in UTC")]
@@ -75,5 +73,3 @@ public class FunctionToolApprovalExample(AzureAIFoundrySettings settings) : IExa
     [Description("Get the current user's location")]
     public static string GetCurrentLocation() => "London";
 }
-
-#pragma warning restore MEAI001

@@ -50,7 +50,7 @@ public class FunctionToolsViaSelfExposedWithOpenTelemetryExample(AzureAIFoundryS
                     .UseOpenTelemetry(sourceName: serviceName, configure: config => config.EnableSensitiveData = true)
                     .Build();
 
-        var session = await agent.GetNewSessionAsync();
+        var session = await agent.CreateSessionAsync();
 
         const string prompt1 = "What is the telephone number for Bob Smith, and when is he available?";
 

@@ -6,16 +6,16 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
     <ItemGroup>
-        <PackageReference Include="Microsoft.SemanticKernel" Version="1.70.0" />
-        <PackageReference Include="Microsoft.SemanticKernel.Connectors.AzureAIInference" Version="1.70.0-beta" />
-        <PackageReference Include="Microsoft.SemanticKernel.Connectors.AzureOpenAI" Version="1.70.0" />
-        <PackageReference Include="Microsoft.SemanticKernel.Connectors.InMemory" Version="1.70.0-preview" />
-        <PackageReference Include="Microsoft.SemanticKernel.Connectors.Ollama" Version="1.70.0-alpha" />
-        <PackageReference Include="Microsoft.SemanticKernel.Connectors.OpenAI" Version="1.70.0" />
-        <PackageReference Include="Microsoft.SemanticKernel.Plugins.Core" Version="1.70.0-preview" />
-        <PackageReference Include="Microsoft.SemanticKernel.Plugins.OpenApi" Version="1.70.0" />
-        <PackageReference Include="Microsoft.SemanticKernel.Yaml" Version="1.70.0" />
-        <PackageReference Include="SemanticChunker.NET" Version="1.1.0" />
+        <PackageReference Include="Microsoft.SemanticKernel" Version="1.75.0" />
+        <PackageReference Include="Microsoft.SemanticKernel.Connectors.AzureAIInference" Version="1.75.0-beta" />
+        <PackageReference Include="Microsoft.SemanticKernel.Connectors.AzureOpenAI" Version="1.75.0" />
+        <PackageReference Include="Microsoft.SemanticKernel.Connectors.InMemory" Version="1.74.0-preview" />
+        <PackageReference Include="Microsoft.SemanticKernel.Connectors.Ollama" Version="1.75.0-alpha" />
+        <PackageReference Include="Microsoft.SemanticKernel.Connectors.OpenAI" Version="1.75.0" />
+        <PackageReference Include="Microsoft.SemanticKernel.Plugins.Core" Version="1.75.0-preview" />
+        <PackageReference Include="Microsoft.SemanticKernel.Plugins.OpenApi" Version="1.75.0" />
+        <PackageReference Include="Microsoft.SemanticKernel.Yaml" Version="1.75.0" />
+        <PackageReference Include="SemanticChunker.NET" Version="1.5.0" />
     </ItemGroup>
     <ItemGroup>
         <ProjectReference Include="..\AIExamples.Data\AIExamples.Data.csproj" />

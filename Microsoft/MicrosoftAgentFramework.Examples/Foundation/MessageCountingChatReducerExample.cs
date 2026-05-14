@@ -14,22 +14,28 @@ public class MessageCountingChatReducerExample(AzureAIFoundrySettings settings) 
 {
     public async Task ExecuteAsync()
     {
+        const int reducerTargetCount = 4;
+
         var project = settings.Projects.Default;
+
+        var chatReducer = new MessageCountingChatReducer(reducerTargetCount);
+
+        var historyProvider = new InMemoryChatHistoryProvider(new InMemoryChatHistoryProviderOptions
+                                                              {
+                                                                  ChatReducer = chatReducer,
+                                                                  ReducerTriggerEvent = InMemoryChatHistoryProviderOptions.ChatReducerTriggerEvent.AfterMessageAdded
+                                                              });
 
         var agentOptions = new ChatClientAgentOptions
                            {
-                               ChatHistoryProviderFactory = (context, _) =>
-                                   new ValueTask<ChatHistoryProvider>(new InMemoryChatHistoryProvider(new MessageCountingChatReducer(4),
-                                                                          context.SerializedState,
-                                                                          context.JsonSerializerOptions,
-                                                                          InMemoryChatHistoryProvider.ChatReducerTriggerEvent.AfterMessageAdded))
+                               ChatHistoryProvider = historyProvider
                            };
 
         var agent = new AzureOpenAIClient(new Uri(project.OpenAIEndpoint), new ApiKeyCredential(project.ApiKey))
                     .GetChatClient(project.DeployedModels.Default)
                     .AsAIAgent(agentOptions);
 
-        var session = await agent.GetNewSessionAsync();
+        var session = await agent.CreateSessionAsync();
 
         const string prompt1 = "My name is Bob Smith. I am 35 years old.";
         var response1 = await agent.RunAsync(prompt1, session);
@@ -46,6 +52,8 @@ public class MessageCountingChatReducerExample(AzureAIFoundrySettings settings) 
         const string prompt5 = "What is my age? ";
         var response5 = await agent.RunAsync(prompt5, session);
 
+        var reducedMessages = historyProvider.GetMessages(session);
+
         Console.WriteLine(response1.Text);
         Console.WriteLine();
         Console.WriteLine(response2.Text);
@@ -55,6 +63,14 @@ public class MessageCountingChatReducerExample(AzureAIFoundrySettings settings) 
         Console.WriteLine(response4.Text);
         Console.WriteLine();
         Console.WriteLine(response5.Text);
+
+        Console.WriteTitle($"After Reduction (with a reducer target count of {reducerTargetCount}):");
+
+        foreach (var message in reducedMessages)
+        {
+            Console.WriteLine();
+            Console.WriteLine(message);
+        }
     }
 }
 

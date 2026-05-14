@@ -1,45 +1,31 @@
 ﻿namespace MicrosoftAgentFramework.Examples.Foundation.Services;
 
-public class UserPreferencesMemory : AIContextProvider
+public class UserPreferencesMemory(IChatClient chatClient, 
+                                   DataStore<UserPreferences> dataStore) : AIContextProvider
 {
-    private readonly IChatClient _chatClient;
+    public const string UserIdStateKey = "userId";
 
-    public UserPreferencesMemory(IChatClient chatClient,
-                                 JsonElement serializedState,
-                                 JsonSerializerOptions? jsonSerializerOptions = null)
-    {
-        _chatClient = chatClient;
-
-        UserPreferences? userPreferences = null;
-
-        if (serializedState.ValueKind == JsonValueKind.Object)
-        {
-            userPreferences = serializedState.Deserialize<UserPreferences>(jsonSerializerOptions)!;
-        }
-
-        UserPreferences = userPreferences ?? new UserPreferences();
-    }
-
-    public UserPreferences UserPreferences { get; }
-
-    public override ValueTask<AIContext> InvokingAsync(InvokingContext context, CancellationToken cancellationToken = default)
+    protected override ValueTask<AIContext> ProvideAIContextAsync(InvokingContext context,
+                                                                  CancellationToken cancellationToken = default)
     {
         var aiContext = new AIContext();
         var builder = new StringBuilder();
 
-        if (UserPreferences.Name is not null)
+        var userPreferences = GetUserPreferences(context.Session);
+
+        if (userPreferences.Name is not null)
         {
-            builder.AppendLine($"The user's name is {UserPreferences.Name}. Address them by name only when appropriate.");
+            builder.AppendLine($"The user's name is {userPreferences.Name}. Address them by name only when appropriate.");
         }
 
-        if (UserPreferences.Likes.Count > 0)
+        if (userPreferences.Likes.Count > 0)
         {
-            builder.AppendLine($"The user likes {string.Join("|", UserPreferences.Likes)}. Each item is separated by |.");
+            builder.AppendLine($"The user likes {string.Join("|", userPreferences.Likes)}. Each item is separated by |.");
         }
 
-        if (UserPreferences.Dislikes.Count > 0)
+        if (userPreferences.Dislikes.Count > 0)
         {
-            builder.AppendLine($"The user dislikes {string.Join("|", UserPreferences.Dislikes)}. Each item is separated by |");
+            builder.AppendLine($"The user dislikes {string.Join("|", userPreferences.Dislikes)}. Each item is separated by |");
         }
 
         aiContext.Instructions = builder.ToString();
@@ -47,13 +33,16 @@ public class UserPreferencesMemory : AIContextProvider
         return new ValueTask<AIContext>(aiContext);
     }
 
-    public override async ValueTask InvokedAsync(InvokedContext context, CancellationToken cancellationToken = default)
+    protected override async ValueTask StoreAIContextAsync(InvokedContext context,
+                                                           CancellationToken cancellationToken = default)
     {
+        var userPreferences = GetUserPreferences(context.Session);
+
         var messages = context.RequestMessages.ToList();
 
-        if (UserPreferences.Name is null)
+        if (userPreferences.Name is null)
         {
-            var nameResult = await _chatClient.GetResponseAsync<UserPreferences>(
+            var nameResult = await chatClient.GetResponseAsync<UserPreferences>(
                 messages,
                 new ChatOptions { Instructions = """
                                                  TASK:
@@ -68,10 +57,10 @@ public class UserPreferencesMemory : AIContextProvider
                                                  """ },
                 cancellationToken: cancellationToken);
 
-            UserPreferences.Name ??= SanitizeValue(nameResult.Result.Name);
+            userPreferences.Name ??= SanitizeValue(nameResult.Result.Name);
         }
 
-        var likesResult = await _chatClient.GetResponseAsync<UserPreferences>(
+        var likesResult = await chatClient.GetResponseAsync<UserPreferences>(
             messages,
             new ChatOptions
             {
@@ -105,15 +94,30 @@ public class UserPreferencesMemory : AIContextProvider
             },
             cancellationToken: cancellationToken);
 
-        UserPreferences.Likes = UserPreferences.Likes.Union(likesResult.Result.Likes, StringComparer.OrdinalIgnoreCase).ToList();
-        UserPreferences.Dislikes = UserPreferences.Dislikes.Union(likesResult.Result.Dislikes, StringComparer.OrdinalIgnoreCase).ToList();
+        userPreferences.Likes = userPreferences.Likes.Union(likesResult.Result.Likes, StringComparer.OrdinalIgnoreCase).ToList();
+        userPreferences.Dislikes = userPreferences.Dislikes.Union(likesResult.Result.Dislikes, StringComparer.OrdinalIgnoreCase).ToList();
+    }
+
+    private UserPreferences GetUserPreferences(AgentSession? session)
+    {
+        if (session == null) throw new InvalidOperationException("Session is required to retrieve user preferences.");
+
+        session.StateBag.TryGetValue<string>(UserIdStateKey, out var key);
+            
+        if (key == null) throw new InvalidOperationException("User ID is required in session state bag to retrieve user preferences.");
+
+        dataStore.TryGet(key, out var userPreferences);
+
+        if (userPreferences != null) return userPreferences;
+
+        userPreferences = new UserPreferences();
+        dataStore.Add(key, userPreferences);
+
+        return userPreferences;
     }
 
     private static string? SanitizeValue(string? value) =>
         (string.IsNullOrWhiteSpace(value) || value.Equals("null", StringComparison.OrdinalIgnoreCase))
             ? null
             : value.Trim();
-
-    public override JsonElement Serialize(JsonSerializerOptions? jsonSerializerOptions = null) =>
-        JsonSerializer.SerializeToElement(UserPreferences, jsonSerializerOptions);
 }

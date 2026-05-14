@@ -17,7 +17,7 @@ public class AgentChatClientSessionExample(AzureAIFoundrySettings settings) : IE
                     .GetChatClient(project.DeployedModels.Default)
                     .AsAIAgent();
 
-        var session = await agent.GetNewSessionAsync();
+        var session = await agent.CreateSessionAsync();
 
         const string prompt1 = "My name is Bob Smith.";
 

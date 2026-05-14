@@ -15,44 +15,29 @@ public class SummarizingChatReducerExample(AzureAIFoundrySettings settings) : IE
 {
     public async Task ExecuteAsync()
     {
+        const int reducerTargetCount = 2;
+
         var project = settings.Projects.Default;
 
         var chatClient = new AzureOpenAIClient(new Uri(project.OpenAIEndpoint), new ApiKeyCredential(project.ApiKey))
             .GetChatClient(project.DeployedModels.Default);
 
-        var chatReducer = new SummarizingChatReducer(chatClient.AsIChatClient(), 2, 0);
+        var chatReducer = new SummarizingChatReducer(chatClient.AsIChatClient(), reducerTargetCount, 0);
+
+        var historyProvider = new InMemoryChatHistoryProvider(new InMemoryChatHistoryProviderOptions
+                                                              {
+                                                                  ChatReducer = chatReducer,
+                                                                  ReducerTriggerEvent = InMemoryChatHistoryProviderOptions.ChatReducerTriggerEvent.AfterMessageAdded
+                                                              });
 
         var agentOptions = new ChatClientAgentOptions
                            {
-                               ChatHistoryProviderFactory = (context, _) =>
-                                   new ValueTask<ChatHistoryProvider>(new InMemoryChatHistoryProvider(
-                                                                          chatReducer,
-                                                                          context.SerializedState,
-                                                                          context.JsonSerializerOptions,
-                                                                          InMemoryChatHistoryProvider.ChatReducerTriggerEvent.AfterMessageAdded))
+                               ChatHistoryProvider = historyProvider
                            };
-
-        // If you want to inspect the message history, comment out the above "var agentOptions = ..." and uncomment the below
-
-        //InMemoryChatHistoryProvider historyProvider;
-
-        //var agentOptions = new ChatClientAgentOptions
-        //                   {
-        //                       ChatHistoryProviderFactory = (context, _) =>
-        //                       {
-        //                           historyProvider =
-        //                               new InMemoryChatHistoryProvider(chatReducer,
-        //                                                               context.SerializedState,
-        //                                                               context.JsonSerializerOptions,
-        //                                                               InMemoryChatHistoryProvider.ChatReducerTriggerEvent.AfterMessageAdded);
-
-        //                           return new ValueTask<ChatHistoryProvider>(historyProvider);
-        //                       }
-        //                   };
 
         var agent = chatClient.AsAIAgent(agentOptions);
 
-        var session = await agent.GetNewSessionAsync();
+        var session = await agent.CreateSessionAsync();
 
         const string prompt1 = "My name is Bob Smith. I am 35 years old.";
         var response1 = await agent.RunAsync(prompt1, session);
@@ -69,6 +54,8 @@ public class SummarizingChatReducerExample(AzureAIFoundrySettings settings) : IE
         const string prompt5 = "What is my age? ";
         var response5 = await agent.RunAsync(prompt5, session);
 
+        var reducedMessages = historyProvider.GetMessages(session);
+
         Console.WriteLine(response1.Text);
         Console.WriteLine();
         Console.WriteLine(response2.Text);
@@ -78,6 +65,14 @@ public class SummarizingChatReducerExample(AzureAIFoundrySettings settings) : IE
         Console.WriteLine(response4.Text);
         Console.WriteLine();
         Console.WriteLine(response5.Text);
+
+        Console.WriteTitle($"After Reduction (with a reducer target count of {reducerTargetCount}):");
+
+        foreach (var message in reducedMessages)
+        {
+            Console.WriteLine();
+            Console.WriteLine(message);
+        }
     }
 }
 

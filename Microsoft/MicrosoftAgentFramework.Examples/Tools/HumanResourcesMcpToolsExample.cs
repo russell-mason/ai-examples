@@ -39,7 +39,7 @@ public class HumanResourcesMcpToolsExample(AzureAIFoundrySettings settings) : IE
                     .AsIChatClient()
                     .AsAIAgent(tools: [.. mcpTools]);
 
-        var session = await agent.GetNewSessionAsync();
+        var session = await agent.CreateSessionAsync();
 
         const string prompt1 = "What is the telephone number for bob smith, and when is he available?";
         var response1 = await agent.RunAsync(prompt1, session);

@@ -31,7 +31,10 @@ public class OpenApiToolExample(AzureAIFoundrySettings azureSettings, OpenApiSet
 
         var httpClient = new HttpClient();
 
-        // URL from config, or local file
+        // URL from updated config
+        // N.B. This cannot use the localhost URL as set by default in the appsettings.json file.
+        //      This is a shared config and is set as a default the for Semantic Kernel example.
+        //      Ensure you change it to reflect the deployed URL for this example.
         var specification = BinaryData.FromBytes(await httpClient.GetByteArrayAsync(openApiSettings.Endpoint));
         
         var openApiToolDefinition = new OpenApiToolDefinition("manage_users",

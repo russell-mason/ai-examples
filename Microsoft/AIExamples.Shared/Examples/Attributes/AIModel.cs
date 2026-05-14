@@ -6,7 +6,7 @@ public enum AIModel
 
     GPT41Mini,
 
-    Grok3Mini,
+    Grok420NonReasoning,
 
     MetaLlama3dot1,
 

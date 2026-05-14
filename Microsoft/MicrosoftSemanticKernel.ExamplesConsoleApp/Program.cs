@@ -113,6 +113,8 @@
 // Embeddings
 // ---------------------------------------------------------------------------------------
 
+//// - From LM Studio
+
 //await host.ExecuteExampleAsync<LocalEmbeddingGeneratorExample>();
 
 // - From Azure Deployments
