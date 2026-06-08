@@ -1,4 +1,6 @@
-﻿namespace MicrosoftAgentFramework.Examples.Tools;
+﻿using RunStatus = Azure.AI.Agents.Persistent.RunStatus;
+
+namespace MicrosoftAgentFramework.Examples.Tools;
 
 // This is not intended to be realistic, i.e. it's an overly simplistic API, has no authentication or error handling etc.
 // This is explicitly designed to demonstrate the prompt is able to pick up the OpenAPI schema and orchestrate multiple function calls

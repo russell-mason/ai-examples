@@ -10,6 +10,7 @@ global using AIExamples.Shared.Extensions;
 global using Azure;
 global using Azure.AI.Agents.Persistent;
 global using Azure.AI.OpenAI;
+global using Microsoft.Agents.AI.Workflows;
 global using Azure.Identity;
 global using Microsoft.Agents.AI;
 global using Microsoft.Extensions.AI;

@@ -60,3 +60,22 @@
 //await host.ExecuteExampleAsync<OpenApiToolExample>();
 
 //await host.ExecuteExampleAsync<HumanResourcesMcpToolsExample>();
+
+
+// ---------------------------------------------------------------------------------------
+// Workflows
+// ---------------------------------------------------------------------------------------
+
+//await host.ExecuteExampleAsync<ClassBasedExecutorExample>();
+//await host.ExecuteExampleAsync<FunctionBasedExecutorExample>();
+//await host.ExecuteExampleAsync<ResettableExecutorExample>();
+
+//await host.ExecuteExampleAsync<DirectEdgeExample>();
+//await host.ExecuteExampleAsync<ConditionalEdgeExample>();
+//await host.ExecuteExampleAsync<SwitchCaseEdgeExample>();
+//await host.ExecuteExampleAsync<FanOutEdgeExample>();
+//await host.ExecuteExampleAsync<FanInEdgeExample>();
+//await host.ExecuteExampleAsync<SuperStepsExample>();
+
+//await host.ExecuteExampleAsync<EventsExample>();
+//await host.ExecuteExampleAsync<CustomEventsExample>();

@@ -172,6 +172,41 @@ Simply using **_"az login"_** via the Azure CLI is sufficient. See
     **N.B.** The associated MCP Server will be automatically started when this example is run.  
     Model: gpt-4o-mini
 
+### Workflow
+
+-   **ClassBasedExecutorExample**  
+    Demonstrates a simple workflow using a class based executor.
+
+-   **FunctionBasedExecutorExample**  
+    Demonstrates a simple workflow using a function based executor.
+
+-   **ResettableExecutorExample**  
+    Demonstrates a simple workflow using a class based executor that can be reset to clear internal state.
+
+-   **DirectEdgeExample**
+    Demonstrates a simple workflow using a direct edge.
+
+-   **ConditionalEdgeExample**  
+    Demonstrates a simple workflow using a conditional edge.
+
+-   **SwitchCaseEdgeExample**  
+    Demonstrates a simple workflow using a switch-case edge.
+
+-   **FanOutEdgeExample**  
+    Demonstrates a simple workflow using a fan-out edge.
+
+-   **FanInEdgeExample**  
+    Demonstrates a simple workflow using a fan-in edge.
+
+-   **SuperStepExample**  
+    Demonstrates that a super step encapsulates several steps when using a fan-out edge.
+
+-   **EventsExample**  
+    Demonstrates the basic events raised during a simple workflow run.
+
+-   **CustomEventsExample**  
+    Demonstrates raising custom events raised during a simple workflow run.
+
 ---
 
 Return to the repository [README](../../) file

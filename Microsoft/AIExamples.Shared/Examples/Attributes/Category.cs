@@ -30,6 +30,8 @@ public enum Category
 
     ModelContextProtocol,
 
+    Workflow, 
+
     MachineLearning,
 
     OpenTelemetry
