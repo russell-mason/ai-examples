@@ -28,6 +28,8 @@ public enum Category
 
     Tools,
 
+    Skills,
+
     ModelContextProtocol,
 
     Workflow, 

@@ -172,6 +172,20 @@ Simply using **_"az login"_** via the Azure CLI is sufficient. See
     **N.B.** The associated MCP Server will be automatically started when this example is run.  
     Model: gpt-4o-mini
 
+### Skills
+
+-   **ListSkillsExample**  
+    Demonstrates that multiple skills can be automatically loaded from skills based subdirectories.  
+    Model: gpt-4o-mini
+
+-  **RulesExample**  
+   Demonstrates using a set of rules to determine an approvals process.  
+   Model: gpt-4o-mini
+
+-  **SelectFromTemplatesExample**  
+   Demonstrates using a skill that selects an appropriate template and fills in details based on the prompt.
+   Model: gpt-4o-mini
+
 ### Workflow
 
 -   **ClassBasedExecutorExample**  

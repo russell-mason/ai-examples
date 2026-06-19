@@ -63,6 +63,15 @@
 
 
 // ---------------------------------------------------------------------------------------
+// Skills
+// ---------------------------------------------------------------------------------------
+
+//await host.ExecuteExampleAsync<ListSkillsExample>();
+//await host.ExecuteExampleAsync<RulesExample>();
+//await host.ExecuteExampleAsync<SelectFromTemplatesExample>();
+
+
+// ---------------------------------------------------------------------------------------
 // Workflows
 // ---------------------------------------------------------------------------------------
 
@@ -79,3 +88,5 @@
 
 //await host.ExecuteExampleAsync<EventsExample>();
 //await host.ExecuteExampleAsync<CustomEventsExample>();
+
+
