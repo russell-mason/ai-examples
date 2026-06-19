@@ -42,8 +42,8 @@ e.g.
                 "Endpoint": "https://[your-foundry-resource-01].services.ai.azure.com/api/projects/[your-foundy-project-01]",
                 "OpenAIEndpoint": "https://[your-foundry-resource-01].openai.azure.com",
                 "DeployedModels": {
-                    "Default": "gpt-4o-mini",
-                    "Gpt4oMini": "gpt-4o-mini",
+                    "Default": "gpt-4.1-mini",
+                    "Gpt4oMini": "gpt-4.1-mini",
                     "Grok420NonReasoning": "grok-4-20-non-reasoning"
                 }
             },

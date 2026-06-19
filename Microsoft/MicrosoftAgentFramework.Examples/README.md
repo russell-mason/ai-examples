@@ -31,61 +31,61 @@ Simply using **_"az login"_** via the Azure CLI is sufficient. See
 -   **ChatClientExample**  
     Demonstrates creating the individual elements required to obtain a chat client, and getting a simple response from a prompt.
     No agent involved.  
-    Model: gpt-4o-mini
+    Model: gpt-4.1-mini
 
 -   **AgentFromExistingChatClientExample**  
     Demonstrates creating the individual elements required to obtain an agent, and getting a simple response from a prompt.  
-    Model: gpt-4o-mini
+    Model: gpt-4.1-mini
 
 -   **MultipleAgentsFromExistingChatClientExample**  
     Demonstrates creating two independent agents using a common chat client.  
-    Model: gpt-4o-mini
+    Model: gpt-4.1-mini
 
 -   **AgentChatClientExample**  
     Demonstrates simplifying the creation of an agent rather than using the individual elements explicitly.  
-    Model: gpt-4o-mini
+    Model: gpt-4.1-mini
 
 -   **AgentChatClientStreamingExample**  
     Demonstrates getting a streamed response from an agent, and outputting response tokens as they're received.  
-    Model: gpt-4o-mini
+    Model: gpt-4.1-mini
 
 -   **AgentChatClientOptionsExample**  
     Demonstrates providing options to the agent, such as a starting prompt and temperature.  
-    Model: gpt-4o-mini
+    Model: gpt-4.1-mini
 
 -   **AgentChatClientTokenUsageExample**  
     Demonstrates how to get the number of input and output tokens used by agent request/response messages.  
-    Model: gpt-4o-mini
+    Model: gpt-4.1-mini
 
 -   **AgentChatClientSessionExample**  
     Demonstrates how to create a session (chat history) so that prior request/response messages provide historical context.  
-    Model: gpt-4o-mini
+    Model: gpt-4.1-mini
 
 -   **AgentChatClientSessionPersistenceExample**  
     Demonstrates how a session (chat history) can be serialized and deserialized in order to persist the session's
     current state.  
-    Model: gpt-4o-mini
+    Model: gpt-4.1-mini
 
 -   **AgentChatClientMemoryExample**  
     Demonstrates the ability to intercept, extract, and capture, information provided during the chat and
     store it in a memory state object for use across sessions and agents.  
-    Model: gpt-4o-mini
+    Model: gpt-4.1-mini
     
   - **AgentChatClientMemoryPromptExample**  
     Demonstrates the ability to intercept chat, and extract the user's name. Prevents further interaction until
     provided. This is stored in a memory state object for use across sessions and agents.  
-    Model: gpt-4o-mini
+    Model: gpt-4.1-mini
 
 -   **MessageCountingChatReducerExample**  
     Demonstrates using a chat reducer with an agent to only include a set number of request/response messages.
     This will result in older messages being removed so context from further back will no longer be available.  
-    Model: gpt-4o-mini
+    Model: gpt-4.1-mini
 
 -   **SummarizingChatReducerExample**  
     Demonstrates using a chat reducer with an agent to summarize messages thus far. This will create a single
     message from a set of messages and replace them. This should provide enough context without having to still have
     all the literal messages available.  
-    Model: gpt-4o-mini
+    Model: gpt-4.1-mini
 
 -   **AzureModelExample**  
     Demonstrates using an Azure hosted grok model with an agent.  
@@ -93,15 +93,15 @@ Simply using **_"az login"_** via the Azure CLI is sufficient. See
 
 -   **StructuredDataExample**  
     Demonstrates how to return a typed response message that contains structured data directly.  
-    Model: gpt-4o-mini
+    Model: gpt-4.1-mini
 
 -   **StructuredDataFromJsonSchemaExample**  
     Demonstrates how to return a message that contains JSON conforming to provided JSON schema.  
-    Model: gpt-4o-mini
+    Model: gpt-4.1-mini
 
 -   **TranscribeAudioExample**  
     Demonstrates how to read an mps3 audio file and transcribe it to text using an audio client.  
-    Model: gpt-4o-mini
+    Model: gpt-4.1-mini
 
 -   **TextToAudioExample**  
     Demonstrates how to use an audio client to convert text into an MP3 stream and play it.  
@@ -133,36 +133,36 @@ Simply using **_"az login"_** via the Azure CLI is sufficient. See
 
 -   **FunctionToolsViaOptionsExample**  
     Demonstrates how to add tools from static functions via options that can be passed to an agent.  
-    Model: gpt-4o-mini
+    Model: gpt-4.1-mini
 
 -   **FunctionToolsViaCreationExample**  
     Demonstrates how to create tools from static functions and include them when creating the agent.  
-    Model: gpt-4o-mini
+    Model: gpt-4.1-mini
 
 -   **FunctionToolsViaSelfExposedExample**  
     Demonstrates how a class can expose a series of functions as AI Tools.  
-    Model: gpt-4o-mini
+    Model: gpt-4.1-mini
 
 -   **FunctionToolsViaSelfExposedWithOpenTelemetryExample**  
     Demonstrates the use of open telemetry for capturing agent activity including the use of AI Tools.  
-    Model: gpt-4o-mini
+    Model: gpt-4.1-mini
 
 -   **ToolWithDependencyInjectionExample**  
     Demonstrates how a service collection can be passed to the agent so that tools can have services injected into them.  
-    Model: gpt-4o-mini
+    Model: gpt-4.1-mini
 
 -   **FunctionToolApprovalExample**  
     Demonstrates requiring the user to approve the calling of a tool from an agent.  
-    Model: gpt-4o-mini
+    Model: gpt-4.1-mini
 
 -   **AgentAsToolExample**  
     Demonstrates how to use an agent as a tool from within another agent.  
-    Model: gpt-4o-mini
+    Model: gpt-4.1-mini
 
 -   **OpenApiToolExample**  
     Demonstrates using a persistent agent with an OpenAPI schema tool that infers a set of functions that can then be used
     automatically given the context of a prompt.  
-    Model: gpt-4o-mini  
+    Model: gpt-4.1-mini  
     **N.B.** This uses a PersistentAgent which is only available via an Azure account using Azure Credentials. You will
     need to be logged in to your Azure account to run this example.  
     **N.B.** The associated API must also have been deployed and publicly available (see the OpenApiWebApi project).
@@ -170,21 +170,21 @@ Simply using **_"az login"_** via the Azure CLI is sufficient. See
 -   **HumanResourcesMcpExample**  
     Demonstrates the use of an MCP Server as Agent AI Tools.  
     **N.B.** The associated MCP Server will be automatically started when this example is run.  
-    Model: gpt-4o-mini
+    Model: gpt-4.1-mini
 
 ### Skills
 
 -   **ListSkillsExample**  
     Demonstrates that multiple skills can be automatically loaded from skills based subdirectories.  
-    Model: gpt-4o-mini
+    Model: gpt-4.1-mini
 
 -  **RulesExample**  
    Demonstrates using a set of rules to determine an approvals process.  
-   Model: gpt-4o-mini
+   Model: gpt-4.1-mini
 
 -  **SelectFromTemplatesExample**  
    Demonstrates using a skill that selects an appropriate template and fills in details based on the prompt.
-   Model: gpt-4o-mini
+   Model: gpt-4.1-mini
 
 ### Workflow
 

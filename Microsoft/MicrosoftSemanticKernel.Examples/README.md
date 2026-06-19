@@ -21,52 +21,52 @@ usage.
 
 -   **ChatClientExample**  
     Demonstrates obtaining a chat client from the kernel, and getting a simple response from a prompt.  
-    Model: gpt-4o-mini
+    Model: gpt-4.1-mini
 
 -   **ChatClientStreamingExample**  
     Demonstrates getting a streamed response from a chat client, and outputting response tokens as they're received.  
-    Model: gpt-4o-mini
+    Model: gpt-4.1-mini
 
 -   **ChatClientHistoryExample**  
     Demonstrates how to create a chat history so that prior request/response messages provide historical context.  
-    Model: gpt-4o-mini
+    Model: gpt-4.1-mini
 
 -   **ChatCompletionExample**  
     Demonstrates obtaining a chat completion service from the kernel, and getting a simple response from a prompt.  
-    Model: gpt-4o-mini
+    Model: gpt-4.1-mini
 
 -   **ChatCompletionStreamingExample**  
     Demonstrates getting a streamed response from a chat completion service, and outputting response tokens as they're received.  
-    Model: gpt-4o-mini
+    Model: gpt-4.1-mini
 
 -   **ChatCompletionSettingsExample**  
     Demonstrates providing options to the chat completion service, such as a starting prompt and temperature.  
-    Model: gpt-4o-mini
+    Model: gpt-4.1-mini
 
 -   **ChatCompletionTokenUsageExample**  
     Demonstrates how to get the number of input and output tokens used by chat request/response messages.  
-    Model: gpt-4o-mini
+    Model: gpt-4.1-mini
 
 -   **ChatCompletionHistoryExample**  
     Demonstrates how to create a chat history so that prior request/response messages provide historical context.  
-    Model: gpt-4o-mini
+    Model: gpt-4.1-mini
 
 -   **ChatCompletionHistoryTruncationReducerExample**  
     Demonstrates how to take a chat history and condense it to only include a set number of request/response messages.
     This will result in older messages being removed so context from further back will no longer be available.  
-    Model: gpt-4o-mini
+    Model: gpt-4.1-mini
 
 -   **ChatCompletionHistorySummarizationReducerExample**  
     Demonstrates how to take a chat history and condense it to a summary of the messages thus far. This will create
     a single message from a set of messages and replace them. This should provide enough context without having to
     still have all the literal messages available.  
-    Model: gpt-4o-mini
+    Model: gpt-4.1-mini
 
 ### Model Providers
 
 -   **AzureOpenAIExample**  
-    Demonstrates using a gpt-4o-mini model via Azure and the OpenAI chat client.  
-    Model: gpt-4o-mini
+    Demonstrates using a GPT model via Azure and the OpenAI chat client.  
+    Model: gpt-4.1-mini
 
 -   **AzureGrokExample**  
     Demonstrates using a grok-4-20-non-reasoning model via Azure and the OpenAI chat client.  
@@ -109,86 +109,86 @@ usage.
 
 -   **JsonFromChatCompletionExample**  
     Demonstrates how to return a message that contains JSON by describing the format in the prompt.  
-    Model: gpt-4o-mini
+    Model: gpt-4.1-mini
 
 -   **ResponseFormatFromInvokePromptExample**  
     Demonstrates how to return a message that contains JSON by specifying the response format via settings, and then
     deserializing the JSON to a typed object.  
-    Model: gpt-4o-mini
+    Model: gpt-4.1-mini
 
 ### Prompt Functions
 
 -   **PromptToFunctionExample**  
     Demonstrates how to turn a parameterized prompt into a kernel function, then execute it passing the parameter.  
-    Model: gpt-4o-mini
+    Model: gpt-4.1-mini
 
 -   **JsonFileToFunctionFunctionExample**  
     Demonstrates how to import a plugin containing a prompt function via config.json and skprompt.txt files, and then executing
     the function from within that plugin.  
-    Model: gpt-4o-mini
+    Model: gpt-4.1-mini
 
 -   **YamlFileToFunctionFunctionExample**  
     Demonstrates how to create a prompt function from a yaml file, then execute it passing a parameter.  
-    Model: gpt-4o-mini
+    Model: gpt-4.1-mini
 
 -   **TranslationFunctionExample**  
     Demonstrates how to import a plugin containing a prompt function via config.json and skprompt.txt files, and executing
     it multiple times using different parameters.  
-    Model: gpt-4o-mini
+    Model: gpt-4.1-mini
 
 -   **FunctionPipelineExample**  
     Demonstrates how to compose, and execute, multiple prompt functions via a pipeline passing a value from one function to
     the next. This uses a custom pipeline class originating from Microsoft examples.  
-    Model: gpt-4o-mini
+    Model: gpt-4.1-mini
 
 ### Plugins
 
 -   **NoPluginExample**  
     Demonstrates how, without additional support, chat completion doesn't know basic information such as the current date.  
-    Model: gpt-4o-mini
+    Model: gpt-4.1-mini
 
 -   **TimePluginExample**  
     Demonstrates how TimePlugin, a pre-built Microsoft plugin, provides chat completion with access to date and time related
     functionality.  
-    Model: gpt-4o-mini
+    Model: gpt-4.1-mini
 
 -   **TimePluginUsageExample**  
     Demonstrates how to get the number of input and output tokens used by chat completion when using a plugin. This increases the
     number of tokens used as additional request and response messages are created between the chat completion client and the
     plugin.  
-    Model: gpt-4o-mini
+    Model: gpt-4.1-mini
 
 -   **FileIOPluginUsageExample**  
     Demonstrates how FileIOPlugin, a pre-built Microsoft plugin, provides the ability to read the contents of a local file and use
     that as an additional source, from within a prompt.  
-    Model: gpt-4o-mini
+    Model: gpt-4.1-mini
 
 -   **TextPluginUsageExample**  
     Demonstrates how TextPlugin, a pre-built Microsoft plugin, provides access to text based functionality, such as converting
     case, and determining the length of text.  
-    Model: gpt-4o-mini
+    Model: gpt-4.1-mini
 
 -   **HttpPluginUsageExample**  
     Demonstrates how HttpPlugin, a pre-built Microsoft plugin, can be used to retrieve some JSON using an HTTP call.  
-    Model: gpt-4o-mini
+    Model: gpt-4.1-mini
 
 -   **ConversationSummaryPluginExample**  
     Demonstrates how ConversationSummaryPlugin, a pre-built Microsoft plugin, can take a block of text and create a summary from it.  
-    Model: gpt-4o-mini
+    Model: gpt-4.1-mini
 
 -   **OpenApiPluginExample**  
     Demonstrates how to import an Open API schema that infers a set of functions that can then be used automatically given the context
     of a prompt.  
     **N.B.** See the **OpenApiWebApi** project for the API used in this example.  
-    Model: gpt-4o-mini
+    Model: gpt-4.1-mini
 
 -   **PersonalDetailsPluginExample**  
     Demonstrates how to create a custom plugin that provides some data that can then be included in prompt queries.  
-    Model: gpt-4o-mini
+    Model: gpt-4.1-mini
 
 -   **TaxCodeServicePluginExample**  
     Demonstrates how to create a custom plugin that uses dependency injection to access external functionality via services.  
-    Model: gpt-4o-mini
+    Model: gpt-4.1-mini
 
 ### Embeddings
 

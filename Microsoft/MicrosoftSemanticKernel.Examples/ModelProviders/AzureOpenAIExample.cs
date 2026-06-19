@@ -1,7 +1,7 @@
 ﻿namespace MicrosoftSemanticKernel.Examples.ModelProviders;
 
 /// <summary>
-/// Demonstrates using a gpt-4o-mini model via Azure and the OpenAI chat client.
+/// Demonstrates using a GPT model via Azure and the OpenAI chat client.
 /// </summary>
 [ExampleCategory(Category.GettingStarted)]
 [ExampleCategory(Category.TextGeneration)]
